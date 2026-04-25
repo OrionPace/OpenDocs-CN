@@ -67,14 +67,17 @@ export async function syncProject(
   const prev = readState(project.id) ?? emptyState(project.id)
 
   const prevByPath = new Map(prev.files.map((f) => [f.path, f]))
-  const changed: FileEntry[] = options.full
-    ? tree
-    : tree.filter((f) => prevByPath.get(f.path)?.sha !== f.sha)
+  // Files whose upstream SHA changed (or haven't been seen before).
+  const changedPaths = new Set<string>(
+    options.full
+      ? tree.map((f) => f.path)
+      : tree.filter((f) => prevByPath.get(f.path)?.sha !== f.sha).map((f) => f.path),
+  )
 
   const summary: RunSummary = {
     projectId: project.id,
     filesScanned: tree.length,
-    filesChanged: changed.length,
+    filesChanged: changedPaths.size,
     filesTranslated: 0,
     blocksTranslated: 0,
     cacheHits: 0,
@@ -88,8 +91,12 @@ export async function syncProject(
   const fileLimit = pLimit(options.filesInParallel ?? 1)
   const blocksPerFile = options.blocksPerFile ?? 3
 
+  // Process ALL files in the tree — write every file to disk so the docs
+  // directories always exist for the VitePress build, regardless of whether
+  // any upstream content changed. For unchanged files every block will be a
+  // cache hit (no LLM calls).
   const fileResults = await Promise.all(
-    changed.map((entry) =>
+    tree.map((entry) =>
       fileLimit(async (): Promise<FileResult> => {
         const markdown = await fetchFileContent(project, entry.path)
         const blocks = splitFile(markdown, entry.path)
