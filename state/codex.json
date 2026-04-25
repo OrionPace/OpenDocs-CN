@@ -1,15 +1,15 @@
 {
   "projectId": "codex",
-  "lastSyncTime": "2026-04-25T16:22:50.928Z",
-  "lastSyncSha": "022f81df1ffa011c7ba24c951bb3309f4e495bfd",
+  "lastSyncTime": "2026-04-25T17:46:21.189Z",
+  "lastSyncSha": "88f300d74d93bfee6750100ee5d3056672cad3ad",
   "fileCount": 22,
   "translatedCount": 404,
-  "cacheHitCount": 393,
+  "cacheHitCount": 394,
   "files": [
     {
       "path": "docs/agents_md.md",
       "sha": "3df0facdf64c1d70779f60bb47e07dddc80445f1",
-      "translatedAt": "2026-04-25T16:21:32.910Z",
+      "translatedAt": "2026-04-25T17:45:36.430Z",
       "blockHashes": [
         "204aa1e75dc7abd78c37fb0bbf9d946d41ff6f0ce819c299be2b5f903665f8d3",
         "654173a3116dd6a5aba025d62c78c5b233ba1d31f321e84357c38faf66ea1380",
@@ -20,7 +20,7 @@
     {
       "path": "docs/authentication.md",
       "sha": "c30734976685465ee3585e483752f15e90bde6f5",
-      "translatedAt": "2026-04-25T16:21:32.949Z",
+      "translatedAt": "2026-04-25T17:45:36.556Z",
       "blockHashes": [
         "ab9baf5b15f8db67ae016fe0d3a44e5ecbcb6b8c10863133633ddeedbb8c8878",
         "19eaf9c7a3b5b601af7b55226b95b43ba37bd9b852fcee6b695f7421618de114"
@@ -29,7 +29,7 @@
     {
       "path": "docs/CLA.md",
       "sha": "804f202c0d369d676abefaf0999dfdd1f572127f",
-      "translatedAt": "2026-04-25T16:21:33.077Z",
+      "translatedAt": "2026-04-25T17:45:36.687Z",
       "blockHashes": [
         "b99c67776a73fa8da285c3e455fee426d862b831d955aa829e14f2d58a06b30e",
         "48f89e20275602be5adcc62dd9b2ac439d0d63693db238202ac09efb956cb5e5",
@@ -51,7 +51,7 @@
     {
       "path": "docs/config.md",
       "sha": "d583122e01061396d8dd00052d99d37a5cff21b5",
-      "translatedAt": "2026-04-25T16:21:33.047Z",
+      "translatedAt": "2026-04-25T17:45:36.683Z",
       "blockHashes": [
         "2161b63730b0bebc097c747fcb2b4018682d66ce6b34c43dd9db4585ddb5d1c5",
         "9b4b47a66c3c46b65dcafd17b0dd510d506ca1f9a5f9977d8fe728191d036038",
@@ -93,7 +93,7 @@
     {
       "path": "docs/contributing.md",
       "sha": "19b31073e9444020d0ac5a478a436b80b506db59",
-      "translatedAt": "2026-04-25T16:22:50.928Z",
+      "translatedAt": "2026-04-25T17:45:49.298Z",
       "blockHashes": [
         "47964f2d9e2f904f6d8d7e6a7bc401ec09137d666cb8d4c614b14a329d8a5333",
         "c41ce80f0b828b137662473ec47afda9751241a43111b0cf61db3cdf46548f59",
@@ -136,7 +136,7 @@
     {
       "path": "docs/example-config.md",
       "sha": "84b11436c58b86ea9800f5ea72d731a90e3febaf",
-      "translatedAt": "2026-04-25T16:21:33.168Z",
+      "translatedAt": "2026-04-25T17:45:36.816Z",
       "blockHashes": [
         "bc8d98678fc219641acad599b8bd59c4f512198deb46e5e8b6d8b5301b793378",
         "28a53c329df794226154bc40acc7bc1ac44e50b9364065bb48dd189072e50fcd"
@@ -145,7 +145,7 @@
     {
       "path": "docs/exec.md",
       "sha": "57e432305bf70930fbbcbe808ab6c160dd266286",
-      "translatedAt": "2026-04-25T16:21:33.268Z",
+      "translatedAt": "2026-04-25T17:45:36.942Z",
       "blockHashes": [
         "9a899f5980d8e591ed54a98b8002d98d1007ea2ca7e1cede43e97d715439e0cf",
         "d66656353336b8c352d38e461c3b5867d40f8e3706987e2111c4384d7fb5295c"
@@ -154,7 +154,7 @@
     {
       "path": "docs/execpolicy.md",
       "sha": "cafebb32ee4f77d8daed27c11572cbe6c63d501c",
-      "translatedAt": "2026-04-25T16:21:33.366Z",
+      "translatedAt": "2026-04-25T17:45:37.057Z",
       "blockHashes": [
         "1b5b862670bd84cfa0d1bb27f596c0c7e26189e0924adaf55d1e1bd8fbfbdd29",
         "29c52d37db8b9b8dee40474d8bc5a08ceeca5b5c5d196962405a7bd249d12b07"
@@ -163,7 +163,7 @@
     {
       "path": "docs/exit-confirmation-prompt-design.md",
       "sha": "814b73730bb98531f3a300dfb3692768b73ec67a",
-      "translatedAt": "2026-04-25T16:21:33.470Z",
+      "translatedAt": "2026-04-25T17:45:37.198Z",
       "blockHashes": [
         "540cc42f6defbb1532e514276e56f3145577a88b5588b90dd9445de9c09b5e30",
         "ab377514eba896f9999ce93e202440fd590ea56e443d890f12c356008946a812",
@@ -199,7 +199,7 @@
     {
       "path": "docs/getting-started.md",
       "sha": "b2ea5f26426baeaa551a41c220075b84c4d6c559",
-      "translatedAt": "2026-04-25T16:21:33.567Z",
+      "translatedAt": "2026-04-25T17:45:37.327Z",
       "blockHashes": [
         "2dbd5aa062e2f3840579d5d4644f609547bd52c6e876f9631c54c2212a27c33a",
         "2e24b4f2b9c71aac3d760ec5f6726105b9a060f4ed9e837260a7e552f14a8f0a"
@@ -208,7 +208,7 @@
     {
       "path": "docs/install.md",
       "sha": "b7d4f0711a60e5dff4f91d8b53c2f85bf934d560",
-      "translatedAt": "2026-04-25T16:21:33.660Z",
+      "translatedAt": "2026-04-25T17:45:37.463Z",
       "blockHashes": [
         "b1cea692e7f759cca8d3adbb4754459d2d49da2af97e78e75f7fc3b479ab3343",
         "b64bda8758b9f7a9d436e9f7a192a68225fde41712791afda36590fef1f03d3b",
@@ -228,7 +228,7 @@
     {
       "path": "docs/license.md",
       "sha": "18ad62af03adb533a195b7a6014799831e7cc907",
-      "translatedAt": "2026-04-25T16:21:33.753Z",
+      "translatedAt": "2026-04-25T17:45:37.579Z",
       "blockHashes": [
         "6c549a56db01e021f248d8da78289a3197d3db86fe0d36d33381d0dfc711e8bc",
         "8a3a9c56ba33ab10e6cc2ea548e7566423c62390b8344046c627239588bb6bd4"
@@ -237,7 +237,7 @@
     {
       "path": "docs/open-source-fund.md",
       "sha": "2da0cdce3e57dfe9f450075cbf9e5e4967031682",
-      "translatedAt": "2026-04-25T16:21:33.838Z",
+      "translatedAt": "2026-04-25T17:45:37.709Z",
       "blockHashes": [
         "eed4ea6d4ff7b3ff4056f780c8158a05aaf93e235053cee3e8d16f5d57372a67",
         "a595845c86c3572f013f348161c34342f2eb7ee1f2cf949be18e49cba8f16555",
@@ -248,7 +248,7 @@
     {
       "path": "docs/sandbox.md",
       "sha": "f5ca8d89bd2ef690e128bb0c299d5e5d9cee5085",
-      "translatedAt": "2026-04-25T16:21:33.941Z",
+      "translatedAt": "2026-04-25T17:45:37.825Z",
       "blockHashes": [
         "7669f96bf98438c5c59fc07640e15aa241d4776316d09a9da74e8f3aa874f258",
         "35c220e2cb796306e9a7f5a71c0ebeaabf53cb63a4f8d05637b9a738051f673a"
@@ -257,7 +257,7 @@
     {
       "path": "docs/skills.md",
       "sha": "a45e7d73917e4a5b67e3f417f2caaa8db6be248d",
-      "translatedAt": "2026-04-25T16:21:34.044Z",
+      "translatedAt": "2026-04-25T17:45:37.964Z",
       "blockHashes": [
         "5ea51b02169e689f372d818150c6183dec194a8617fe1ca4deeed71d4ec44491",
         "04dc28a0d9a6aeaa81ae68387b8496a702dbb5c1697bcc3dc3bf5186655aa608"
@@ -266,7 +266,7 @@
     {
       "path": "docs/slash_commands.md",
       "sha": "4db63f7f6e6a2d7b8447e311b0dce6279426313c",
-      "translatedAt": "2026-04-25T16:21:34.134Z",
+      "translatedAt": "2026-04-25T17:45:38.076Z",
       "blockHashes": [
         "fe6894ef474d0898fc2a0ecd172ff941a0571d0ff1b3b59d78b5615f49939310",
         "fe77f8bc1146443c64aee74922a2aaf361c381d9c5ce40cabcc2088a4c3107ef"
@@ -275,7 +275,7 @@
     {
       "path": "docs/tui-alternate-screen.md",
       "sha": "2fe141a2f230464406413108390162e1276cd8f5",
-      "translatedAt": "2026-04-25T16:21:34.235Z",
+      "translatedAt": "2026-04-25T17:45:38.223Z",
       "blockHashes": [
         "c81424df9ce0ad3aa8aba98838fd24c86d4b99ecaaf5be6b74388554ea93189f",
         "7337f3d0aa29e9a82b8f1650b743a98eef90794631fa763a319686e69c546821",
@@ -330,7 +330,7 @@
     {
       "path": "docs/tui-chat-composer.md",
       "sha": "0ad5c693b3cf872e77a7bb6834882e36f4a77722",
-      "translatedAt": "2026-04-25T16:21:34.376Z",
+      "translatedAt": "2026-04-25T17:45:38.378Z",
       "blockHashes": [
         "e606515ef34ebbbb1ecd2a701b1d748921902cf51474892b5e5f59b7da8e77a3",
         "eb218bbf345ebe79d0ce6733e8e540388abc749413ef1216273a2ca46c0d6c49",
@@ -439,7 +439,7 @@
     {
       "path": "docs/tui-request-user-input.md",
       "sha": "8ca6f5369bb180d6bf94df7d5ca62782523a17e2",
-      "translatedAt": "2026-04-25T16:21:34.480Z",
+      "translatedAt": "2026-04-25T17:45:38.506Z",
       "blockHashes": [
         "d334f6d0ad250d6853ce0a7a64995db1ca301f71ad09485f98be8e53c7f0949d",
         "967cd63372805e5bcc1d758721a52bae14fd5bdf45261b1e6bbd07f72247f4a7",
@@ -460,7 +460,7 @@
     {
       "path": "docs/tui-stream-chunking-review.md",
       "sha": "3722492ddf8c17d246a6236b99d335f3f9c9e24e",
-      "translatedAt": "2026-04-25T16:21:57.168Z",
+      "translatedAt": "2026-04-25T17:46:09.660Z",
       "blockHashes": [
         "2b0d7643f978487f1ea146d5e2a1274a9f02ad3f214c8894475495e9cfaa1e0d",
         "498ca96a37c41849f706de5d8015ccbeb142603bda3ca2d2e7296fc7f3ec0126",
@@ -502,7 +502,7 @@
     {
       "path": "docs/tui-stream-chunking-tuning.md",
       "sha": "d9a2ea5e2136ab04daa3e4f99586c7a747bd87b0",
-      "translatedAt": "2026-04-25T16:22:25.322Z",
+      "translatedAt": "2026-04-25T17:46:11.641Z",
       "blockHashes": [
         "8ad1bd2225b6630ddac130feab0ad36f40133aace891f3a6c8a35015d2e6c320",
         "a17195a727955053245efa9b7ef8bbdc201f362db7394173eeea6d32e1961e31",
@@ -537,7 +537,7 @@
     {
       "path": "docs/tui-stream-chunking-validation.md",
       "sha": "a31a7b62232e09c7a3e35db442c0c633b5d6924e",
-      "translatedAt": "2026-04-25T16:22:35.531Z",
+      "translatedAt": "2026-04-25T17:46:21.189Z",
       "blockHashes": [
         "2c55ac824a374c1ba4e853bedbb863980d630cbc333c40c6841951c46eaf0c7f",
         "95fdd1423beb61268f2c08bd0fbdec697c9a8ed91cafdc6920ced7fe49fdf14d",
@@ -576,37 +576,37 @@
       "blockId": "8051a2ac2226",
       "reason": "nvidia-nim: glossaryTerms",
       "sourceHash": "92be8d2f0313549fbd0f735e1df87e393cce1e963438219207778e4f69f8a909",
-      "timestamp": "2026-04-25T16:22:50.928Z"
+      "timestamp": "2026-04-25T17:45:49.298Z"
     },
     {
       "blockId": "ffa683730cc1",
       "reason": "nvidia-nim: glossaryTerms",
       "sourceHash": "2430444e8941ba30fc8b15b03c58492e8bc36113517ae5c457f0cbe0ff55786b",
-      "timestamp": "2026-04-25T16:21:57.168Z"
+      "timestamp": "2026-04-25T17:46:09.660Z"
     },
     {
       "blockId": "9ed23f08ece3",
       "reason": "nvidia-nim: glossaryTerms",
       "sourceHash": "32453921ee96f1243fa7375ef816ab32ba9d70a801ef93f2b12313456e2a59b9",
-      "timestamp": "2026-04-25T16:21:57.168Z"
+      "timestamp": "2026-04-25T17:46:09.660Z"
     },
     {
       "blockId": "850aafbccfb1",
       "reason": "nvidia-nim: glossaryTerms",
       "sourceHash": "eb51bcecedbb34d8458efaa57e6c62586a6db9717cf0679a8b796274c58785c8",
-      "timestamp": "2026-04-25T16:22:25.322Z"
+      "timestamp": "2026-04-25T17:46:11.641Z"
     },
     {
       "blockId": "b34bb6d9fe5d",
       "reason": "nvidia-nim: glossaryTerms",
       "sourceHash": "a091be0fe8597be5cf69f85ced8b9c4f4de5b90cecaa9641fbe206cd9fee8e82",
-      "timestamp": "2026-04-25T16:22:25.322Z"
+      "timestamp": "2026-04-25T17:46:11.641Z"
     },
     {
       "blockId": "fcbd8c2099d5",
-      "reason": "nvidia-nim: glossaryTerms",
+      "reason": "nvidia-nim: 429 status code (no body)",
       "sourceHash": "996c7a872386fe6ea6a567c534ebabddb502fa710a88a4746a6dd9b823e2be9e",
-      "timestamp": "2026-04-25T16:22:35.531Z"
+      "timestamp": "2026-04-25T17:46:21.189Z"
     }
   ]
 }

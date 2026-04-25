@@ -1,15 +1,15 @@
 {
   "projectId": "gemini-cli",
-  "lastSyncTime": "2026-04-25T16:21:32.093Z",
+  "lastSyncTime": "2026-04-25T17:45:35.367Z",
   "lastSyncSha": "42587de7338f65e075070eeea33a4149266d05ae",
   "fileCount": 91,
-  "translatedCount": 4608,
-  "cacheHitCount": 4021,
+  "translatedCount": 4613,
+  "cacheHitCount": 4031,
   "files": [
     {
       "path": "docs/admin/enterprise-controls.md",
       "sha": "575b597db644839f520c07dafb2493ba53423fad",
-      "translatedAt": "2026-04-25T16:04:55.896Z",
+      "translatedAt": "2026-04-25T17:35:44.570Z",
       "blockHashes": [
         "586dc9e78fa05c061a0dbd77db7a6479ec0f3bf28c82f4264fd3a1a2329b606a",
         "f6b4926a18247948060a997beabb5b6557c0c3c9b84560eb706bed0cbc3936e3",
@@ -53,7 +53,7 @@
     {
       "path": "docs/changelogs/index.md",
       "sha": "abb845121c62dbd0acf14c258a60e9db45458c0f",
-      "translatedAt": "2026-04-25T16:06:00.582Z",
+      "translatedAt": "2026-04-25T17:36:50.611Z",
       "blockHashes": [
         "b77d0d66b979eb434e391a8c3e5bb484f5230571cbfc684ae86b9f7b6fb52540",
         "8c1fbc6bca1b93f8c4a0f0f2d2cf43a4ce8cb40996c81efed4c9e8b7b3d67e0b",
@@ -134,7 +134,7 @@
     {
       "path": "docs/changelogs/latest.md",
       "sha": "365325e626d3a3a7b07131882b32bc3f79932d09",
-      "translatedAt": "2026-04-25T16:09:50.648Z",
+      "translatedAt": "2026-04-25T17:41:32.732Z",
       "blockHashes": [
         "b4da3f93f37c7c9c26c1f9204e6404b2fb44abc51e13843e616d481e6c8f2642",
         "b6fce8945581e6474e5e13d339c48646b013d54b34c136d540a1f25d39c498bd",
@@ -150,7 +150,7 @@
     {
       "path": "docs/changelogs/preview.md",
       "sha": "737b0917b4e9f0fbac27b644043a807fe6036024",
-      "translatedAt": "2026-04-25T16:11:41.022Z",
+      "translatedAt": "2026-04-25T17:40:12.983Z",
       "blockHashes": [
         "24e127142ebff69d6fa79383289ebef74aad42c812419176f0f1e7e62caaab98",
         "8525cc57bb87595b9495c02a4dfab5316e3f140737a19506617d17c8c5df580e",
@@ -167,7 +167,7 @@
     {
       "path": "docs/cli/acp-mode.md",
       "sha": "a5f9b6a63a3aa539cf35c5b58e3135a1540c19d4",
-      "translatedAt": "2026-04-25T16:09:50.834Z",
+      "translatedAt": "2026-04-25T17:40:13.279Z",
       "blockHashes": [
         "115014a9f62854ab7e687416dbb60d96b1e879b39190f53d85056e6161790caa",
         "c921cad4b8df3a6458f3b0257aba5f1874e378f8f5aa5b9e062ee12a55d4d4f8",
@@ -210,7 +210,7 @@
     {
       "path": "docs/cli/auto-memory.md",
       "sha": "8b3f5379daa8a851f851351bb88b9f8e0e573aec",
-      "translatedAt": "2026-04-25T16:09:51.026Z",
+      "translatedAt": "2026-04-25T17:40:13.578Z",
       "blockHashes": [
         "7ae8062b21a2333222996336055ff2d19af8323c7dec1b4ed1fb2cf240de063e",
         "0223175b30c0e2f2e709e063f316891ba1de73a24700e617ddd5c7b624f7e388",
@@ -250,7 +250,7 @@
     {
       "path": "docs/cli/checkpointing.md",
       "sha": "775c9b7fea014122ad7f567be8a885c39c992761",
-      "translatedAt": "2026-04-25T16:09:51.135Z",
+      "translatedAt": "2026-04-25T17:40:13.726Z",
       "blockHashes": [
         "75210c83895770f058158280447d0e61e3ce05196cee04071e3457b8114e8ad8",
         "13fa7d08470031a0db2b1f65d4dbea0f1c0aee5ff3db95c76a1c1e14c75b23a2",
@@ -283,7 +283,7 @@
     {
       "path": "docs/cli/cli-reference.md",
       "sha": "41cc76617515bb6e100fc9658d1c4338c447948b",
-      "translatedAt": "2026-04-25T16:09:51.296Z",
+      "translatedAt": "2026-04-25T17:40:13.977Z",
       "blockHashes": [
         "839265752ef47eb45d1772249a2da077d98717733469f0dff1ad75693db9f806",
         "430c2f67905e82774ae0c1ac430ba25e781c4ad745c178e37238269861885bb1",
@@ -315,7 +315,7 @@
     {
       "path": "docs/cli/creating-skills.md",
       "sha": "71f7e6df8a9ff5a614b10433891d0fba2c112786",
-      "translatedAt": "2026-04-25T16:09:51.416Z",
+      "translatedAt": "2026-04-25T17:40:14.117Z",
       "blockHashes": [
         "f1bd398403412139b2ede2376c535617e97c056f75218b60b2cad43b88fc213e",
         "9a2cbd04d977e2364a84ecdb4bdf4bf8cb4a2224bc3501d2ec7d9b32bbe7db18",
@@ -343,7 +343,7 @@
     {
       "path": "docs/cli/custom-commands.md",
       "sha": "3cb3cea36a99988e23ba358565c9142bf55dcb24",
-      "translatedAt": "2026-04-25T16:09:51.550Z",
+      "translatedAt": "2026-04-25T17:40:14.295Z",
       "blockHashes": [
         "36c81bde564c99187e0b3e6ba6ddf189efbf1476acf3fadfd3e13797f3879bbe",
         "1544129524234569bea0db959fa316db459cfe42ef01475871f8f40673c68ad9",
@@ -424,7 +424,7 @@
     {
       "path": "docs/cli/enterprise.md",
       "sha": "1222591fc9492ca285d32fbdf73788393f6b46cc",
-      "translatedAt": "2026-04-25T16:09:51.744Z",
+      "translatedAt": "2026-04-25T17:40:14.564Z",
       "blockHashes": [
         "cfec12ea5bb822cd70c72a62d01081ce5fc5934e33417eeb2f452d3df2ef74e2",
         "1df0c36a9e3a721cb25e1a51d580340f3bb533332f496c74f03c12091d29da0f",
@@ -543,7 +543,7 @@
     {
       "path": "docs/cli/gemini-ignore.md",
       "sha": "fcdf94482c6763bba8509b7ef1757e00444be780",
-      "translatedAt": "2026-04-25T16:09:51.849Z",
+      "translatedAt": "2026-04-25T17:40:14.744Z",
       "blockHashes": [
         "0a79583e6ea69fe8bf23bf16f37ff0aa4e12fb56bf1195db5ca9ecaec4e63713",
         "48e5d2df5a46949c6d08f1fa75df9fec100bff181ef65acd5dce624e4a351077",
@@ -571,7 +571,7 @@
     {
       "path": "docs/cli/gemini-md.md",
       "sha": "624b2fc566ec1c38828825ceaab04a2e068d0431",
-      "translatedAt": "2026-04-25T16:09:51.959Z",
+      "translatedAt": "2026-04-25T17:40:14.884Z",
       "blockHashes": [
         "a777cf8a48a6dbb6317f6ee647b3384769da40def1d28ae7a12477f5c49d78b0",
         "782cdf4c15ccbd4142e614059f313228b07e3c268cd909bd4071afab86451399",
@@ -602,7 +602,7 @@
     {
       "path": "docs/cli/generation-settings.md",
       "sha": "c5ba2151b8a24208d793384c970321c73d2644c1",
-      "translatedAt": "2026-04-25T16:09:52.067Z",
+      "translatedAt": "2026-04-25T17:40:15.043Z",
       "blockHashes": [
         "9d132118f6d9d4530e2b6596150f177bd0d76358e408d64cf8e7c4ed430b9183",
         "31aabec6c02e0a8b2d2f23eeec5ce82641f0026364b32502bb4d6fd0b6083292",
@@ -655,7 +655,7 @@
     {
       "path": "docs/cli/git-worktrees.md",
       "sha": "5020b3fa9a402fa9c82d5bfd6643f5f75497b491",
-      "translatedAt": "2026-04-25T16:09:52.162Z",
+      "translatedAt": "2026-04-25T17:40:15.190Z",
       "blockHashes": [
         "081a576706d951b457898f374e9adf0336266a6056c090f99c827dafe4277cd8",
         "193336867f42e051d169666db4747bb11da99900bd23744048c3a810547709c6",
@@ -689,7 +689,7 @@
     {
       "path": "docs/cli/headless.md",
       "sha": "c83ce70d0e326ab22316a35c47bb92ec40fe9055",
-      "translatedAt": "2026-04-25T16:10:00.862Z",
+      "translatedAt": "2026-04-25T17:40:39.117Z",
       "blockHashes": [
         "055d9fef94dd32d030528e9e9e2f1eebaddbffc737f245652ac44427c5ac7811",
         "ec6588906ea59a4616cb3a0aec4e053f39d513c9d9fef8edbc71f16c399f8107",
@@ -713,7 +713,7 @@
     {
       "path": "docs/cli/model-routing.md",
       "sha": "c9ec073a64e86fa688a81eb8f4072b43dd564750",
-      "translatedAt": "2026-04-25T16:10:01.042Z",
+      "translatedAt": "2026-04-25T17:40:39.384Z",
       "blockHashes": [
         "836b1497ebbe1e8e0ba3ad50ca7c108ade2b4661856e7d558d4e0498ebe848b3",
         "7e5a4daaab42c45f8f0654031c9dabb209814e2380200e0b818bbf469e442545",
@@ -732,7 +732,7 @@
     {
       "path": "docs/cli/model-steering.md",
       "sha": "60f07253c4f430021fe0d2d8b896d5dbbf0d3f20",
-      "translatedAt": "2026-04-25T16:10:01.234Z",
+      "translatedAt": "2026-04-25T17:40:39.657Z",
       "blockHashes": [
         "68c8281d97590aa778d7e6a408d230aba4e89127afbf3d04e4a563c728fc1fe8",
         "3b10a0d006619b25458e57e75c7fabbe6705efe8b570a10a4af6aac9a6951d5c",
@@ -761,7 +761,7 @@
     {
       "path": "docs/cli/model.md",
       "sha": "b85f597e080ae96e1d262b87d3c077afa5fa10d9",
-      "translatedAt": "2026-04-25T16:10:01.339Z",
+      "translatedAt": "2026-04-25T17:40:39.792Z",
       "blockHashes": [
         "03017f9eb822827387e52a103abb57406a45492dc332e91b8f7e316384a2ff59",
         "09ca8036de8143f742287bc616a9dc938f9c28811bb88366a4b3f8532753ae85",
@@ -782,7 +782,7 @@
     {
       "path": "docs/cli/notifications.md",
       "sha": "abe6743c56b8b2518c7c1e190f84c42c691513c2",
-      "translatedAt": "2026-04-25T16:10:01.521Z",
+      "translatedAt": "2026-04-25T17:40:39.931Z",
       "blockHashes": [
         "f8faf3fcc1f9ff1edbe4571267fd5d01ff36c25381e2e243d39de101687b65b0",
         "3ae9cd9ef7c0a2c8c482d807dff23c82cc315968650a3ace0baeac9f5b32458b",
@@ -807,7 +807,7 @@
     {
       "path": "docs/cli/plan-mode.md",
       "sha": "4e205164a09efe427292f1300873feeb9113406c",
-      "translatedAt": "2026-04-25T16:10:01.699Z",
+      "translatedAt": "2026-04-25T17:40:40.174Z",
       "blockHashes": [
         "ff9738df09e8ae89ef953bb49bd364cb483ea29c44b86a2f94502fc5563dfc12",
         "08f152e57ae07ce103aeab50ac0f7c56e9fd5836ff1efb305e0df6cc8203a8fa",
@@ -926,7 +926,7 @@
     {
       "path": "docs/cli/rewind.md",
       "sha": "98ed72a825367a38072a0b0f43598cafffcc5a1a",
-      "translatedAt": "2026-04-25T16:10:01.815Z",
+      "translatedAt": "2026-04-25T17:40:40.309Z",
       "blockHashes": [
         "6b4119a8be68b59d0e3c26568d9b8790c1366fbdb54bf7a8a2ddec6c30277079",
         "c2c640ec8683d98cf2f844db88b270ec5d3238ccd85caa089eeda049d7b9da65",
@@ -944,7 +944,7 @@
     {
       "path": "docs/cli/sandbox.md",
       "sha": "3574e9d231986632b6342be4549aeac9c222efb9",
-      "translatedAt": "2026-04-25T16:10:46.897Z",
+      "translatedAt": "2026-04-25T17:41:08.312Z",
       "blockHashes": [
         "82c296c2bef67484f52a44d46cf142c35acd9b3cb31e7f59d34099a483ade1ef",
         "e42a44d6d8bccc68322d474136d3ce31007aee4e59a3a8cebe33f9c0dc1f7714",
@@ -1057,7 +1057,7 @@
     {
       "path": "docs/cli/session-management.md",
       "sha": "74bc4a4337f0d22a9db6ee93e961d64dcfeec1c3",
-      "translatedAt": "2026-04-25T16:11:06.416Z",
+      "translatedAt": "2026-04-25T17:41:23.473Z",
       "blockHashes": [
         "d849c2c0bc3699b7b866076efc3b7570c3be5c53f624345714dcc14c326ce31a",
         "2e1a6a559323058c1a637c4a023565c61cd13f69a635644a05a23eceacfbf7d4",
@@ -1117,7 +1117,7 @@
     {
       "path": "docs/cli/settings.md",
       "sha": "834750fdf980c7989ae12bbd165bda16882256a7",
-      "translatedAt": "2026-04-25T16:11:06.655Z",
+      "translatedAt": "2026-04-25T17:41:23.925Z",
       "blockHashes": [
         "f7045a6317bb5bc3a91b244fe31d38816f63c54a1fe65b5e3409297bf5d1f422",
         "10770113738be144a9b1afb9cb11ee662dd1a4d6aeb21d7dfabf63ae4d4e2d22",
@@ -1162,7 +1162,7 @@
     {
       "path": "docs/cli/skills.md",
       "sha": "73e5eb66ebc53ff7982fcb582023f0e9ed09e693",
-      "translatedAt": "2026-04-25T16:11:06.850Z",
+      "translatedAt": "2026-04-25T17:41:24.208Z",
       "blockHashes": [
         "8b848286c515f1b9c1fcd2b804a1ac734b265c77aea6f31cb65264890c31f069",
         "9687342060f1e3a7255420462127a809a7969111da0b997c9735b89b6dca9693",
@@ -1196,7 +1196,7 @@
     {
       "path": "docs/cli/system-prompt.md",
       "sha": "9667e7de86d83258bc5d2dac8906c749b44cf489",
-      "translatedAt": "2026-04-25T16:11:17.594Z",
+      "translatedAt": "2026-04-25T17:41:24.369Z",
       "blockHashes": [
         "a139c9f8a04384a14445d23c5c2a59234600f978889917ea17e0b36a3613ad53",
         "8d6f1ba0e556c7f784089439591efcdc0f87aa27f6651ba3835b051b93221948",
@@ -1232,7 +1232,7 @@
     {
       "path": "docs/cli/telemetry.md",
       "sha": "2f42c16c293ad52ef484590c531d2416b121e233",
-      "translatedAt": "2026-04-25T16:12:33.769Z",
+      "translatedAt": "2026-04-25T17:42:31.895Z",
       "blockHashes": [
         "06158ad9fde51db166276a077d5c4b1f85d406efa1cdd55a559c34ddb60e6628",
         "d54fff3221f1a9f6bd260b10e0050fa02e3e35d05863078f41cc75178cea9cd5",
@@ -1670,7 +1670,7 @@
     {
       "path": "docs/cli/themes.md",
       "sha": "9a3d628c20a745ffdc22cd239fda2b989cbefee4",
-      "translatedAt": "2026-04-25T16:11:59.894Z",
+      "translatedAt": "2026-04-25T17:41:33.036Z",
       "blockHashes": [
         "2b55aaf84c6b44ef3a5a11ad84e9f1a62bef65dc2f1d49eb210ccc7690d673c2",
         "b92be6bd24688809dd6eae96bddb6bebcf55e3bab0e0f3e172102fb87aa5e4b9",
@@ -1754,7 +1754,7 @@
     {
       "path": "docs/cli/token-caching.md",
       "sha": "8d56391b0a3d2aa8b76bc3e1ef95920082ac6beb",
-      "translatedAt": "2026-04-25T16:12:11.132Z",
+      "translatedAt": "2026-04-25T17:41:43.294Z",
       "blockHashes": [
         "b89ea431b07f196dc635fe915ebb0f9dfb75016d56ff404c334e39092a708b9b",
         "5a1ba8b17fb89f72164f5066902d5b30787ba7ed1365470a1b76d016a1668d6a",
@@ -1768,7 +1768,7 @@
     {
       "path": "docs/cli/trusted-folders.md",
       "sha": "cbcf5b7fd09848b63b8305ebd87762838143096f",
-      "translatedAt": "2026-04-25T16:12:11.321Z",
+      "translatedAt": "2026-04-25T17:41:43.584Z",
       "blockHashes": [
         "dcc45df95b2e1ef8df1ad78150efd122d2ab57e343cbc76f89df85d34eb8f6c9",
         "dae2708b011251933a06fa62561d7788e46e770bdad43357f5d67ccc6da7a326",
@@ -1811,7 +1811,7 @@
     {
       "path": "docs/cli/tutorials/automation.md",
       "sha": "4285cdcf3b276e92ea9d98a988546c8e02cd917c",
-      "translatedAt": "2026-04-25T16:12:11.553Z",
+      "translatedAt": "2026-04-25T17:41:43.870Z",
       "blockHashes": [
         "65d61285ad2da8c7a7821cb6c1a0767e547017b1aded2bb77b1a4503eb8a160d",
         "730ee08d15fcca5ad9cbb8e1447eb0365df0ed1f4909ca75e1309d8d28295ce8",
@@ -1857,7 +1857,7 @@
     {
       "path": "docs/cli/tutorials/file-management.md",
       "sha": "37112d3bc77c1e53ec74604c1c11acf130860757",
-      "translatedAt": "2026-04-25T16:12:11.689Z",
+      "translatedAt": "2026-04-25T17:41:44.000Z",
       "blockHashes": [
         "9e51c61d6df3423b6aa5bc489b5bf9c7012c634f1f3c74cf07c82c4776427492",
         "cdcf4c7a4837835992dd3b5cde8e7f25cdfaf02dff54ab69e2498ca6e65b5b12",
@@ -1911,7 +1911,7 @@
     {
       "path": "docs/cli/tutorials/mcp-setup.md",
       "sha": "6d3646ade90dfc952ef2ce5f62382c3ae4aab725",
-      "translatedAt": "2026-04-25T16:12:11.824Z",
+      "translatedAt": "2026-04-25T17:41:44.153Z",
       "blockHashes": [
         "7a25d87b5086b778b6191c6e99ccb5ac837436ec2403c7547b9e6f6495017a57",
         "b96f3ab651da134ed5c3ff20421a5c0924694303a580ce74c3a03c435856a0f4",
@@ -1952,7 +1952,7 @@
     {
       "path": "docs/cli/tutorials/memory-management.md",
       "sha": "aa0423157f8bfb69a305b82a53d10e1804d77415",
-      "translatedAt": "2026-04-25T16:12:11.975Z",
+      "translatedAt": "2026-04-25T17:41:44.287Z",
       "blockHashes": [
         "1a934ed244dd160ad60cc2991f0fe5d3174df59e52ccaaed1a7d1ce5374803ed",
         "d351f17eb0c725816279412570483e9c833fd205026a526c1a11d425de50d558",
@@ -1999,7 +1999,7 @@
     {
       "path": "docs/cli/tutorials/plan-mode-steering.md",
       "sha": "b666877d5bf99f0a857059655e5d0286aa0318bc",
-      "translatedAt": "2026-04-25T16:12:35.529Z",
+      "translatedAt": "2026-04-25T17:41:44.440Z",
       "blockHashes": [
         "4b2c59e4383e549f1abb7eb3827baa937622e86b9d25f7b57ee9d133ceea452a",
         "263851bb88397841a41ce16181007b3fa1c7d9c42f58a8ce153e588fe4c43179",
@@ -2035,7 +2035,7 @@
     {
       "path": "docs/cli/tutorials/session-management.md",
       "sha": "3a0a6fae86d4140cae5179ca0abefb8f51e4e7d2",
-      "translatedAt": "2026-04-25T16:12:33.939Z",
+      "translatedAt": "2026-04-25T17:41:44.583Z",
       "blockHashes": [
         "70ae82698f173ec8dfd96598631d86b4d036792d9f760943673fee9d82609856",
         "fe2c47004ce7b4a70e069a3e8abbb00ceb86f31b0e6c2ea1ebae3bd90d54f3cc",
@@ -2079,7 +2079,7 @@
     {
       "path": "docs/cli/tutorials/shell-commands.md",
       "sha": "9ff7cef4efa8766e09e434c4c8e720dd50407a44",
-      "translatedAt": "2026-04-25T16:12:34.119Z",
+      "translatedAt": "2026-04-25T17:41:44.749Z",
       "blockHashes": [
         "42c9142c205ed9d4f711019a361af206c7dc08561d2fa707ee6882ff4f94559e",
         "60d5690d09d2cedc3c85ba2a95a31140e41774fc0f7547c56933f79e0039ea85",
@@ -2124,7 +2124,7 @@
     {
       "path": "docs/cli/tutorials/skills-getting-started.md",
       "sha": "ee59641d2160eb66819055b41ff4d37360cfb74b",
-      "translatedAt": "2026-04-25T16:12:34.227Z",
+      "translatedAt": "2026-04-25T17:41:44.874Z",
       "blockHashes": [
         "70ecac70a7531fef845e2deed00168af842860fa441544b385c409bdcfeab28e",
         "8147ede07b7b8a5e2202d83988dbe2fde9b2ff18df452c42e18fd72a5a403d68",
@@ -2155,7 +2155,7 @@
     {
       "path": "docs/cli/tutorials/task-planning.md",
       "sha": "86f7bab9a438975a11153d3ccec8b7886437e20f",
-      "translatedAt": "2026-04-25T16:12:34.337Z",
+      "translatedAt": "2026-04-25T17:41:45.021Z",
       "blockHashes": [
         "ac5a0cef57d379f967d93c9cc676654d14b85d486ea1d592f73a8f1312110103",
         "de33da3c5f53cf197e2ad0ea06feaa818db0be00e2c3f8fcf28de95850e7e9ed",
@@ -2194,7 +2194,7 @@
     {
       "path": "docs/cli/tutorials/web-tools.md",
       "sha": "6af670b09467c9db811b12b50c12c604728009cd",
-      "translatedAt": "2026-04-25T16:12:34.440Z",
+      "translatedAt": "2026-04-25T17:41:45.146Z",
       "blockHashes": [
         "3ae6c5215634c2415f40d49e3b12f8bc41f595803b0cb9757294d7d1ae357198",
         "e7fa61a5d07d88dd256eb93927ec72cfbf0a82dbb0a57d18be5f8e09370cc0d2",
@@ -2230,7 +2230,7 @@
     {
       "path": "docs/CONTRIBUTING.md",
       "sha": "44fcc63439371c8c829df00eec6aedbdc4d0e4cd",
-      "translatedAt": "2026-04-25T16:12:59.058Z",
+      "translatedAt": "2026-04-25T17:42:07.620Z",
       "blockHashes": [
         "945abca49e5b668471469fae0740fa81c5d2690ba11375b1df496caf694e3754",
         "d775b7f2dbc603ef3891660e75c38129b5ebb94cdf944e8de421a54261da8d77",
@@ -2382,7 +2382,7 @@
     {
       "path": "docs/core/index.md",
       "sha": "2724e8e922f21974602e24fa74ebdd4be564a9a6",
-      "translatedAt": "2026-04-25T16:12:48.896Z",
+      "translatedAt": "2026-04-25T17:42:18.737Z",
       "blockHashes": [
         "44e97157299dd50a7d23d02d1988c0680210bcf31db02af376145baac02e30fb",
         "876dc073f4c0e9c97904831e865ebfaaa9954153dae1bee115121ba6969673b5",
@@ -2416,7 +2416,7 @@
     {
       "path": "docs/core/local-model-routing.md",
       "sha": "220ee13c46bbd70d5954500274df364ff1eaffd8",
-      "translatedAt": "2026-04-25T16:13:10.379Z",
+      "translatedAt": "2026-04-25T17:42:19.018Z",
       "blockHashes": [
         "4dad62cdcb00cec47e1615f418e0f55de36fd351c04d40e7afb457a0af6eefce",
         "7d33b25d05f06567101da7f6445f8ad34e8209a826ff712b8b3aea4f4d2946f7",
@@ -2465,7 +2465,7 @@
     {
       "path": "docs/core/remote-agents.md",
       "sha": "7a3e7ffe2aa035934f45532e40525bdd38849a93",
-      "translatedAt": "2026-04-25T16:13:11.513Z",
+      "translatedAt": "2026-04-25T17:42:19.446Z",
       "blockHashes": [
         "bc1aaf54fde5e0b83a29cb242913a91cef18f7bb466e86d5e6311fe9ce266397",
         "2d76b2c39f29968f7fb9e3053ef2f7beb8d538386d274e258d03601dbd2c3859",
@@ -2575,7 +2575,7 @@
     {
       "path": "docs/core/subagents.md",
       "sha": "d2069b5b12bda8572d6bf4a06e2445e70a9926e4",
-      "translatedAt": "2026-04-25T16:13:10.617Z",
+      "translatedAt": "2026-04-25T17:42:19.684Z",
       "blockHashes": [
         "99c61d8ea888a5f74d91766bf7d63ad87fb95e4ed25dc8170e57d75a350395ec",
         "9895f520d32da5a86a1e9714e370ac4b5f1308845d4e312860e925dcbda3fb90",
@@ -2709,7 +2709,7 @@
     {
       "path": "docs/examples/proxy-script.md",
       "sha": "35780d41efec80aaa21cccc0c4e3e524f8c464c6",
-      "translatedAt": "2026-04-25T16:13:10.794Z",
+      "translatedAt": "2026-04-25T17:42:19.827Z",
       "blockHashes": [
         "9a1d56763d62d7e6521ae0fc670be52efa1fe8d4318c38a308e6d03e188a751f",
         "dc1df54718a4d48cb78bcb7f54e060b974433bd44466f22fb56e27024dcafd27",
@@ -2719,7 +2719,7 @@
     {
       "path": "docs/extensions/best-practices.md",
       "sha": "ccd1652c8848261ac12c65d8fe0109055bac7bd5",
-      "translatedAt": "2026-04-25T16:13:10.945Z",
+      "translatedAt": "2026-04-25T17:42:19.985Z",
       "blockHashes": [
         "e7165df9920b9ac98a0c982418d637dd3728a060455892881c60b79dce4d5e9d",
         "9d2bb2e35300d82b0345e0f2d3f70d7818f44742ff188a7b2b61da082a169de9",
@@ -2778,7 +2778,7 @@
     {
       "path": "docs/extensions/index.md",
       "sha": "1c6ce1e6997841f5e1a6220797f1c7c8f85afc96",
-      "translatedAt": "2026-04-25T16:13:11.064Z",
+      "translatedAt": "2026-04-25T17:42:20.130Z",
       "blockHashes": [
         "c9f6f7aa5bc765459a33c76b528abeac9223325841af315ade117301d4b9bcaf",
         "1c45e42a51eb19bb9e98b75cbd90f80212b367894d39fa70f5323ae935384855",
@@ -2805,7 +2805,7 @@
     {
       "path": "docs/extensions/reference.md",
       "sha": "274cb61a781ad28b8c7a3c493db6685d256e2000",
-      "translatedAt": "2026-04-25T16:13:11.218Z",
+      "translatedAt": "2026-04-25T17:42:20.310Z",
       "blockHashes": [
         "6f440dd458261527bbdde11ec0c1aa2f07eeaa36ba24eab6b1720783ed20dcfd",
         "34ac270ec520718aa563436ffd4fe272dcd5ead3268440c3d7bf2739720f5839",
@@ -2889,7 +2889,7 @@
     {
       "path": "docs/extensions/releasing.md",
       "sha": "10ab3584ed1d4db7d2a842f9aa535fe8f4c04f16",
-      "translatedAt": "2026-04-25T16:13:11.375Z",
+      "translatedAt": "2026-04-25T17:42:20.469Z",
       "blockHashes": [
         "3756341deb804e732b3e6c7f95aa137cc930719fb8315ce3396fb4d1f1d8929d",
         "fe4496a3d93f2ec52cfb0490c2a12743953440cb944a4b8495b3d5f023c840b0",
@@ -2934,7 +2934,7 @@
     {
       "path": "docs/extensions/writing-extensions.md",
       "sha": "f2dc730c2946b1c119412d8bf8f9f744cb94484e",
-      "translatedAt": "2026-04-25T16:13:11.510Z",
+      "translatedAt": "2026-04-25T17:42:20.629Z",
       "blockHashes": [
         "62798c3aae2b78422df0130d90bcde575a58956781b92df3646224e7bfc8903e",
         "d9a41612f4ae021a5428d31bb22cc3622565b5ed1569f5ce9dec025da28d7483",
@@ -2989,7 +2989,7 @@
     {
       "path": "docs/get-started/gemini-3.md",
       "sha": "259070d3ec876055467006a896c47dc620d91908",
-      "translatedAt": "2026-04-25T16:13:11.655Z",
+      "translatedAt": "2026-04-25T17:42:20.769Z",
       "blockHashes": [
         "2efa7f0ea53ea73d19c63ea2289f8120842fae2c2a66815cad6643c389c79b87",
         "15e5e7d47d61aef543fa022ab8e99fbb50cb36d597262017b03dbc3b86ae7444",
@@ -3032,7 +3032,7 @@
     {
       "path": "docs/get-started/index.md",
       "sha": "90cc78d40a33f2aa11620b8259985d0c012950c5",
-      "translatedAt": "2026-04-25T16:13:32.447Z",
+      "translatedAt": "2026-04-25T17:42:20.921Z",
       "blockHashes": [
         "116e42f154270efb44e745e041f5e5ec9283d72614de9aafc901a8871f4e0aa1",
         "4d1ab9a3de5434bc6e3427d6325ecd6183813b588ebff545a7d02166f3266169",
@@ -3096,7 +3096,7 @@
     {
       "path": "docs/hooks/best-practices.md",
       "sha": "1a4dd46de1fb69b914bf9d2bc078588d26c68879",
-      "translatedAt": "2026-04-25T16:13:30.641Z",
+      "translatedAt": "2026-04-25T17:42:36.382Z",
       "blockHashes": [
         "7da68349400be810cf184fae28f38b5fc444abd75a991d39ebb6adf317e4669e",
         "343f679b6acb60c224f80c3101d149187b4a284c9c5917bdb8fae57be6b6b910",
@@ -3249,7 +3249,7 @@
     {
       "path": "docs/hooks/index.md",
       "sha": "0125a28eb23bfc9e087bae1d8d52e76ace2ca9f5",
-      "translatedAt": "2026-04-25T16:13:30.813Z",
+      "translatedAt": "2026-04-25T17:42:32.156Z",
       "blockHashes": [
         "0e6ef540aafb086c698323998064a0aa4ea6e018c2146a45371185d1ffa719cb",
         "e1566b92bde8ccbd97fa194e1a75c90fa6c302522cdb125355925b85d420c6ed",
@@ -3298,7 +3298,7 @@
     {
       "path": "docs/hooks/reference.md",
       "sha": "14846fe2275526bffe20ada016954aed0ae0446f",
-      "translatedAt": "2026-04-25T16:13:31.034Z",
+      "translatedAt": "2026-04-25T17:42:32.491Z",
       "blockHashes": [
         "7f786c54a1da612b8c90b8ff90acd66f16349181243a827fc53274701259dd36",
         "60ac5a64cea75eb1472cde9a08f9c9536e480ec6c508bca4745ca033dc1b30c4",
@@ -3375,7 +3375,7 @@
     {
       "path": "docs/hooks/writing-hooks.md",
       "sha": "f4f156776f3b01e1facfd7b6b54d1da7b3f13e9a",
-      "translatedAt": "2026-04-25T16:13:31.154Z",
+      "translatedAt": "2026-04-25T17:42:32.630Z",
       "blockHashes": [
         "dcfaaf7fea7811ead9dcac80c0a144552f088ddd83a4d63e62a47f5486dd213b",
         "47ca65e8a70afacbdf2c20e814170f1d9eefd1ea887cdea77de0fab4828b09d4",
@@ -3438,7 +3438,7 @@
     {
       "path": "docs/ide-integration/ide-companion-spec.md",
       "sha": "eb4e24bd820073acdba99a02a294622e9588d42b",
-      "translatedAt": "2026-04-25T16:14:30.274Z",
+      "translatedAt": "2026-04-25T17:42:32.790Z",
       "blockHashes": [
         "3e55b6f4611b338a25fc9a84bb644adbdc33e37a392da462e9cdec3a7ecead31",
         "3d9116ca940e41975dd2c98c18eeb780277a4ea3d0f0db2529f8101e586f09f0",
@@ -3484,7 +3484,7 @@
     {
       "path": "docs/ide-integration/index.md",
       "sha": "cc3b150c1aeeb8c885734f7c497d4f063224b366",
-      "translatedAt": "2026-04-25T16:13:49.622Z",
+      "translatedAt": "2026-04-25T17:42:43.552Z",
       "blockHashes": [
         "548c21154b33deedbd09a0d08d3e21eefeeff059ba6833a267ae4c58e493a27e",
         "97c2cc6e85e9be6cb1b4febbf54343d7b77b53e3ccff05347928c9c3143dfce6",
@@ -3569,7 +3569,7 @@
     {
       "path": "docs/index.md",
       "sha": "d5fefce47c41816a5b7e8757789404e7e9a11a17",
-      "translatedAt": "2026-04-25T16:13:49.776Z",
+      "translatedAt": "2026-04-25T17:42:36.521Z",
       "blockHashes": [
         "a629f5f65b064ef3e52edc39fd23a7267e1d707d2e63ea9e48c5c0e1deb9f71e",
         "429c086da04228484f57376e050fe08a99aacb966d55bf244b565314910e9463",
@@ -3602,7 +3602,7 @@
     {
       "path": "docs/integration-tests.md",
       "sha": "06ac3a347f2600d8581711fe1de906d038e7c7e1",
-      "translatedAt": "2026-04-25T16:13:49.949Z",
+      "translatedAt": "2026-04-25T17:42:36.659Z",
       "blockHashes": [
         "a0ede5d050d5c2d5660452b7da0754f7194f89e1bfb74cd1816500041b5d6739",
         "dbcf93c97a70e67c1851a8c6e1d2897889c17efda900a58ecd4c428c65cbd9d7",
@@ -3702,7 +3702,7 @@
     {
       "path": "docs/issue-and-pr-automation.md",
       "sha": "3107bfcb4e8f196ccd82ef2da118d22dcf9fb525",
-      "translatedAt": "2026-04-25T16:13:50.070Z",
+      "translatedAt": "2026-04-25T17:42:36.792Z",
       "blockHashes": [
         "f157b1f226575b9722aee65d408dfaa5b54add2853ddea2bcb05546ad638e7b7",
         "3ce528ecbdb3790c921d270e41336dbe570bf2f337428df790864ef1c8841aa0",
@@ -3737,7 +3737,7 @@
     {
       "path": "docs/local-development.md",
       "sha": "83520c75064ce096bf73d0f02ff0a1f021fbfb45",
-      "translatedAt": "2026-04-25T16:13:50.176Z",
+      "translatedAt": "2026-04-25T17:42:36.920Z",
       "blockHashes": [
         "d78bbe166a317c27ffe7924e20ce07189004f8f9c4bd42cc5303334addd805eb",
         "18ad301c15daa21f4d2c5bfb7d0af81a7f8102fa889bd9534f14a96904632bfd",
@@ -3770,7 +3770,7 @@
     {
       "path": "docs/npm.md",
       "sha": "3ceab3c5e717d9c15123eccfd1682839339c53d1",
-      "translatedAt": "2026-04-25T16:13:50.288Z",
+      "translatedAt": "2026-04-25T17:42:37.037Z",
       "blockHashes": [
         "4aa978e37da38a87188b051cdc472ceab9a753af34b5a693d03317c5cb94aa96",
         "759cc9e6b4a5ffbe73d9a05322905e599c5b2f0ebd2df2095af80b90df10336c",
@@ -3793,7 +3793,7 @@
     {
       "path": "docs/reference/commands.md",
       "sha": "7651539cb213e8cc586284c440deef7a8e8bd29e",
-      "translatedAt": "2026-04-25T16:14:36.877Z",
+      "translatedAt": "2026-04-25T17:42:37.237Z",
       "blockHashes": [
         "bb2a218886fe54716fd22650d389cdc4d4846413a8e01f177c215847d587a98b",
         "c3fa54f6ad9236078ec196eb3e51d6a633e35e2b87f7e53ee8fa9f6282508dd5",
@@ -3894,7 +3894,7 @@
     {
       "path": "docs/reference/configuration.md",
       "sha": "94a64cc1977073ec5b0a396eeec3f8dad8ca9eb5",
-      "translatedAt": "2026-04-25T16:21:32.093Z",
+      "translatedAt": "2026-04-25T17:45:35.367Z",
       "blockHashes": [
         "eb28a2a421f6730401ea68c6cc171e4d7f195ff78ec9749c51ab7d0896292d5a",
         "e8d46bda800987e16f632ea5c7f2ec866f316172b3ccb495dc5723596374cc11",
@@ -4026,7 +4026,7 @@
     {
       "path": "docs/reference/keyboard-shortcuts.md",
       "sha": "6f7a8cce4a6c11c5f2a4c8aecf8f6f35dbc308fd",
-      "translatedAt": "2026-04-25T16:14:37.140Z",
+      "translatedAt": "2026-04-25T17:42:43.954Z",
       "blockHashes": [
         "8dfe07e841537bc5dd12280cb158645237fd9411fc844294dba4e84fc0b317c1",
         "2c0f466911d64d061605c780d7fb2d0737db6cea4a8d5589b7ecc68c837af8fa",
@@ -4079,7 +4079,7 @@
     {
       "path": "docs/reference/memport.md",
       "sha": "a8c2da5a2d1ad648fe4e089fcdf56ed0c1cdea38",
-      "translatedAt": "2026-04-25T16:14:37.351Z",
+      "translatedAt": "2026-04-25T17:42:44.207Z",
       "blockHashes": [
         "cc99702a7b444bc3036b41304b90a27c13e6d9a95a742ff6156d83078684d0dc",
         "46d3c331a71699bc61052d9cf57ece288ad17af0ccf808e22fddb5c6c976bc23",
@@ -4157,7 +4157,7 @@
     {
       "path": "docs/reference/policy-engine.md",
       "sha": "d9dc21f49cb2faa57ef146b9cd7e8d2f80d7ade7",
-      "translatedAt": "2026-04-25T16:14:37.523Z",
+      "translatedAt": "2026-04-25T17:42:44.387Z",
       "blockHashes": [
         "e954d98d8894cb053fed4441255d0c30a6eb6c342f525b551faf1f3acd8b7fc8",
         "2a71dd97ec9f11756f40300103e9495299e3de9a7b7841a80000cae495b222a1",
@@ -4269,7 +4269,7 @@
     {
       "path": "docs/reference/tools.md",
       "sha": "6236225d88c6021168f64f01e7290964e9ced066",
-      "translatedAt": "2026-04-25T16:14:37.657Z",
+      "translatedAt": "2026-04-25T17:42:44.530Z",
       "blockHashes": [
         "a245141477f0f051a4912745185fbab1164330d5f2d8586403bcf5873c4119b7",
         "5792de309ed91a6a906eb3c7b4790057133a57672b98858e7f686c9c000b2fb8",
@@ -4326,7 +4326,7 @@
     {
       "path": "docs/release-confidence.md",
       "sha": "22769f95564df93d6e0338f47887ce51ca09d196",
-      "translatedAt": "2026-04-25T16:14:37.762Z",
+      "translatedAt": "2026-04-25T17:42:44.679Z",
       "blockHashes": [
         "9641d7b626b348c26902999055f4c0f5fb238d07cdddfaf6e74becb8ae717725",
         "b05698e2d3be68b3658f5b0536d997c276b05c6a4fcdfe1e15411ad0a6401f71",
@@ -4375,7 +4375,7 @@
     {
       "path": "docs/releases.md",
       "sha": "7969535960ef0fec1d08bc3e7198852fdf1aeb8c",
-      "translatedAt": "2026-04-25T16:14:37.911Z",
+      "translatedAt": "2026-04-25T17:42:44.871Z",
       "blockHashes": [
         "72c8b1c60376e6c15f4fe7db98848f180fc54894fdfc2ba4dfa305375d3860c0",
         "a94eeea12154992988ea88567eed85506a35d1f83e439a912e23fafd65191f47",
@@ -4505,7 +4505,7 @@
     {
       "path": "docs/resources/faq.md",
       "sha": "834eda02cecb31d4dbff17bedeaf27b24c512050",
-      "translatedAt": "2026-04-25T16:14:38.015Z",
+      "translatedAt": "2026-04-25T17:42:45.008Z",
       "blockHashes": [
         "ba8bde6479bcb546d7d82a1adbab3c4054fdc3cdb203536c12cd58ae0ed0501d",
         "a529e7df1d4d1a04593e281b7f9d11adfd635ea8ad1c835dac1caf449475ad18",
@@ -4570,7 +4570,7 @@
     {
       "path": "docs/resources/quota-and-pricing.md",
       "sha": "18beb7c761ff199103e4871bb55b2827fd3c5cfc",
-      "translatedAt": "2026-04-25T16:15:22.369Z",
+      "translatedAt": "2026-04-25T17:43:05.291Z",
       "blockHashes": [
         "b71bf6e810c1c65422602b810e68058d0f051fae881c2d0db2406d723d02fa37",
         "eb9badca5a9c287822d185525fb8ef280d164dc28ee763b38344d36c8beb4c73",
@@ -4635,7 +4635,7 @@
     {
       "path": "docs/resources/tos-privacy.md",
       "sha": "06966138894068be5c3dcffc65f5147ad74081a7",
-      "translatedAt": "2026-04-25T16:15:22.573Z",
+      "translatedAt": "2026-04-25T17:43:05.557Z",
       "blockHashes": [
         "56131d3ea3669584c50929e38734ad8ad7d6bcacecd459fecf8eb8e4527c0e80",
         "dbdd7ea6d16bf643c88459c52985b9a1de4223905a64cc6fabac4e7ad8b6afc6",
@@ -4666,7 +4666,7 @@
     {
       "path": "docs/resources/troubleshooting.md",
       "sha": "2c63e7c9694634b0f675d65a2ac48fef914ab738",
-      "translatedAt": "2026-04-25T16:15:22.786Z",
+      "translatedAt": "2026-04-25T17:43:05.852Z",
       "blockHashes": [
         "9ad439eb250df1746c2121d68115d80dd71cec894f9547c3db46f8b0c71fcc09",
         "0ab65bae826bb24a6c0c43710d2cc037a3f20d744cebb2dfa4959e1615bb05ae",
@@ -4689,7 +4689,7 @@
     {
       "path": "docs/resources/uninstall.md",
       "sha": "60d8eac9b7d7c337545d6db6ac030a148440b301",
-      "translatedAt": "2026-04-25T16:15:22.892Z",
+      "translatedAt": "2026-04-25T17:43:05.987Z",
       "blockHashes": [
         "371df07f3e9dd0941529fb3883bb647f8ce9071bc259a56ca1a75801cb59d020",
         "7e07fce42355eaec765d553b1522743d1a31d47fcce589136b56773399001dea",
@@ -4715,7 +4715,7 @@
     {
       "path": "docs/tools/activate-skill.md",
       "sha": "e7178b7a38fa8aeec69477908fd2a7646d3f45f2",
-      "translatedAt": "2026-04-25T16:15:23.040Z",
+      "translatedAt": "2026-04-25T17:43:06.117Z",
       "blockHashes": [
         "487aedaf4fc6c947bc2b30da931de6a8a3500cd6c7854d0740e7c280d332cfc6",
         "578775406bf01aaa44e28c1a844193c2ab60412dedd44c6f3e1fd63b63e199dd",
@@ -4737,7 +4737,7 @@
     {
       "path": "docs/tools/ask-user.md",
       "sha": "065d2227dc943fb1841de5b08e62b7db5396e654",
-      "translatedAt": "2026-04-25T16:15:23.207Z",
+      "translatedAt": "2026-04-25T17:43:06.250Z",
       "blockHashes": [
         "119031fb33100f0792883a3a7dfb90df003fa8312e65af8eb9f325e4bc2da09f",
         "47f0bd70e25abc45012765af71afa0bc81c69faed8099a03922ab3ddc4dbc5bb",
@@ -4755,7 +4755,7 @@
     {
       "path": "docs/tools/file-system.md",
       "sha": "83c3691dd35b86c02136157cf215b198ba6e61f8",
-      "translatedAt": "2026-04-25T16:15:23.331Z",
+      "translatedAt": "2026-04-25T17:43:06.394Z",
       "blockHashes": [
         "f0551ef99ca9a286b100d1afa0432f102699f2bf79ec0e0e5d570eca2bc1677f",
         "91e41c7ccab9b06e6bf883368b53c95bc97ee2964e24ba86e453b34e15abffcd",
@@ -4786,7 +4786,7 @@
     {
       "path": "docs/tools/internal-docs.md",
       "sha": "0d30655fcda2c352cbf8bfca8c3317d1a20551aa",
-      "translatedAt": "2026-04-25T16:15:23.431Z",
+      "translatedAt": "2026-04-25T17:43:06.518Z",
       "blockHashes": [
         "4c2036c7f7d3d7b298943bbf1ff08a05aeaa2dc3ec9009f3144611b4afca461e",
         "d34e203128f4bbb546299e6909254daf42979ec932c8ca5f47c15077d5216dcf",
@@ -4808,7 +4808,7 @@
     {
       "path": "docs/tools/mcp-resources.md",
       "sha": "a6dad26e10fa938355253e13ff987ad3a7250d5a",
-      "translatedAt": "2026-04-25T16:15:23.543Z",
+      "translatedAt": "2026-04-25T17:43:06.662Z",
       "blockHashes": [
         "fe930eeb5142107a9a25643fd276834b887610d7b14aa724034a3f06239d58de",
         "db5f8b52869adfe919694da6aad551208e843345f347667fa67affa78cb02264",
@@ -4823,7 +4823,7 @@
     {
       "path": "docs/tools/mcp-server.md",
       "sha": "d9d8835c8ce6a549da6c9057c23afdcf3f63767d",
-      "translatedAt": "2026-04-25T16:15:44.711Z",
+      "translatedAt": "2026-04-25T17:43:20.010Z",
       "blockHashes": [
         "6334e5209762460bb3e412a9ce8092ee2fc940cf9df87c7a455f36d692e2fb72",
         "a33cdfb994248cd8afba2475ec56548bfb4d95d75801e6c3bb836ce77ac35816",
@@ -5109,7 +5109,7 @@
     {
       "path": "docs/tools/memory.md",
       "sha": "f76e16523835835b21b6ca992fb7b6a9521d6bfc",
-      "translatedAt": "2026-04-25T16:15:44.875Z",
+      "translatedAt": "2026-04-25T17:43:20.334Z",
       "blockHashes": [
         "cc97683f43c6dacfc7be12c84ac3858971a5bc421e50f4bdc53a5f2757d25cf4",
         "428654bed1088064e0f181d589243279c0aab5becf6123c290c85300cefc28b0",
@@ -5128,7 +5128,7 @@
     {
       "path": "docs/tools/planning.md",
       "sha": "13e9cd4fd8c4e2c24bdfea1dae2489a6b105d96d",
-      "translatedAt": "2026-04-25T16:15:45.061Z",
+      "translatedAt": "2026-04-25T17:43:20.583Z",
       "blockHashes": [
         "6fa13a92fbbd93a0818158c13d6e906967d212d42ae3e8dc8f67f803b2c24c3c",
         "8dea7e336f66aec450604f0105ffd77cca4b0f3a393a9d82951d6b85957fc049",
@@ -5145,7 +5145,7 @@
     {
       "path": "docs/tools/shell.md",
       "sha": "84bb76e39346cca8e27a804a713980b8b07b1d0b",
-      "translatedAt": "2026-04-25T16:15:45.190Z",
+      "translatedAt": "2026-04-25T17:43:20.729Z",
       "blockHashes": [
         "f732ae4837b703ddabbb1d516e5e89b64dbdb2ce08af946df9fbfb7bd209b414",
         "67a780a22317daac8b2796593d2dec6a3b7c263742c2ab4c870cc25182744b9d",
@@ -5208,7 +5208,7 @@
     {
       "path": "docs/tools/todos.md",
       "sha": "d198b872eab3fc9c0dccdef219b0952b1ef97554",
-      "translatedAt": "2026-04-25T16:15:45.291Z",
+      "translatedAt": "2026-04-25T17:43:20.850Z",
       "blockHashes": [
         "f65b079d154c2ea2a9929a86d2807b6fe2ee5c439e152b471e616172b30fb140",
         "7356117e09bdb04a2d87fbe91a27b7a651a25fdd0521019f977d6e095a947ab5",
@@ -5227,7 +5227,7 @@
     {
       "path": "docs/tools/tracker.md",
       "sha": "387d0bd654a88c747b90543dc4d0110f5e3d5baf",
-      "translatedAt": "2026-04-25T16:15:59.555Z",
+      "translatedAt": "2026-04-25T17:43:20.986Z",
       "blockHashes": [
         "6ca310d0b5b9e467fc4bb50f6b3c05e236ed788a67ae08dd4c04cd1207d5877c",
         "a94eeea12154992988ea88567eed85506a35d1f83e439a912e23fafd65191f47",
@@ -5248,7 +5248,7 @@
     {
       "path": "docs/tools/web-fetch.md",
       "sha": "66d8f4a57029b27d85bbc90b7cebae153161405d",
-      "translatedAt": "2026-04-25T16:15:59.696Z",
+      "translatedAt": "2026-04-25T17:43:21.114Z",
       "blockHashes": [
         "910aea254e5111acd1d346c0dd5ca0c9fc6a66f4f5fbc761f0963309bfbe5af8",
         "9133971124d34262faf68a6b850f0738de23cc9df42731262a56a3bd61167511",
@@ -5267,7 +5267,7 @@
     {
       "path": "docs/tools/web-search.md",
       "sha": "3976b2b7e071e958ae4331e281bdb9ce3ee4bd7a",
-      "translatedAt": "2026-04-25T16:15:59.884Z",
+      "translatedAt": "2026-04-25T17:43:21.239Z",
       "blockHashes": [
         "c36f6236a116a3bc0ae0c35bc9a3a36561f6fb68af4d82878397a1fb533b5960",
         "cbbdec06e64e02ac747f89e3d6b907c09e0bec2cc19f81d6b7f5ff92462ef192",
@@ -5289,193 +5289,163 @@
       "blockId": "7fd6bc5a4793",
       "reason": "nvidia-nim: glossaryTerms",
       "sourceHash": "e1eb801e0727af799a7764e9550d3d53120855f459de247d4d459af15a59eee5",
-      "timestamp": "2026-04-25T16:06:00.581Z"
+      "timestamp": "2026-04-25T17:36:50.610Z"
     },
     {
       "blockId": "fae4501d0037",
-      "reason": "nvidia-nim: urlCount,linkCount",
+      "reason": "nvidia-nim: 429 status code (no body)",
       "sourceHash": "1f0f609877ad808fea7a577cf04332d268e38889059ee65e5fde258ef44d323f",
-      "timestamp": "2026-04-25T16:09:50.648Z"
+      "timestamp": "2026-04-25T17:41:32.731Z"
     },
     {
       "blockId": "579c9a006937",
-      "reason": "nvidia-nim: Connection error.",
+      "reason": "nvidia-nim: inlineCodeCount,urlCount,linkCount,glossaryTerms",
       "sourceHash": "304a3d71bd4e14c2a800815ade64585bbcbce1624d57cae6c5b7bde54f5e3374",
-      "timestamp": "2026-04-25T16:11:41.022Z"
+      "timestamp": "2026-04-25T17:40:12.983Z"
     },
     {
       "blockId": "e2a1aad072f7",
       "reason": "nvidia-nim: glossaryTerms",
       "sourceHash": "75312bc0fbf6dce6196990843b3255fd6594acaa2241d41a4aa343f808b9ce91",
-      "timestamp": "2026-04-25T16:10:00.862Z"
+      "timestamp": "2026-04-25T17:40:39.116Z"
     },
     {
       "blockId": "1fd73ec68fe6",
       "reason": "nvidia-nim: glossaryTerms",
       "sourceHash": "2354417ba3e58167b667606eb480fc8e7bd54ad3851545d2a4695d8c7a02419d",
-      "timestamp": "2026-04-25T16:10:46.897Z"
+      "timestamp": "2026-04-25T17:41:08.311Z"
     },
     {
       "blockId": "d4a52e6052cd",
       "reason": "nvidia-nim: glossaryTerms",
       "sourceHash": "59cc4ef6b809c8ec277ce922486d11d4cf6c2e5cbed76eabb636337ca5b65c26",
-      "timestamp": "2026-04-25T16:10:46.897Z"
+      "timestamp": "2026-04-25T17:41:08.311Z"
     },
     {
       "blockId": "d203b90d2809",
       "reason": "nvidia-nim: glossaryTerms",
       "sourceHash": "c2fe6852eb1f98f548d0e00dff3bd0c4760b18d3e4a5ece35b25d352ab7587f3",
-      "timestamp": "2026-04-25T16:10:46.897Z"
-    },
-    {
-      "blockId": "4d107fc48211",
-      "reason": "nvidia-nim: 429 status code (no body)",
-      "sourceHash": "d4d4c93fdb732775037024bd53da67d5d9e686d64cfd5d5cddecc2fbd84769ee",
-      "timestamp": "2026-04-25T16:11:06.415Z"
+      "timestamp": "2026-04-25T17:41:08.311Z"
     },
     {
       "blockId": "e43184d6d54d",
-      "reason": "nvidia-nim: 429 status code (no body)",
+      "reason": "nvidia-nim: glossaryTerms",
       "sourceHash": "2897dc2ece681e8475351751e96a83370688689ea26d8973fa04014a45df7e3e",
-      "timestamp": "2026-04-25T16:12:33.769Z"
+      "timestamp": "2026-04-25T17:42:31.895Z"
     },
     {
       "blockId": "4485912a9c18",
-      "reason": "nvidia-nim: 429 status code (no body)",
+      "reason": "nvidia-nim: glossaryTerms",
       "sourceHash": "97730754705470f4c590c171f2cc08fec9eb1485ec8a734bcc5bf00313809c43",
-      "timestamp": "2026-04-25T16:12:33.769Z"
-    },
-    {
-      "blockId": "283d3ad7899f",
-      "reason": "nvidia-nim: 429 status code (no body)",
-      "sourceHash": "942c2f7caee1657670d481574e661a3a1e2d0f7ca647290ad49d6b135a3964ae",
-      "timestamp": "2026-04-25T16:12:33.769Z"
+      "timestamp": "2026-04-25T17:42:31.895Z"
     },
     {
       "blockId": "5e41a8c2f216",
-      "reason": "nvidia-nim: 429 status code (no body)",
+      "reason": "nvidia-nim: glossaryTerms",
       "sourceHash": "5a5825afc3f890a23b290b200ad66a262327f4525702da53a8270187400c64c1",
-      "timestamp": "2026-04-25T16:12:33.769Z"
+      "timestamp": "2026-04-25T17:42:31.895Z"
     },
     {
       "blockId": "b7f6a9a3a3b3",
       "reason": "nvidia-nim: 429 status code (no body)",
       "sourceHash": "d30d52f6255edbfe8f95dbd6b454c9dc8f975ab5d3c87baf2f8ab1b55d642c8f",
-      "timestamp": "2026-04-25T16:12:33.769Z"
+      "timestamp": "2026-04-25T17:42:31.895Z"
     },
     {
       "blockId": "36cfb4c076df",
       "reason": "nvidia-nim: 429 status code (no body)",
       "sourceHash": "fddb25b030a3455bf6f566f5af19137604006981056a7d8740fee58e8fcd804b",
-      "timestamp": "2026-04-25T16:12:33.769Z"
+      "timestamp": "2026-04-25T17:42:31.895Z"
     },
     {
       "blockId": "1bbdf41ffe78",
       "reason": "nvidia-nim: 429 status code (no body)",
       "sourceHash": "2e6f23ab1636ee410138239402b20c4cbc494fcfb2fee490ce8d01ef01c83b84",
-      "timestamp": "2026-04-25T16:12:33.769Z"
+      "timestamp": "2026-04-25T17:42:31.895Z"
     },
     {
       "blockId": "c1e729a47471",
       "reason": "nvidia-nim: 429 status code (no body)",
       "sourceHash": "f5a09b5779ee6d93fafbc96675168b0128b85bd8b0d9145741afcab3081d46c5",
-      "timestamp": "2026-04-25T16:12:33.769Z"
+      "timestamp": "2026-04-25T17:42:31.895Z"
     },
     {
       "blockId": "f23d4309958a",
       "reason": "nvidia-nim: 429 status code (no body)",
       "sourceHash": "b550facd19f24dbe7e08ece8dcfe1730298fdf95c27ce6139539167e5eb50bd0",
-      "timestamp": "2026-04-25T16:12:33.769Z"
+      "timestamp": "2026-04-25T17:42:31.895Z"
     },
     {
       "blockId": "cad8ffb05c19",
       "reason": "nvidia-nim: 429 status code (no body)",
       "sourceHash": "a766d6e7dcf48e5e47ecde1f2f615cc1fdfb8370460a358269d0aaaa76c39ef5",
-      "timestamp": "2026-04-25T16:12:33.769Z"
+      "timestamp": "2026-04-25T17:42:31.895Z"
     },
     {
       "blockId": "22eb2513ca19",
       "reason": "nvidia-nim: 429 status code (no body)",
       "sourceHash": "ce6fda6909111ed347470a295917fe036d930ca17e21b0cb35d1bb192f6f79cd",
-      "timestamp": "2026-04-25T16:12:11.132Z"
+      "timestamp": "2026-04-25T17:41:43.294Z"
     },
     {
       "blockId": "f18855a42557",
       "reason": "nvidia-nim: 429 status code (no body)",
       "sourceHash": "c976ab90ec0d9b6e656e824640cf4f62d62d37ac90b7ce85804db5c3a63fb31c",
-      "timestamp": "2026-04-25T16:12:11.132Z"
+      "timestamp": "2026-04-25T17:41:43.294Z"
     },
     {
       "blockId": "dcaea1b6ab0a",
       "reason": "nvidia-nim: 429 status code (no body)",
       "sourceHash": "7377cfcdc3a27cd2098518c98e72e032e935b8e0efae0eac161337bad2e92a80",
-      "timestamp": "2026-04-25T16:12:59.058Z"
+      "timestamp": "2026-04-25T17:42:07.620Z"
     },
     {
       "blockId": "009adad836b7",
       "reason": "nvidia-nim: 429 status code (no body)",
       "sourceHash": "97cd37043d7296c22b66fe61b330743a4664fb4f533220eabf4be65edea896f5",
-      "timestamp": "2026-04-25T16:12:48.896Z"
+      "timestamp": "2026-04-25T17:42:18.737Z"
     },
     {
       "blockId": "a601fb074515",
-      "reason": "nvidia-nim: glossaryTerms",
+      "reason": "nvidia-nim: 429 status code (no body)",
       "sourceHash": "f63bb5ece9d03cbfa65006f58206cb0b29382dd1f7851b02bb20019c4e8de92e",
-      "timestamp": "2026-04-25T16:13:30.640Z"
+      "timestamp": "2026-04-25T17:42:36.381Z"
     },
     {
       "blockId": "5ac563d2c8cd",
       "reason": "nvidia-nim: 429 status code (no body)",
       "sourceHash": "6b6435b09a344a1e51e409a2ad0588d3b57b06d1cd69df80f94e68c0a561adcc",
-      "timestamp": "2026-04-25T16:13:49.621Z"
-    },
-    {
-      "blockId": "f004b367394d",
-      "reason": "nvidia-nim: inlineCodeCount",
-      "sourceHash": "9a43153d49d5eac99dded12f20398107f97e96be0f3501b38cca71735db08237",
-      "timestamp": "2026-04-25T16:21:32.092Z"
+      "timestamp": "2026-04-25T17:42:43.551Z"
     },
     {
       "blockId": "596bfbf98807",
       "reason": "nvidia-nim: Request timed out.",
       "sourceHash": "db5853be8b6be0e0e7105cea05bda186aab3699714b36a2c856bc28345491c6b",
-      "timestamp": "2026-04-25T16:21:32.092Z"
-    },
-    {
-      "blockId": "7c6f6490b10b",
-      "reason": "nvidia-nim: inlineCodeCount",
-      "sourceHash": "17d81f3f989ec8c95f4cbe9b3cce82e89ca5aae8cc3268cfa6a61e4f32ffeb94",
-      "timestamp": "2026-04-25T16:21:32.092Z"
+      "timestamp": "2026-04-25T17:45:35.366Z"
     },
     {
       "blockId": "86ad7a2389ea",
       "reason": "nvidia-nim: 429 status code (no body)",
       "sourceHash": "d14627872c13655909f55e07ab14c53f2b181f02b7a6428f66dd7611e8649ad9",
-      "timestamp": "2026-04-25T16:21:32.092Z"
-    },
-    {
-      "blockId": "a59198d6ab17",
-      "reason": "nvidia-nim: glossaryTerms",
-      "sourceHash": "7df7072e41b7289c3612fcbfde23e42fbc116a4f3182d37568aeee4bec6d282b",
-      "timestamp": "2026-04-25T16:21:32.092Z"
+      "timestamp": "2026-04-25T17:45:35.366Z"
     },
     {
       "blockId": "a9dc539cd16e",
-      "reason": "nvidia-nim: glossaryTerms",
+      "reason": "nvidia-nim: 429 status code (no body)",
       "sourceHash": "c35237c7dd6ddfc7505c49df796b10114ad222f2b99c3c4b41778463e1e4d864",
-      "timestamp": "2026-04-25T16:15:22.369Z"
+      "timestamp": "2026-04-25T17:43:05.291Z"
     },
     {
       "blockId": "8f50721ff260",
-      "reason": "nvidia-nim: glossaryTerms",
+      "reason": "nvidia-nim: 429 status code (no body)",
       "sourceHash": "4e6644113f52f0f626b3913ec35052e2de8be765f9c8a5220cdea8851dc4d6d0",
-      "timestamp": "2026-04-25T16:15:22.369Z"
+      "timestamp": "2026-04-25T17:43:05.291Z"
     },
     {
       "blockId": "760c0a74a377",
       "reason": "nvidia-nim: 429 status code (no body)",
       "sourceHash": "2c04bf3dbbf31d2a866f6d14a04773ea16ec19b5bbec5a053528e6431604d2ad",
-      "timestamp": "2026-04-25T16:15:44.711Z"
+      "timestamp": "2026-04-25T17:43:20.009Z"
     }
   ]
 }
