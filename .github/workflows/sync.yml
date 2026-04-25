@@ -86,7 +86,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add translation-memory/ state/ || true
+          git add translation-memory/ state/ docs/gemini-cli/ docs/codex/ || true
           if git diff --staged --quiet; then
             echo "No memory/state changes to commit."
           else

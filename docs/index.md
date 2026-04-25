@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: OpenDocs CN
-  text: 开发者 CLI 文档 · 中文社区翻译
+  text: 开发者 CLI 文档 · 社区中文翻译
   tagline: 自动同步上游英文文档，使用 LLM 翻译为简体中文。社区翻译 · 非官方 · 以英文原文为准。
   actions:
     - theme: brand
