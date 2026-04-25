@@ -53,6 +53,7 @@ jobs:
 
       - name: Sync and translate
         env:
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           OPENROUTER_MODEL: ${{ vars.OPENROUTER_MODEL }}
@@ -90,10 +91,20 @@ jobs:
             git push
           fi
 
-      - name: Upload Pages artifact
+      - name: Upload Pages artifact (GitHub Pages)
         uses: actions/upload-pages-artifact@v3
         with:
           path: docs/.vitepress/dist
+
+      - name: Deploy to Cloudflare Pages
+        if: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: opendocs-cn
+          directory: docs/.vitepress/dist
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
 
   deploy:
     needs: sync-and-build

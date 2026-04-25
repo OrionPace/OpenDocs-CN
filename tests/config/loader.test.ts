@@ -8,16 +8,21 @@ describe('loadConfig', () => {
     expect(config.projects.projects.map((p) => p.id).sort()).toEqual(['codex', 'gemini-cli'])
   })
 
-  it('includes both DeepSeek and OpenRouter providers', () => {
+  it('primary provider is nvidia-nim (free endpoint first)', () => {
     const { providers } = loadConfig().providers
-    expect(providers.map((p) => p.name).sort()).toEqual(['deepseek', 'openrouter'])
+    expect(providers[0]?.name).toBe('nvidia-nim')
+    expect(providers[0]?.optional).toBe(false)
   })
 
-  it('DeepSeek provider uses deepseek-v4-flash (no pro-upgrade model exposed)', () => {
+  it('deepseek and openrouter are optional fallbacks', () => {
     const { providers } = loadConfig().providers
     const deepseek = providers.find((p) => p.name === 'deepseek')
-    expect(deepseek?.defaultModel).toBe('deepseek-v4-flash')
-    // Pro must NOT appear in providers.yml — cost control constraint.
+    const openrouter = providers.find((p) => p.name === 'openrouter')
+    expect(deepseek?.optional).toBe(true)
+    expect(openrouter?.optional).toBe(true)
+  })
+
+  it('no pro-upgrade model exposed in providers.yml (cost control)', () => {
     const yaml = JSON.stringify(loadConfig().providers)
     expect(yaml).not.toContain('deepseek-v4-pro')
     expect(yaml).not.toContain('upgradeModel')

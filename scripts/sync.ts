@@ -10,6 +10,7 @@ import { syncProject, type RunSummary } from '../src/pipeline/runner.js'
 import { TranslationMemory } from '../src/translation/memory.js'
 import { DeepSeekProvider } from '../src/translation/providers/deepseek.js'
 import type { TranslationProvider } from '../src/translation/providers/interface.js'
+import { NvidiaNimProvider } from '../src/translation/providers/nvidia-nim.js'
 import { OpenRouterProvider } from '../src/translation/providers/openrouter.js'
 
 // Load .env.local explicitly — `dotenv/config` only handles `.env`.
@@ -28,6 +29,9 @@ function buildProvider(cfg: ProviderConfig): TranslationProvider | null {
   }
   if (cfg.name === 'openrouter') {
     return new OpenRouterProvider({ apiKey, model, baseUrl: cfg.baseUrl })
+  }
+  if (cfg.name === 'nvidia-nim') {
+    return new NvidiaNimProvider({ apiKey, model, baseUrl: cfg.baseUrl })
   }
   // Type-narrowed exhaustively above; this is unreachable but keeps TS strict.
   throw new Error(`Unknown provider: ${(cfg as { name: string }).name}`)

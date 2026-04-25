@@ -18,7 +18,7 @@ export const ProjectsFileSchema = z.object({
 })
 
 export const ProviderConfigSchema = z.object({
-  name: z.enum(['deepseek', 'openrouter']),
+  name: z.enum(['deepseek', 'openrouter', 'nvidia-nim']),
   baseUrl: z.string().url(),
   defaultModel: z.string().min(1),
   envKey: z.string().min(1),

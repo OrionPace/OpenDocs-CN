@@ -1,0 +1,15 @@
+{
+  "projectId": "gemini-cli",
+  "lastSyncTime": "2026-04-25T00:30:23.493Z",
+  "lastSyncSha": "abc123",
+  "fileCount": 5,
+  "translatedCount": 0,
+  "cacheHitCount": 0,
+  "files": [
+    {
+      "path": "docs/index.md",
+      "sha": "xxx"
+    }
+  ],
+  "failedBlocks": []
+}

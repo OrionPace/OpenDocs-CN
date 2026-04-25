@@ -11,10 +11,6 @@ docs/.vitepress/cache/
 docs/gemini-cli/
 docs/codex/
 
-# State & translation memory (gitignored; regenerated from upstream + cache)
-state/
-translation-memory/
-
 # Environment & secrets (NEVER commit API keys)
 .env
 .env.local
