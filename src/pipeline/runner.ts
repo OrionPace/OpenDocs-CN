@@ -22,6 +22,8 @@ export interface RunOptions {
   full?: boolean
   /** Concurrency limit for blocks within a single file. */
   blocksPerFile?: number
+  /** Concurrency limit for files processed in parallel. */
+  filesInParallel?: number
   /** Override docs output root (default `<cwd>/docs`). */
   docsRoot?: string
   /** Owner/repo of THIS project, used in attribution footer. */
@@ -37,6 +39,15 @@ export interface RunSummary {
   cacheHits: number
   failures: number
   upstreamSha: string
+}
+
+interface FileResult {
+  entry: FileEntry
+  tracked: TrackedFile
+  cacheHits: number
+  blocksTranslated: number
+  failures: number
+  failedBlocks: FailedBlock[]
 }
 
 /**
@@ -71,63 +82,88 @@ export async function syncProject(
     upstreamSha,
   }
 
-  const failedBlocks: FailedBlock[] = []
   const trackedFiles: TrackedFile[] = []
+  const allFailedBlocks: FailedBlock[] = []
 
-  for (const entry of changed) {
-    const markdown = await fetchFileContent(project, entry.path)
-    const blocks = splitFile(markdown, entry.path)
-    const blockResults = await translateAllBlocks(
-      blocks,
-      providers,
-      memory,
-      glossary,
-      project.id,
-      upstreamSha,
-      options.blocksPerFile ?? 3,
-    )
+  const fileLimit = pLimit(options.filesInParallel ?? 1)
+  const blocksPerFile = options.blocksPerFile ?? 3
 
-    for (const r of blockResults) {
-      if (r.cacheHit) summary.cacheHits++
-      else if (r.status === 'ok') summary.blocksTranslated++
-      if (r.status === 'failed') {
-        summary.failures++
-        failedBlocks.push({
-          blockId: r.blockId,
-          reason: r.failReason ?? 'unknown',
-          sourceHash: r.sourceHash,
-          timestamp: new Date().toISOString(),
+  const fileResults = await Promise.all(
+    changed.map((entry) =>
+      fileLimit(async (): Promise<FileResult> => {
+        const markdown = await fetchFileContent(project, entry.path)
+        const blocks = splitFile(markdown, entry.path)
+        const blockResults = await translateAllBlocks(
+          blocks,
+          providers,
+          memory,
+          glossary,
+          project.id,
+          upstreamSha,
+          blocksPerFile,
+        )
+
+        const fileFailed: FailedBlock[] = []
+        let fileCacheHits = 0
+        let fileTranslated = 0
+        let fileFailures = 0
+
+        for (const r of blockResults) {
+          if (r.cacheHit) fileCacheHits++
+          else if (r.status === 'ok') fileTranslated++
+          if (r.status === 'failed') {
+            fileFailures++
+            fileFailed.push({
+              blockId: r.blockId,
+              reason: r.failReason ?? 'unknown',
+              sourceHash: r.sourceHash,
+              timestamp: new Date().toISOString(),
+            })
+          }
+        }
+
+        const parts: AssembledBlock[] = blocks.map((block, i) => ({
+          block,
+          translated: blockResults[i]!.translated,
+        }))
+        const assembled = assembleFile(parts)
+
+        writeTranslatedFile({
+          project,
+          relativePath: entry.relativePath,
+          body: assembled,
+          upstreamSha,
+          upstreamPath: entry.path,
+          ourRepo: options.ourRepo,
+          ...(options.docsRoot ? { docsRoot: options.docsRoot } : {}),
         })
-      }
-    }
 
-    const parts: AssembledBlock[] = blocks.map((block, i) => ({
-      block,
-      translated: blockResults[i]!.translated,
-    }))
-    const assembled = assembleFile(parts)
+        return {
+          entry,
+          tracked: {
+            path: entry.path,
+            sha: entry.sha,
+            translatedAt: new Date().toISOString(),
+            blockHashes: blocks.map((b) => b.sourceHash),
+          },
+          cacheHits: fileCacheHits,
+          blocksTranslated: fileTranslated,
+          failures: fileFailures,
+          failedBlocks: fileFailed,
+        }
+      }),
+    ),
+  )
 
-    writeTranslatedFile({
-      project,
-      relativePath: entry.relativePath,
-      body: assembled,
-      upstreamSha,
-      upstreamPath: entry.path,
-      ourRepo: options.ourRepo,
-      ...(options.docsRoot ? { docsRoot: options.docsRoot } : {}),
-    })
-
+  for (const r of fileResults) {
+    summary.cacheHits += r.cacheHits
+    summary.blocksTranslated += r.blocksTranslated
+    summary.failures += r.failures
     summary.filesTranslated++
-    trackedFiles.push({
-      path: entry.path,
-      sha: entry.sha,
-      translatedAt: new Date().toISOString(),
-      blockHashes: blocks.map((b) => b.sourceHash),
-    })
+    trackedFiles.push(r.tracked)
+    allFailedBlocks.push(...r.failedBlocks)
   }
 
-  // Carry forward unchanged files' tracking entries; replace tracked entries
-  // for files we just translated.
   const trackedByPath = new Map(trackedFiles.map((f) => [f.path, f]))
   const finalFiles: TrackedFile[] = tree.map((f) => {
     const justTranslated = trackedByPath.get(f.path)
@@ -144,7 +180,7 @@ export async function syncProject(
     translatedCount: summary.blocksTranslated + summary.cacheHits,
     cacheHitCount: summary.cacheHits,
     files: finalFiles,
-    failedBlocks,
+    failedBlocks: allFailedBlocks,
   }
   writeState(newState)
 

@@ -89,9 +89,8 @@ async function main(): Promise<void> {
       const summary = await syncProject(project, providers, memory, config.glossary.terms, {
         full: opts.full,
         ourRepo: config.projects.ourRepo,
-        ...(opts.concurrency
-          ? { blocksPerFile: opts.concurrency }
-          : { blocksPerFile: config.providers.concurrency.blocksPerFile }),
+        blocksPerFile: opts.concurrency ?? config.providers.concurrency.blocksPerFile,
+        filesInParallel: config.providers.concurrency.filesInParallel,
       })
       printSummary(summary)
       totalFailures += summary.failures
