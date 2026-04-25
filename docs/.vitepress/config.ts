@@ -17,6 +17,8 @@ export default defineConfig({
   lang: 'zh-CN',
   title: 'OpenDocs CN',
   description: '社区中文翻译 · 非官方 · Unofficial community translation',
+  // GitHub Pages serves under /OpenDocs-CN/ — must match the repo name exactly.
+  base: '/OpenDocs-CN/',
   cleanUrls: true,
   lastUpdated: false,
 
