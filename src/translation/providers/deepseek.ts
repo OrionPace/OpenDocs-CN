@@ -17,6 +17,7 @@ export class DeepSeekProvider implements TranslationProvider {
     this.client = new OpenAI({
       apiKey: opts.apiKey,
       baseURL: opts.baseUrl ?? 'https://api.deepseek.com',
+      timeout: 60_000,
     })
   }
 

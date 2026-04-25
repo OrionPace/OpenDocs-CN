@@ -17,6 +17,7 @@ export class NvidiaNimProvider implements TranslationProvider {
     this.client = new OpenAI({
       apiKey: opts.apiKey,
       baseURL: opts.baseUrl ?? 'https://integrate.api.nvidia.com/v1',
+      timeout: 60_000,
     })
   }
 

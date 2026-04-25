@@ -24,10 +24,10 @@ async function callWithBackoff(
   // has access to block context and can route to the stricter-prompt retry or
   // the next provider without burning backoff budget.
   return await pRetry(() => provider.translate(prompt, MAX_OUTPUT_TOKENS), {
-    retries: 3,
-    minTimeout: 1000,
+    retries: 1,
+    minTimeout: 2000,
     factor: 2,
-    maxTimeout: 30_000,
+    maxTimeout: 10_000,
   })
 }
 

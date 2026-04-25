@@ -8,17 +8,17 @@ describe('loadConfig', () => {
     expect(config.projects.projects.map((p) => p.id).sort()).toEqual(['codex', 'gemini-cli'])
   })
 
-  it('primary provider is nvidia-nim (free endpoint first)', () => {
+  it('primary provider is deepseek (required)', () => {
     const { providers } = loadConfig().providers
-    expect(providers[0]?.name).toBe('nvidia-nim')
+    expect(providers[0]?.name).toBe('deepseek')
     expect(providers[0]?.optional).toBe(false)
   })
 
-  it('deepseek and openrouter are optional fallbacks', () => {
+  it('nvidia-nim and openrouter are optional fallbacks', () => {
     const { providers } = loadConfig().providers
-    const deepseek = providers.find((p) => p.name === 'deepseek')
+    const nim = providers.find((p) => p.name === 'nvidia-nim')
     const openrouter = providers.find((p) => p.name === 'openrouter')
-    expect(deepseek?.optional).toBe(true)
+    expect(nim?.optional).toBe(true)
     expect(openrouter?.optional).toBe(true)
   })
 

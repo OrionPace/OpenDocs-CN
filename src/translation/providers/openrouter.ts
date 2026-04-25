@@ -12,6 +12,7 @@ export class OpenRouterProvider implements TranslationProvider {
     this.client = new OpenAI({
       apiKey: opts.apiKey,
       baseURL: opts.baseUrl ?? 'https://openrouter.ai/api/v1',
+      timeout: 60_000,
     })
   }
 

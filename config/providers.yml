@@ -1,24 +1,24 @@
 # LLM provider configuration.
 #
 # Fallback chain (in order):
-#   1. NVIDIA NIM — free endpoint, deepseek-ai/deepseek-v4-flash (rate-limited)
-#   2. DeepSeek official API — paid, flash only (optional if key not set)
+#   1. DeepSeek official API — primary, flash only (required)
+#   2. NVIDIA NIM — free endpoint, deepseek-ai/deepseek-v4-flash (optional, rate-limited)
 #   3. OpenRouter — paid fallback (optional if key not set)
 #
 # If a provider's envKey is not set and optional=true, it is silently skipped.
 # If envKey is not set and optional=false, startup fails with an error.
 
 providers:
-  - name: nvidia-nim
-    baseUrl: https://integrate.api.nvidia.com/v1
-    defaultModel: deepseek-ai/deepseek-v4-flash
-    envKey: NVIDIA_API_KEY
-    optional: false
-
   - name: deepseek
     baseUrl: https://api.deepseek.com
     defaultModel: deepseek-v4-flash
     envKey: DEEPSEEK_API_KEY
+    optional: false
+
+  - name: nvidia-nim
+    baseUrl: https://integrate.api.nvidia.com/v1
+    defaultModel: deepseek-ai/deepseek-v4-flash
+    envKey: NVIDIA_API_KEY
     optional: true
 
   - name: openrouter
@@ -33,5 +33,5 @@ maxBlockTokens: 1500
 
 # Concurrency controls.
 concurrency:
-  blocksPerFile: 3
-  filesInParallel: 1
+  blocksPerFile: 5
+  filesInParallel: 2
