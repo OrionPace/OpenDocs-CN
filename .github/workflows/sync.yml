@@ -94,8 +94,19 @@ jobs:
         with:
           path: docs/.vitepress/dist
 
+      - name: Check Cloudflare configuration
+        id: cf_check
+        env:
+          CF_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          if [ -n "$CF_TOKEN" ]; then
+            echo "configured=true" >> $GITHUB_OUTPUT
+          else
+            echo "configured=false" >> $GITHUB_OUTPUT
+          fi
+
       - name: Deploy to Cloudflare Pages
-        if: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
+        if: steps.cf_check.outputs.configured == 'true'
         uses: cloudflare/pages-action@v1
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
