@@ -1,0 +1,45 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build output
+dist/
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+
+# Generated translated docs (produced by `pnpm sync`)
+docs/gemini-cli/
+docs/codex/
+
+# State & translation memory (gitignored; regenerated from upstream + cache)
+state/
+translation-memory/
+
+# Environment & secrets (NEVER commit API keys)
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Agent scratchpads
+.agents/
+task.md

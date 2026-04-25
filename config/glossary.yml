@@ -1,0 +1,37 @@
+# Glossary: English term -> Simplified Chinese target.
+# Matching is word-boundary, case-insensitive unless caseSensitive: true.
+# Any change to this file invalidates the glossary_hash component of the
+# cache key for blocks where the term appears.
+
+terms:
+  - source: agent
+    target: 智能体
+    note: fixed term in agent tooling; do not use 代理
+
+  - source: sandbox
+    target: 沙箱
+
+  - source: tool use
+    target: 工具调用
+
+  - source: context window
+    target: 上下文窗口
+
+  - source: prompt
+    target: 提示词
+
+  - source: streaming
+    target: 流式输出
+
+  - source: token
+    target: token
+    note: keep as English acronym
+
+  - source: fine-tuning
+    target: 微调
+
+  - source: grounding
+    target: 接地
+
+  - source: multimodal
+    target: 多模态

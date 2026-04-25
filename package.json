@@ -1,0 +1,60 @@
+{
+  "name": "opendocs-cn",
+  "version": "0.1.0",
+  "description": "Community Chinese translation of developer CLI documentation (Gemini CLI, Codex CLI). Unofficial.",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@9.15.0",
+  "engines": {
+    "node": ">=22.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "scripts": {
+    "sync": "tsx scripts/sync.ts",
+    "sync:full": "tsx scripts/sync.ts --full",
+    "qa": "tsx scripts/qa.ts",
+    "fetch-licenses": "tsx scripts/fetch-licenses.ts",
+    "predeploy:check": "tsx scripts/predeploy-check.ts",
+    "build": "vitepress build docs",
+    "dev": "vitepress dev docs",
+    "preview": "vitepress preview docs",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . && prettier --check .",
+    "fix": "eslint . --fix && prettier --write ."
+  },
+  "dependencies": {
+    "@octokit/rest": "^21.0.0",
+    "better-sqlite3": "^11.0.0",
+    "commander": "^12.1.0",
+    "dotenv": "^16.4.0",
+    "github-slugger": "^2.0.0",
+    "mdast-util-to-string": "^4.0.0",
+    "openai": "^4.70.0",
+    "p-limit": "^6.1.0",
+    "p-retry": "^6.2.0",
+    "picocolors": "^1.1.0",
+    "remark-frontmatter": "^5.0.0",
+    "remark-gfm": "^4.0.0",
+    "remark-parse": "^11.0.0",
+    "remark-stringify": "^11.0.0",
+    "unified": "^11.0.0",
+    "vitepress": "^1.5.0",
+    "yaml": "^2.6.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.0",
+    "@types/node": "^22.9.0",
+    "@typescript-eslint/eslint-plugin": "^8.15.0",
+    "@typescript-eslint/parser": "^8.15.0",
+    "eslint": "^9.15.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.3.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0"
+  }
+}

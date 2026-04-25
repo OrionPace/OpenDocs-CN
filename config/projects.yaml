@@ -1,0 +1,23 @@
+projects:
+  - id: gemini-cli
+    name: Gemini CLI
+    owner: google-gemini
+    repo: gemini-cli
+    branch: main
+    docsPath: docs/
+    route: /gemini-cli/
+    upstreamUrl: https://github.com/google-gemini/gemini-cli/tree/main/docs
+    license: Apache-2.0
+
+  - id: codex
+    name: Codex CLI
+    owner: openai
+    repo: codex
+    branch: main
+    docsPath: docs/
+    route: /codex/
+    upstreamUrl: https://github.com/openai/codex/tree/main/docs
+    license: Apache-2.0
+
+# Our own repo identifier, used for the attribution footer's "report an error" link.
+ourRepo: opendocs-cn/opendocs-cn

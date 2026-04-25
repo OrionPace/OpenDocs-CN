@@ -1,0 +1,30 @@
+# LLM provider configuration.
+#
+# NOTE: This project uses ONLY deepseek-v4-flash. The pro-model upgrade path is
+# intentionally disabled to control cost. Large blocks must be split to fit
+# flash's context instead of being upgraded to pro.
+#
+# Fallback chain: deepseek-v4-flash -> OpenRouter (if key set) -> mark failed.
+
+providers:
+  - name: deepseek
+    baseUrl: https://api.deepseek.com
+    defaultModel: deepseek-v4-flash
+    envKey: DEEPSEEK_API_KEY
+    optional: false
+
+  - name: openrouter
+    baseUrl: https://openrouter.ai/api/v1
+    defaultModel: deepseek/deepseek-chat
+    envKey: OPENROUTER_API_KEY
+    modelEnvKey: OPENROUTER_MODEL
+    optional: true
+
+# Per-block limits. Blocks larger than this should already have been split by
+# the Markdown splitter; if a block still exceeds this, it is logged as a bug.
+maxBlockTokens: 1500
+
+# Concurrency controls.
+concurrency:
+  blocksPerFile: 3
+  filesInParallel: 1

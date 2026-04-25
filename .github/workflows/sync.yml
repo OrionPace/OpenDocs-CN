@@ -1,0 +1,106 @@
+name: Sync upstream and deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      project:
+        description: 'Limit sync to one project id (leave empty for all)'
+        required: false
+        default: ''
+      full:
+        description: 'Force full re-translation (ignore cache)'
+        required: false
+        default: 'false'
+  schedule:
+    # Daily at 17:00 UTC = 01:00 Beijing time (next day). Avoid the on-the-hour
+    # GitHub Actions queue spike.
+    - cron: '0 17 * * *'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: sync-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  sync-and-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Need translation memory + state files committed back, so use a
+          # token that can push.
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Sync and translate
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          OPENROUTER_MODEL: ${{ vars.OPENROUTER_MODEL }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ARGS=""
+          if [ -n "${{ inputs.project }}" ]; then
+            ARGS="$ARGS --project ${{ inputs.project }}"
+          fi
+          if [ "${{ inputs.full }}" = "true" ]; then
+            ARGS="$ARGS --full"
+          fi
+          pnpm sync $ARGS
+
+      - name: Fetch upstream LICENSE/NOTICE
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: pnpm fetch-licenses
+
+      - name: Predeploy compliance check
+        run: pnpm predeploy:check
+
+      - name: Build site
+        run: pnpm build
+
+      - name: Commit translation memory + state
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add translation-memory/ state/ || true
+          if git diff --staged --quiet; then
+            echo "No memory/state changes to commit."
+          else
+            git commit -m "chore(sync): update translation memory and state"
+            git push
+          fi
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/.vitepress/dist
+
+  deploy:
+    needs: sync-and-build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

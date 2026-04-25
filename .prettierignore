@@ -1,0 +1,17 @@
+node_modules
+dist
+docs/.vitepress/dist
+docs/.vitepress/cache
+docs/gemini-cli
+docs/codex
+coverage
+pnpm-lock.yaml
+state
+translation-memory
+
+# Spec / rule documents — treated as source-of-truth, not code style
+.claude/
+.agents/
+implementation_plan.md
+README.md
+LICENSE
