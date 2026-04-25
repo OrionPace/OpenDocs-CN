@@ -1,10 +1,10 @@
 {
   "projectId": "codex",
-  "lastSyncTime": "2026-04-25T15:40:58.040Z",
+  "lastSyncTime": "2026-04-25T15:48:09.642Z",
   "lastSyncSha": "022f81df1ffa011c7ba24c951bb3309f4e495bfd",
   "fileCount": 22,
-  "translatedCount": 403,
-  "cacheHitCount": 3,
+  "translatedCount": 0,
+  "cacheHitCount": 0,
   "files": [
     {
       "path": "docs/agents_md.md",
@@ -571,48 +571,5 @@
       ]
     }
   ],
-  "failedBlocks": [
-    {
-      "blockId": "8051a2ac2226",
-      "reason": "nvidia-nim: glossaryTerms",
-      "sourceHash": "92be8d2f0313549fbd0f735e1df87e393cce1e963438219207778e4f69f8a909",
-      "timestamp": "2026-04-25T15:37:29.652Z"
-    },
-    {
-      "blockId": "ffa683730cc1",
-      "reason": "nvidia-nim: glossaryTerms",
-      "sourceHash": "2430444e8941ba30fc8b15b03c58492e8bc36113517ae5c457f0cbe0ff55786b",
-      "timestamp": "2026-04-25T15:40:05.419Z"
-    },
-    {
-      "blockId": "9ed23f08ece3",
-      "reason": "nvidia-nim: glossaryTerms",
-      "sourceHash": "32453921ee96f1243fa7375ef816ab32ba9d70a801ef93f2b12313456e2a59b9",
-      "timestamp": "2026-04-25T15:40:05.419Z"
-    },
-    {
-      "blockId": "850aafbccfb1",
-      "reason": "nvidia-nim: glossaryTerms",
-      "sourceHash": "eb51bcecedbb34d8458efaa57e6c62586a6db9717cf0679a8b796274c58785c8",
-      "timestamp": "2026-04-25T15:40:58.040Z"
-    },
-    {
-      "blockId": "b34bb6d9fe5d",
-      "reason": "nvidia-nim: glossaryTerms",
-      "sourceHash": "a091be0fe8597be5cf69f85ced8b9c4f4de5b90cecaa9641fbe206cd9fee8e82",
-      "timestamp": "2026-04-25T15:40:58.040Z"
-    },
-    {
-      "blockId": "8cd2604cdde5",
-      "reason": "nvidia-nim: inlineCodeCount",
-      "sourceHash": "1222cdae30ce2efd5bc783f5a96f316aa98f1af4b410e5c31619e71b28e4d0db",
-      "timestamp": "2026-04-25T15:40:58.040Z"
-    },
-    {
-      "blockId": "fcbd8c2099d5",
-      "reason": "nvidia-nim: 429 status code (no body)",
-      "sourceHash": "996c7a872386fe6ea6a567c534ebabddb502fa710a88a4746a6dd9b823e2be9e",
-      "timestamp": "2026-04-25T15:40:45.723Z"
-    }
-  ]
+  "failedBlocks": []
 }
