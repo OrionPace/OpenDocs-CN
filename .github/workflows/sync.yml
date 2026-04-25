@@ -64,7 +64,11 @@ jobs:
           if [ "${{ inputs.full }}" = "true" ]; then
             ARGS="$ARGS --full"
           fi
-          pnpm sync $ARGS
+          pnpm sync $ARGS || SYNC_EXIT=$?
+          # exit 2 = block-level failures (English placeholders) — acceptable, continue to build
+          if [ "${SYNC_EXIT:-0}" -ne 0 ] && [ "${SYNC_EXIT:-0}" -ne 2 ]; then
+            exit $SYNC_EXIT
+          fi
 
       - name: Fetch upstream LICENSE/NOTICE
         env:
