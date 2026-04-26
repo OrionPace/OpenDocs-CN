@@ -30,6 +30,7 @@ export class OpenRouterProvider implements TranslationProvider {
       tokensInput: resp.usage?.prompt_tokens,
       tokensOutput: resp.usage?.completion_tokens,
       model: this.model,
+      truncated: choice?.finish_reason === 'length',
     }
   }
 

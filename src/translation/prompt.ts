@@ -2,70 +2,56 @@ import { renderGlossaryYaml } from './glossary.js'
 import type { GlossaryEntry, TranslationRequest } from './types.js'
 
 /**
- * Bumping this string invalidates all cached translations in
- * `translation-memory/*.sqlite`. Any change to the template below is a
- * conscious, reviewed decision that costs real money to re-translate.
+ * Bumping this string invalidates ALL cached translations. Architectural
+ * change in v2.0.0: paragraph-level blocks → file-level (or H2-section-level
+ * for very large files) translation. Single LLM call per chunk; the model
+ * sees full context within a chunk and is instructed to preserve every
+ * code fence, URL, and `{#anchor}` verbatim.
  */
-export const PROMPT_VERSION = 'v1.0.0'
+export const PROMPT_VERSION = 'v2.0.0'
 
 /**
- * Canonical block-level translation prompt. See
- * .claude/rules/03-translation-rules.md §7 — this file is the code-side
- * authority and must stay in sync with that spec (changes to either require
- * bumping PROMPT_VERSION).
+ * Build the file-/section-level translation prompt. Receives the entire chunk
+ * source and returns a prompt asking for the translated chunk back, with
+ * structure preserved exactly.
  */
 export function buildPrompt(
   req: TranslationRequest,
   glossaryEntries: readonly GlossaryEntry[],
 ): string {
-  const { block } = req
-  const anchorHint = block.anchorHint
-    ? block.customAnchor
-      ? `{#${block.customAnchor}}  // upstream already provided this; keep verbatim`
-      : `{#${block.anchorHint}}`
-    : '(not a heading)'
+  const { chunk, upstreamPath } = req
+  const positionHint =
+    chunk.isFirst && chunk.isLast
+      ? 'a complete Markdown file'
+      : chunk.isFirst
+        ? `the FIRST section of ${upstreamPath} (frontmatter and intro included)`
+        : chunk.isLast
+          ? `the LAST section of ${upstreamPath}`
+          : `a middle section of ${upstreamPath}`
 
   return [
-    'You are a technical documentation translator. Translate the specified Markdown block from English to Simplified Chinese.',
+    'You are a professional technical documentation translator. Translate the following Markdown from English to Simplified Chinese.',
     '',
-    '[DOCUMENT TITLE]',
-    block.documentTitle || '(untitled)',
-    '[END DOCUMENT TITLE]',
+    `[CONTEXT] You are translating ${positionHint}.`,
     '',
-    '[SECTION]',
-    block.sectionTitle || '(top-level)',
-    '[END SECTION]',
-    '',
-    '[PREVIOUS BLOCK — CONTEXT ONLY, DO NOT TRANSLATE OR OUTPUT]',
-    block.prevBlockSource ?? '(none)',
-    '[END PREVIOUS BLOCK]',
-    '',
-    '[TRANSLATE THIS BLOCK]',
-    block.source,
-    '[END BLOCK]',
-    '',
-    '[NEXT BLOCK — CONTEXT ONLY, DO NOT TRANSLATE OR OUTPUT]',
-    block.nextBlockSource ?? '(none)',
-    '[END NEXT BLOCK]',
-    '',
-    '[GLOSSARY — apply to this block]',
+    '[GLOSSARY — apply these terms consistently]',
     renderGlossaryYaml(glossaryEntries),
     '[END GLOSSARY]',
     '',
-    '[ANCHOR HINT — for headings only]',
-    anchorHint,
-    '[END ANCHOR HINT]',
+    '[RULES — non-negotiable]',
+    '1. Preserve EVERY fenced code block (```...```) and inline code (`...`) byte-for-byte. Never translate code or comments inside code.',
+    '2. Preserve EVERY URL and URL fragment exactly. In links `[text](url)`: translate `text`, keep `url` verbatim.',
+    '3. Preserve heading levels (`#`, `##`, `###`) and any `{#anchor}` markers attached to them — copy them through verbatim. Do NOT generate new anchors.',
+    '4. Preserve list markers (`-`, `*`, `1.`), table pipes (`|`), table alignment rows (`|---|`), blockquote `>`, horizontal rules `---`, and frontmatter `---` delimiters.',
+    '5. Never translate: file paths with extensions (`config.toml`, `src/index.ts`), CLI names (`npm`, `pnpm`, `node`, `gemini`, `codex`), command flags (`--help`), env var names (`GEMINI_API_KEY`), HTML tag/attribute names.',
+    '6. Keep English acronyms untranslated: CLI, API, MCP, LLM, JSON, YAML, TOML, URL, HTTP, SDK.',
+    '7. Apply the glossary EXACTLY: if a source term appears, the translation MUST contain its target term.',
+    '8. Output ONLY the translated Markdown. No preface, no commentary, no surrounding code fence. Same structure, same number of headings, same number of code blocks, same number of links.',
     '',
-    '[RULES]',
-    '1. Never translate content inside code fences or inline code.',
-    '2. Never translate URLs, URL anchors, file paths, CLI names, flags, or env var names.',
-    '3. Preserve Markdown structure: headings, lists, tables, quotes, frontmatter delimiters.',
-    '4. In links `[text](url)`: translate the visible text; the URL stays exact.',
-    '5. For every heading, keep the anchor-hint I gave you: output `## 译文 {#original-slug}`.',
-    '6. Keep English acronyms (CLI, API, MCP, LLM, JSON, YAML) untranslated.',
-    '7. Apply glossary terms exactly as given. If the source contains a glossary source term, the translation must contain its target term.',
-    '8. Output ONLY the translated Markdown block. No preface. No backticks around the whole output. No explanation.',
+    '[SOURCE]',
+    chunk.source,
+    '[END SOURCE]',
     '',
-    'Translate now.',
+    'Translate the [SOURCE] section now. Output the translated Markdown only.',
   ].join('\n')
 }

@@ -13,7 +13,6 @@ import type { TranslationProvider } from '../src/translation/providers/interface
 import { NvidiaNimProvider } from '../src/translation/providers/nvidia-nim.js'
 import { OpenRouterProvider } from '../src/translation/providers/openrouter.js'
 
-// Load .env.local explicitly — `dotenv/config` only handles `.env`.
 const envFile = resolve(process.cwd(), '.env.local')
 if (existsSync(envFile)) loadDotenv({ path: envFile })
 
@@ -33,7 +32,6 @@ function buildProvider(cfg: ProviderConfig): TranslationProvider | null {
   if (cfg.name === 'nvidia-nim') {
     return new NvidiaNimProvider({ apiKey, model, baseUrl: cfg.baseUrl })
   }
-  // Type-narrowed exhaustively above; this is unreachable but keeps TS strict.
   throw new Error(`Unknown provider: ${(cfg as { name: string }).name}`)
 }
 
@@ -41,9 +39,8 @@ function printSummary(s: RunSummary): void {
   console.log(pc.bold(`\n[${s.projectId}] @ ${s.upstreamSha.slice(0, 7)}`))
   console.log(`  files scanned   : ${s.filesScanned}`)
   console.log(`  files changed   : ${s.filesChanged}`)
-  console.log(`  files written   : ${s.filesTranslated}`)
-  console.log(`  blocks LLM-call : ${s.blocksTranslated}`)
-  console.log(`  cache hits      : ${s.cacheHits}`)
+  console.log(`  files translated: ${s.filesTranslated}`)
+  console.log(`  files cache-hit : ${s.filesCacheHit}`)
   if (s.failures > 0) {
     console.log(pc.red(`  failures        : ${s.failures}`))
   } else {
@@ -55,10 +52,10 @@ async function main(): Promise<void> {
   const program = new Command()
   program
     .name('sync')
-    .description('Sync upstream docs and translate to Simplified Chinese')
+    .description('Sync upstream docs and translate to Simplified Chinese (file-level)')
     .option('-p, --project <id>', 'sync a single project by id')
     .option('-f, --full', 'force re-translation, ignore cache', false)
-    .option('-c, --concurrency <n>', 'blocks per file (parallel)', (v) => parseInt(v, 10))
+    .option('-c, --concurrency <n>', 'files in parallel', (v) => parseInt(v, 10))
     .parse(process.argv)
 
   const opts = program.opts<{ project?: string; full: boolean; concurrency?: number }>()
@@ -89,8 +86,8 @@ async function main(): Promise<void> {
       const summary = await syncProject(project, providers, memory, config.glossary.terms, {
         full: opts.full,
         ourRepo: config.projects.ourRepo,
-        blocksPerFile: opts.concurrency ?? config.providers.concurrency.blocksPerFile,
-        filesInParallel: config.providers.concurrency.filesInParallel,
+        filesInParallel: opts.concurrency ?? config.providers.concurrency.filesInParallel,
+        chunksPerFile: config.providers.concurrency.chunksPerFile,
       })
       printSummary(summary)
       totalFailures += summary.failures
@@ -102,9 +99,11 @@ async function main(): Promise<void> {
   if (totalFailures > 0) {
     console.log(
       pc.yellow(
-        `\nFinished with ${totalFailures} block-level failure(s). See state/<id>.json#failedBlocks.`,
+        `\nFinished with ${totalFailures} file-level failure(s). See state/<id>.json#failedFiles.`,
       ),
     )
+    // exit 2 = "translations completed with some failures"; the workflow
+    // treats this as a soft failure (deployable with English placeholders).
     process.exit(2)
   }
   console.log(pc.green('\n✓ all projects synced'))

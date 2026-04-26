@@ -25,9 +25,9 @@ export function emptyState(projectId: string): ProjectState {
     lastSyncTime: new Date().toISOString(),
     lastSyncSha: '',
     fileCount: 0,
-    translatedCount: 0,
-    cacheHitCount: 0,
+    filesTranslated: 0,
+    filesCacheHit: 0,
     files: [],
-    failedBlocks: [],
+    failedFiles: [],
   }
 }

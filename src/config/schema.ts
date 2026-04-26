@@ -28,13 +28,12 @@ export const ProviderConfigSchema = z.object({
 
 export const ProvidersFileSchema = z.object({
   providers: z.array(ProviderConfigSchema).min(1),
-  maxBlockTokens: z.number().int().positive().default(1500),
   concurrency: z
     .object({
-      blocksPerFile: z.number().int().positive().default(3),
       filesInParallel: z.number().int().positive().default(1),
+      chunksPerFile: z.number().int().positive().default(1),
     })
-    .default({ blocksPerFile: 3, filesInParallel: 1 }),
+    .default({ filesInParallel: 1, chunksPerFile: 1 }),
 })
 
 export const GlossaryEntrySchema = z.object({

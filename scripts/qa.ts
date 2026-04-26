@@ -8,9 +8,8 @@ import { loadConfig } from '../src/config/loader.js'
 import type { ProjectConfig } from '../src/config/schema.js'
 import { fetchFileContent } from '../src/sync/github.js'
 import { readState } from '../src/sync/state.js'
+import { runFileQA } from '../src/translation/file-qa.js'
 import { matchGlossary } from '../src/translation/glossary.js'
-import { splitFile } from '../src/markdown/splitter.js'
-import { runQA } from '../src/translation/qa.js'
 import type { GlossaryEntry, QAReport } from '../src/translation/types.js'
 
 const envFile = resolve(process.cwd(), '.env.local')
@@ -23,9 +22,8 @@ interface PerFileResult {
 }
 
 /**
- * Re-fetch each tracked upstream file and re-run runQA against the local
- * translated file's body (the part above the attribution footer). Pure
- * structural validation — no LLM calls.
+ * Re-fetch each tracked upstream file and run runFileQA against the
+ * locally-translated copy. Pure structural validation — no LLM calls.
  */
 async function qaProject(
   project: ProjectConfig,
@@ -48,13 +46,12 @@ async function qaProject(
   const fileResults: PerFileResult[] = []
   for (const tracked of state.files) {
     const upstream = await fetchFileContent(project, tracked.path)
-    const blocks = splitFile(upstream, tracked.path)
 
     const docsAbsPath = resolve(
       docsRoot,
       project.id,
       tracked.path.startsWith(project.docsPath)
-        ? tracked.path.slice(project.docsPath.length)
+        ? tracked.path.slice(project.docsPath.length).replace(/^\/+/, '')
         : tracked.path,
     )
     if (!existsSync(docsAbsPath)) {
@@ -66,32 +63,18 @@ async function qaProject(
       continue
     }
     const translatedRaw = readFileSync(docsAbsPath, 'utf8')
-    // Strip the attribution footer (last `---` block we appended).
+    // Strip the attribution footer before structural comparison.
     const translated = translatedRaw.replace(/\n---\n>[\s\S]*$/, '\n')
 
-    const fileFailures: { name: string; details?: string }[] = []
-    for (const block of blocks) {
-      if (!block.translatable) continue
-      const applicable = matchGlossary(block.source, glossary)
-      // We don't have per-block translated chunks here, so we run QA against
-      // the entire file body. This still catches: empty output, mismatched
-      // fence/inline-code/link/heading counts, missing glossary targets.
-      const out = runQA(block, translated, applicable)
-      for (const f of out.failures) {
-        // De-dup glossary failures (same term flagged for every block).
-        if (
-          f.check === 'glossaryTerms' &&
-          fileFailures.some((x) => x.name === 'glossaryTerms' && x.details === f.details)
-        ) {
-          continue
-        }
-        fileFailures.push({ name: f.check, details: f.details })
-      }
-    }
+    const applicable = matchGlossary(upstream, glossary)
+    const out = runFileQA(upstream, translated, applicable)
     fileResults.push({
       file: tracked.path,
-      failures: fileFailures.length,
-      checks: fileFailures,
+      failures: out.failures.length,
+      checks: out.failures.map((f) => ({
+        name: f.name,
+        ...(f.details ? { details: f.details } : {}),
+      })),
     })
   }
 

@@ -44,29 +44,29 @@ class CountingProvider implements TranslationProvider {
   constructor(private readonly fn: (prompt: string) => string) {}
   async translate(prompt: string, _maxTokens: number): Promise<ProviderCallResult> {
     this.calls++
-    return { text: this.fn(prompt), tokensInput: 5, tokensOutput: 5, model: this.model }
+    return { text: this.fn(prompt), tokensInput: 50, tokensOutput: 50, model: this.model }
   }
   async healthCheck() {
     return true
   }
 }
 
-// Translates by replacing a few well-known English phrases. Just enough to
-// produce a non-empty translation that passes QA structural checks (same
-// counts of code-fences, inline code, headings, etc).
+/**
+ * Pulls the file source out of the prompt's [SOURCE] block and produces a
+ * structurally-identical translation: same headings, same code blocks, same
+ * inline code, same URLs. This is what a competent LLM would produce.
+ */
 function fakeTranslate(prompt: string): string {
-  // Extract the [TRANSLATE THIS BLOCK] section's content.
-  const m = prompt.match(/\[TRANSLATE THIS BLOCK\]\n([\s\S]*?)\n\[END BLOCK\]/)
+  const m = prompt.match(/\[SOURCE\]\n([\s\S]*?)\n\[END SOURCE\]/)
   if (!m || !m[1]) return ''
-  const src = m[1]
-  return src
-    .replace(/^# Gemini CLI$/m, '# Gemini CLI 中文文档 {#gemini-cli}')
-    .replace(/^## Installation$/m, '## 安装 {#installation}')
+  return m[1]
+    .replace(/^# Gemini CLI$/m, '# Gemini CLI 中文文档')
+    .replace(/^## Installation$/m, '## 安装')
     .replace(/Welcome to the Gemini CLI documentation\./, '欢迎阅读 Gemini CLI 文档。')
     .replace(/Run `npm install` to install the CLI\./, '运行 `npm install` 安装 CLI。')
 }
 
-describe('syncProject (integration)', () => {
+describe('syncProject (integration, file-level)', () => {
   let tmpCwd: string
   let origCwd: string
 
@@ -87,7 +87,7 @@ describe('syncProject (integration)', () => {
     rmSync(tmpCwd, { recursive: true, force: true })
   })
 
-  it('first run translates each block; second run with same SHA is a no-op (zero LLM calls)', async () => {
+  it('first run translates the file; second run hits cache (zero LLM calls)', async () => {
     const provider = new CountingProvider(fakeTranslate)
     const glossary: GlossaryEntry[] = []
 
@@ -98,19 +98,17 @@ describe('syncProject (integration)', () => {
     })
     memory1.close()
     expect(summary1.filesTranslated).toBe(1)
-    expect(provider.calls).toBeGreaterThan(0)
-    const callsAfterFirst = provider.calls
+    expect(provider.calls).toBe(1)
 
-    // Second run, same upstream SHA — sha-v1 unchanged, so the file is
-    // skipped at the changed-file filter (no LLM calls at all).
+    // Second run, same content → file-hash cache hit, no LLM call.
     const memory2 = new TranslationMemory(project.id)
     const summary2 = await syncProject(project, [provider], memory2, glossary, {
       ourRepo: 'me/opendocs-cn',
       docsRoot: resolve(tmpCwd, 'docs'),
     })
     memory2.close()
-    expect(summary2.filesChanged).toBe(0)
-    expect(provider.calls).toBe(callsAfterFirst)
+    expect(summary2.filesCacheHit).toBe(1)
+    expect(provider.calls).toBe(1) // no new call
   })
 
   it('attribution footer + landing-warning block are both present in landing page', async () => {
@@ -129,7 +127,7 @@ describe('syncProject (integration)', () => {
     expect(out).toContain('```bash\nnpm install -g gemini\n```')
   })
 
-  it('changing the upstream blob sha re-fetches and re-translates that file', async () => {
+  it('always writes the file even when content already cached', async () => {
     const provider = new CountingProvider(fakeTranslate)
     const memory1 = new TranslationMemory(project.id)
     await syncProject(project, [provider], memory1, [], {
@@ -138,22 +136,20 @@ describe('syncProject (integration)', () => {
     })
     memory1.close()
 
-    // Change the tree blob sha — the runner should treat the file as changed.
-    // The body is unchanged, so all four blocks hit cache (zero LLM calls).
-    vi.mocked(github.fetchFileTree).mockResolvedValueOnce([
-      { path: 'docs/index.md', relativePath: 'index.md', sha: 'sha-v2' },
-    ])
+    // Wipe the docs output and run again — the runner should re-create it
+    // from cache without any new LLM calls.
+    rmSync(resolve(tmpCwd, 'docs', project.id), { recursive: true, force: true })
     const callsBefore = provider.calls
 
     const memory2 = new TranslationMemory(project.id)
-    const summary = await syncProject(project, [provider], memory2, [], {
+    await syncProject(project, [provider], memory2, [], {
       ourRepo: 'me/opendocs-cn',
       docsRoot: resolve(tmpCwd, 'docs'),
     })
     memory2.close()
-    expect(summary.filesChanged).toBe(1)
-    expect(summary.cacheHits).toBeGreaterThan(0)
-    // Body identical → cache hit on every block → no new LLM calls.
+
     expect(provider.calls).toBe(callsBefore)
+    const out = readFileSync(resolve(tmpCwd, 'docs', project.id, 'index.md'), 'utf8')
+    expect(out).toContain('# Gemini CLI 中文文档')
   })
 })
