@@ -11,6 +11,48 @@ const URL_RE = /https?:\/\/[^\s)<>"']+/g
 const HEADING_RE = /^#{1,6} .+$/gm
 const ANCHOR_ATTR_RE = /\{#[a-zA-Z0-9_-][^}]*\}/g
 
+// HTML void elements that are legal without a closing tag
+const VOID_ELEMENTS = new Set([
+  'area',
+  'base',
+  'br',
+  'col',
+  'embed',
+  'hr',
+  'img',
+  'input',
+  'link',
+  'meta',
+  'param',
+  'source',
+  'track',
+  'wbr',
+])
+
+const OPEN_TAG_RE = /<([a-zA-Z][a-zA-Z0-9-]*)\b[^>]*?(?<!\/|-)>/g
+const CLOSE_TAG_RE = /<\/([a-zA-Z][a-zA-Z0-9-]*)>/g
+
+function countHtmlTags(text: string): Map<string, { open: number; close: number }> {
+  const stripped = text.replace(FENCE_RE, '')
+  const counts = new Map<string, { open: number; close: number }>()
+
+  const get = (tag: string) => {
+    const key = tag.toLowerCase()
+    if (!counts.has(key)) counts.set(key, { open: 0, close: 0 })
+    return counts.get(key)!
+  }
+
+  for (const m of stripped.matchAll(new RegExp(OPEN_TAG_RE.source, 'g'))) {
+    const tag = m[1]!.toLowerCase()
+    if (!VOID_ELEMENTS.has(tag)) get(tag).open++
+  }
+  for (const m of stripped.matchAll(new RegExp(CLOSE_TAG_RE.source, 'g'))) {
+    get(m[1]!.toLowerCase()).close++
+  }
+
+  return counts
+}
+
 function count(text: string, re: RegExp): number {
   return (text.match(re) ?? []).length
 }
@@ -92,6 +134,26 @@ export function runFileQA(
       passed: false,
       details: `source=${srcAnchors} translated=${trAnchors}`,
     })
+  }
+
+  // HTML tag balance: detect unclosed tags that would break VitePress/Vue build.
+  // Only fail when source is balanced but translation is not — if source itself
+  // is unbalanced, that is an upstream problem, not a translation error.
+  const srcTags = countHtmlTags(source)
+  const trTags = countHtmlTags(translated)
+  const allTagNames = new Set([...srcTags.keys(), ...trTags.keys()])
+  for (const tag of allTagNames) {
+    const src = srcTags.get(tag) ?? { open: 0, close: 0 }
+    const tr = trTags.get(tag) ?? { open: 0, close: 0 }
+    const srcBalanced = src.open === src.close
+    const trBalanced = tr.open === tr.close
+    if (srcBalanced && !trBalanced) {
+      failures.push({
+        name: 'htmlTagBalance',
+        passed: false,
+        details: `tag=${tag} source_open=${src.open} source_close=${src.close} translated_open=${tr.open} translated_close=${tr.close}`,
+      })
+    }
   }
 
   // Glossary enforcement: every applicable source term must have its target in

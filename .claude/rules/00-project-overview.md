@@ -1,68 +1,41 @@
 # 项目概览 — OpenDocs-CN
 
-> **请先阅读本文。** 其他规则文件和 `implementation_plan.md` 中的每个决策都基于这里的上下文。
+> **进入项目时先读 `implementation_plan.md`** —— 它给出当前架构、已完成、当前阻塞、下一步。本文件只给出"是什么"。
 
-## 我们要构建什么
+## 一句话
 
-一个自动化流水线，用于：
+自动同步上游 GitHub 项目的英文 `docs/` → 用 LLM 翻译成中文 → 通过 VitePress 发布静态站点。
 
-1. 从 GitHub 开源项目同步英文文档（其 `docs/` 路径），
-2. 使用 LLM API 将其翻译为简体中文，并通过块级增量缓存减少重复调用，
-3. 发布一个包含多个项目的静态文档站点。
+## Phase 1 范围（MVP）
 
-这个系统是一个 **文档同步与翻译** 工具，**不是** 通用翻译器，不是代理服务，也不是阅读模式扩展。
-
-## 为什么做
-
-热门开发者 CLI（Gemini CLI、Codex，以及后续更多项目）的英文文档更新频繁。现有中文翻译通常滞后数周，甚至从不同步。用户需要一个可以收藏、始终跟上游同步的中文参考站。
-
-## 第 1 阶段范围（MVP）— 首版只交付这些
-
-两个项目，不多做：
+两个项目，仅此而已：
 
 | 项目 | 上游 | 路由 |
 |---|---|---|
 | Gemini CLI | `google-gemini/gemini-cli` @ `main`，路径 `docs/` | `/gemini-cli/` |
 | Codex CLI | `openai/codex` @ `main`，路径 `docs/` | `/codex/` |
 
-首页展示两张卡片（图标 + 标题 + “中文文档”标签）。点击卡片后进入对应项目文档，并显示左侧侧边栏。
+部署到 `https://orionpace.github.io/OpenDocs-CN/`（GitHub Pages，子路径 `/OpenDocs-CN/`）。
 
-## MVP 非目标（不要实现）
+## Phase 1 验收标准（八条）
 
-- ❌ 并排双语阅读视图（改为链接到上游英文原文）
-- ❌ 基于 PR review 的社区贡献流程（MVP 直接提交）
-- ❌ 非 Markdown 内容翻译（不做图片文字 OCR、不处理 MDX 组件、不处理 Jupyter notebooks）
-- ❌ 多版本文档（只跟踪上游默认分支）
-- ❌ 本地 LLM 推理（不使用 4060）
-- ❌ 超出 VitePress 内置本地搜索之外的搜索基础设施
-- ❌ 站点外壳 i18n（UI 以中文优先；不提供英文 UI 切换）
-- ❌ 自定义主题设计（使用 VitePress 默认主题，仅做轻微颜色调整）
+`implementation_plan.md` 跟踪每条的当前状态。
 
-## 第 1 阶段成功标准
+1. `pnpm sync` 首次跑通 → 两个项目完整翻译，VitePress 无错误构建
+2. 再次 `pnpm sync`（无上游变化）→ 零 LLM 调用
+3. 单文件变更 → 仅该文件触发 LLM
+4. 代码块 / 行内代码 / URL / 标题锚点逐字节与上游一致
+5. `pnpm qa` → 零 glossary_violation
+6. 站点可访问 + GitHub Pages 自动部署
+7. 每页 footer 含上游 commit-pinned 来源链接
+8. 首页首屏有"社区中文翻译 · 非官方"声明
 
-具体验收测试。全部通过之前，不能视为实现完成：
+## 不做（Phase 1 非目标）
 
-1. 在全新 checkout 中设置好两个 API key 后运行 `pnpm run sync` → 两个项目都完整翻译，并且 VitePress 可以无错误构建。
-2. 在上游无变化的情况下再次运行 `pnpm run sync` → **零** LLM 调用，只更新状态时间戳。
-3. 在本地修改某个上游 `.md` 的一个段落（模拟变更）→ 只有变更块触发 LLM 调用，其他块命中缓存。
-4. 上游文件中的每个代码块、行内代码、URL 和标题锚点，在译文文件中都逐字节一致（标题文本本身除外）。
-5. 每个术语表映射都得到遵守，QA 不报告 `glossary_violation`。
-6. 站点可从同一个构建产物部署到 GitHub Pages 和 Cloudflare Pages。
-7. 每个译文页面的页脚都链接到固定上游 commit 的源文件。
-8. 首页首屏清楚显示“社区中文翻译 · 非官方”。
+并排双语 / PR review 流 / 非 Markdown 内容（图片 OCR、MDX、notebook）/ 多版本文档 / 本地 LLM / Algolia 搜索 / UI 多语言切换 / 自定义主题。
 
-## 状态与责任
+## 详细规则
 
-- 当前状态：**规划完成，开始实现**。
-- 编码智能体：Antigravity（规格驱动：`implementation_plan.md` → `task.md` → review）。
-- 人类审阅者：项目所有者（你）。
-- 第 1 阶段目标：端到端流水线完整可用，不追求精修。
-
-## 其他规则入口
-
-- 技术栈和版本：`01-tech-stack.md`
-- Windows 开发环境：`02-environment.md`
-- 每次 LLM 调用都必须遵守的翻译规则：`03-translation-rules.md`
-- 许可证、商标、隐私：`04-compliance.md`
-
-如果任何规则与本概览冲突，以本概览为准。发现冲突时，标记出来并询问。
+- 技术栈、Provider 配置、跨平台约束：`01-tech-stack.md`
+- 翻译时硬约束（v2 文件级架构）：`03-translation-rules.md`
+- 合规、署名、预部署清单：`04-compliance.md`
