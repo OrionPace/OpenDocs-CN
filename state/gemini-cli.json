@@ -1,6 +1,6 @@
 {
   "projectId": "gemini-cli",
-  "lastSyncTime": "2026-04-27T06:57:54.016Z",
+  "lastSyncTime": "2026-04-27T07:24:39.779Z",
   "lastSyncSha": "42587de7338f65e075070eeea33a4149266d05ae",
   "fileCount": 91,
   "filesTranslated": 0,
@@ -9,457 +9,457 @@
     {
       "path": "docs/admin/enterprise-controls.md",
       "sha": "575b597db644839f520c07dafb2493ba53423fad",
-      "translatedAt": "2026-04-27T06:43:59.004Z"
+      "translatedAt": "2026-04-27T07:10:48.966Z"
     },
     {
       "path": "docs/changelogs/index.md",
       "sha": "abb845121c62dbd0acf14c258a60e9db45458c0f",
-      "translatedAt": "2026-04-27T06:43:59.025Z"
+      "translatedAt": "2026-04-27T07:10:49.211Z"
     },
     {
       "path": "docs/changelogs/latest.md",
       "sha": "365325e626d3a3a7b07131882b32bc3f79932d09",
-      "translatedAt": "2026-04-27T06:43:59.028Z"
+      "translatedAt": "2026-04-27T07:10:49.157Z"
     },
     {
       "path": "docs/changelogs/preview.md",
       "sha": "737b0917b4e9f0fbac27b644043a807fe6036024",
-      "translatedAt": "2026-04-27T06:43:59.018Z"
+      "translatedAt": "2026-04-27T07:10:49.148Z"
     },
     {
       "path": "docs/cli/acp-mode.md",
       "sha": "a5f9b6a63a3aa539cf35c5b58e3135a1540c19d4",
-      "translatedAt": "2026-04-27T06:43:59.098Z"
+      "translatedAt": "2026-04-27T07:10:49.231Z"
     },
     {
       "path": "docs/cli/auto-memory.md",
       "sha": "8b3f5379daa8a851f851351bb88b9f8e0e573aec",
-      "translatedAt": "2026-04-27T06:43:59.120Z"
+      "translatedAt": "2026-04-27T07:10:49.283Z"
     },
     {
       "path": "docs/cli/checkpointing.md",
       "sha": "775c9b7fea014122ad7f567be8a885c39c992761",
-      "translatedAt": "2026-04-27T06:43:59.108Z"
+      "translatedAt": "2026-04-27T07:10:49.289Z"
     },
     {
       "path": "docs/cli/cli-reference.md",
       "sha": "41cc76617515bb6e100fc9658d1c4338c447948b",
-      "translatedAt": "2026-04-27T06:43:59.123Z"
+      "translatedAt": "2026-04-27T07:10:49.338Z"
     },
     {
       "path": "docs/cli/creating-skills.md",
       "sha": "71f7e6df8a9ff5a614b10433891d0fba2c112786",
-      "translatedAt": "2026-04-27T06:43:59.177Z"
+      "translatedAt": "2026-04-27T07:10:49.359Z"
     },
     {
       "path": "docs/cli/custom-commands.md",
       "sha": "3cb3cea36a99988e23ba358565c9142bf55dcb24",
-      "translatedAt": "2026-04-27T06:43:59.201Z"
+      "translatedAt": "2026-04-27T07:10:49.420Z"
     },
     {
       "path": "docs/cli/enterprise.md",
       "sha": "1222591fc9492ca285d32fbdf73788393f6b46cc",
-      "translatedAt": "2026-04-27T06:43:59.217Z"
+      "translatedAt": "2026-04-27T07:10:49.423Z"
     },
     {
       "path": "docs/cli/gemini-ignore.md",
       "sha": "fcdf94482c6763bba8509b7ef1757e00444be780",
-      "translatedAt": "2026-04-27T06:43:59.208Z"
+      "translatedAt": "2026-04-27T07:10:49.460Z"
     },
     {
       "path": "docs/cli/gemini-md.md",
       "sha": "624b2fc566ec1c38828825ceaab04a2e068d0431",
-      "translatedAt": "2026-04-27T06:43:59.268Z"
+      "translatedAt": "2026-04-27T07:10:49.517Z"
     },
     {
       "path": "docs/cli/generation-settings.md",
       "sha": "c5ba2151b8a24208d793384c970321c73d2644c1",
-      "translatedAt": "2026-04-27T06:43:59.288Z"
+      "translatedAt": "2026-04-27T07:10:49.547Z"
     },
     {
       "path": "docs/cli/git-worktrees.md",
       "sha": "5020b3fa9a402fa9c82d5bfd6643f5f75497b491",
-      "translatedAt": "2026-04-27T06:43:59.296Z"
+      "translatedAt": "2026-04-27T07:10:49.562Z"
     },
     {
       "path": "docs/cli/headless.md",
       "sha": "c83ce70d0e326ab22316a35c47bb92ec40fe9055",
-      "translatedAt": "2026-04-27T06:43:59.318Z"
+      "translatedAt": "2026-04-27T07:10:49.601Z"
     },
     {
       "path": "docs/cli/model-routing.md",
       "sha": "c9ec073a64e86fa688a81eb8f4072b43dd564750",
-      "translatedAt": "2026-04-27T06:43:59.354Z"
+      "translatedAt": "2026-04-27T07:10:49.627Z"
     },
     {
       "path": "docs/cli/model-steering.md",
       "sha": "60f07253c4f430021fe0d2d8b896d5dbbf0d3f20",
-      "translatedAt": "2026-04-27T06:43:59.380Z"
+      "translatedAt": "2026-04-27T07:10:49.702Z"
     },
     {
       "path": "docs/cli/model.md",
       "sha": "b85f597e080ae96e1d262b87d3c077afa5fa10d9",
-      "translatedAt": "2026-04-27T06:43:59.402Z"
+      "translatedAt": "2026-04-27T07:10:49.690Z"
     },
     {
       "path": "docs/cli/notifications.md",
       "sha": "abe6743c56b8b2518c7c1e190f84c42c691513c2",
-      "translatedAt": "2026-04-27T06:43:59.405Z"
+      "translatedAt": "2026-04-27T07:10:49.746Z"
     },
     {
       "path": "docs/cli/plan-mode.md",
       "sha": "4e205164a09efe427292f1300873feeb9113406c",
-      "translatedAt": "2026-04-27T06:43:59.454Z"
+      "translatedAt": "2026-04-27T07:10:49.771Z"
     },
     {
       "path": "docs/cli/rewind.md",
       "sha": "98ed72a825367a38072a0b0f43598cafffcc5a1a",
-      "translatedAt": "2026-04-27T06:43:59.469Z"
+      "translatedAt": "2026-04-27T07:10:49.808Z"
     },
     {
       "path": "docs/cli/sandbox.md",
       "sha": "3574e9d231986632b6342be4549aeac9c222efb9",
-      "translatedAt": "2026-04-27T06:43:59.493Z"
+      "translatedAt": "2026-04-27T07:10:49.830Z"
     },
     {
       "path": "docs/cli/session-management.md",
       "sha": "74bc4a4337f0d22a9db6ee93e961d64dcfeec1c3",
-      "translatedAt": "2026-04-27T06:43:59.476Z"
+      "translatedAt": "2026-04-27T07:10:49.875Z"
     },
     {
       "path": "docs/cli/settings.md",
       "sha": "834750fdf980c7989ae12bbd165bda16882256a7",
-      "translatedAt": "2026-04-27T06:43:59.548Z"
+      "translatedAt": "2026-04-27T07:10:49.963Z"
     },
     {
       "path": "docs/cli/skills.md",
       "sha": "73e5eb66ebc53ff7982fcb582023f0e9ed09e693",
-      "translatedAt": "2026-04-27T06:43:59.554Z"
+      "translatedAt": "2026-04-27T07:10:49.940Z"
     },
     {
       "path": "docs/cli/system-prompt.md",
       "sha": "9667e7de86d83258bc5d2dac8906c749b44cf489",
-      "translatedAt": "2026-04-27T06:43:59.570Z"
+      "translatedAt": "2026-04-27T07:10:49.952Z"
     },
     {
       "path": "docs/cli/telemetry.md",
       "sha": "2f42c16c293ad52ef484590c531d2416b121e233",
-      "translatedAt": "2026-04-27T06:43:59.590Z"
+      "translatedAt": "2026-04-27T07:10:50.023Z"
     },
     {
       "path": "docs/cli/themes.md",
       "sha": "9a3d628c20a745ffdc22cd239fda2b989cbefee4",
-      "translatedAt": "2026-04-27T06:43:59.629Z"
+      "translatedAt": "2026-04-27T07:10:50.077Z"
     },
     {
       "path": "docs/cli/token-caching.md",
       "sha": "8d56391b0a3d2aa8b76bc3e1ef95920082ac6beb",
-      "translatedAt": "2026-04-27T06:43:59.646Z"
+      "translatedAt": "2026-04-27T07:10:50.079Z"
     },
     {
       "path": "docs/cli/trusted-folders.md",
       "sha": "cbcf5b7fd09848b63b8305ebd87762838143096f",
-      "translatedAt": "2026-04-27T06:43:59.649Z"
+      "translatedAt": "2026-04-27T07:10:50.092Z"
     },
     {
       "path": "docs/cli/tutorials/automation.md",
       "sha": "4285cdcf3b276e92ea9d98a988546c8e02cd917c",
-      "translatedAt": "2026-04-27T06:43:59.668Z"
+      "translatedAt": "2026-04-27T07:10:50.174Z"
     },
     {
       "path": "docs/cli/tutorials/file-management.md",
       "sha": "37112d3bc77c1e53ec74604c1c11acf130860757",
-      "translatedAt": "2026-04-27T06:43:59.709Z"
+      "translatedAt": "2026-04-27T07:10:50.226Z"
     },
     {
       "path": "docs/cli/tutorials/mcp-setup.md",
       "sha": "6d3646ade90dfc952ef2ce5f62382c3ae4aab725",
-      "translatedAt": "2026-04-27T06:43:59.733Z"
+      "translatedAt": "2026-04-27T07:10:50.211Z"
     },
     {
       "path": "docs/cli/tutorials/memory-management.md",
       "sha": "aa0423157f8bfb69a305b82a53d10e1804d77415",
-      "translatedAt": "2026-04-27T06:43:59.734Z"
+      "translatedAt": "2026-04-27T07:10:50.234Z"
     },
     {
       "path": "docs/cli/tutorials/plan-mode-steering.md",
       "sha": "b666877d5bf99f0a857059655e5d0286aa0318bc",
-      "translatedAt": "2026-04-27T06:43:59.757Z"
+      "translatedAt": "2026-04-27T07:10:50.320Z"
     },
     {
       "path": "docs/cli/tutorials/session-management.md",
       "sha": "3a0a6fae86d4140cae5179ca0abefb8f51e4e7d2",
-      "translatedAt": "2026-04-27T06:43:59.825Z"
+      "translatedAt": "2026-04-27T07:10:50.372Z"
     },
     {
       "path": "docs/cli/tutorials/shell-commands.md",
       "sha": "9ff7cef4efa8766e09e434c4c8e720dd50407a44",
-      "translatedAt": "2026-04-27T06:43:59.811Z"
+      "translatedAt": "2026-04-27T07:10:50.359Z"
     },
     {
       "path": "docs/cli/tutorials/skills-getting-started.md",
       "sha": "ee59641d2160eb66819055b41ff4d37360cfb74b",
-      "translatedAt": "2026-04-27T06:43:59.809Z"
+      "translatedAt": "2026-04-27T07:10:50.355Z"
     },
     {
       "path": "docs/cli/tutorials/task-planning.md",
       "sha": "86f7bab9a438975a11153d3ccec8b7886437e20f",
-      "translatedAt": "2026-04-27T06:43:59.832Z"
+      "translatedAt": "2026-04-27T07:10:50.441Z"
     },
     {
       "path": "docs/cli/tutorials/web-tools.md",
       "sha": "6af670b09467c9db811b12b50c12c604728009cd",
-      "translatedAt": "2026-04-27T06:43:59.891Z"
+      "translatedAt": "2026-04-27T07:10:50.472Z"
     },
     {
       "path": "docs/CONTRIBUTING.md",
       "sha": "44fcc63439371c8c829df00eec6aedbdc4d0e4cd",
-      "translatedAt": "2026-04-27T06:43:59.904Z"
+      "translatedAt": "2026-04-27T07:10:50.490Z"
     },
     {
       "path": "docs/core/index.md",
       "sha": "2724e8e922f21974602e24fa74ebdd4be564a9a6",
-      "translatedAt": "2026-04-27T06:43:59.907Z"
+      "translatedAt": "2026-04-27T07:10:50.491Z"
     },
     {
       "path": "docs/core/local-model-routing.md",
       "sha": "220ee13c46bbd70d5954500274df364ff1eaffd8",
-      "translatedAt": "2026-04-27T06:43:59.920Z"
+      "translatedAt": "2026-04-27T07:10:50.585Z"
     },
     {
       "path": "docs/core/remote-agents.md",
       "sha": "7a3e7ffe2aa035934f45532e40525bdd38849a93",
-      "translatedAt": "2026-04-27T06:52:04.915Z"
+      "translatedAt": "2026-04-27T07:18:45.111Z"
     },
     {
       "path": "docs/core/subagents.md",
       "sha": "d2069b5b12bda8572d6bf4a06e2445e70a9926e4",
-      "translatedAt": "2026-04-27T06:43:59.982Z"
+      "translatedAt": "2026-04-27T07:10:50.627Z"
     },
     {
       "path": "docs/examples/proxy-script.md",
       "sha": "35780d41efec80aaa21cccc0c4e3e524f8c464c6",
-      "translatedAt": "2026-04-27T06:50:47.682Z"
+      "translatedAt": "2026-04-27T07:17:26.571Z"
     },
     {
       "path": "docs/extensions/best-practices.md",
       "sha": "ccd1652c8848261ac12c65d8fe0109055bac7bd5",
-      "translatedAt": "2026-04-27T06:43:59.997Z"
+      "translatedAt": "2026-04-27T07:10:50.726Z"
     },
     {
       "path": "docs/extensions/index.md",
       "sha": "1c6ce1e6997841f5e1a6220797f1c7c8f85afc96",
-      "translatedAt": "2026-04-27T06:44:00.069Z"
+      "translatedAt": "2026-04-27T07:10:50.796Z"
     },
     {
       "path": "docs/extensions/reference.md",
       "sha": "274cb61a781ad28b8c7a3c493db6685d256e2000",
-      "translatedAt": "2026-04-27T06:44:00.076Z"
+      "translatedAt": "2026-04-27T07:10:50.881Z"
     },
     {
       "path": "docs/extensions/releasing.md",
       "sha": "10ab3584ed1d4db7d2a842f9aa535fe8f4c04f16",
-      "translatedAt": "2026-04-27T06:44:00.156Z"
+      "translatedAt": "2026-04-27T07:10:50.952Z"
     },
     {
       "path": "docs/extensions/writing-extensions.md",
       "sha": "f2dc730c2946b1c119412d8bf8f9f744cb94484e",
-      "translatedAt": "2026-04-27T06:44:00.153Z"
+      "translatedAt": "2026-04-27T07:10:51.019Z"
     },
     {
       "path": "docs/get-started/gemini-3.md",
       "sha": "259070d3ec876055467006a896c47dc620d91908",
-      "translatedAt": "2026-04-27T06:44:00.246Z"
+      "translatedAt": "2026-04-27T07:10:51.088Z"
     },
     {
       "path": "docs/get-started/index.md",
       "sha": "90cc78d40a33f2aa11620b8259985d0c012950c5",
-      "translatedAt": "2026-04-27T06:44:00.249Z"
+      "translatedAt": "2026-04-27T07:10:51.189Z"
     },
     {
       "path": "docs/hooks/best-practices.md",
       "sha": "1a4dd46de1fb69b914bf9d2bc078588d26c68879",
-      "translatedAt": "2026-04-27T06:44:00.336Z"
+      "translatedAt": "2026-04-27T07:10:51.227Z"
     },
     {
       "path": "docs/hooks/index.md",
       "sha": "0125a28eb23bfc9e087bae1d8d52e76ace2ca9f5",
-      "translatedAt": "2026-04-27T06:44:00.366Z"
+      "translatedAt": "2026-04-27T07:10:51.326Z"
     },
     {
       "path": "docs/hooks/reference.md",
       "sha": "14846fe2275526bffe20ada016954aed0ae0446f",
-      "translatedAt": "2026-04-27T06:44:00.434Z"
+      "translatedAt": "2026-04-27T07:10:51.350Z"
     },
     {
       "path": "docs/hooks/writing-hooks.md",
       "sha": "f4f156776f3b01e1facfd7b6b54d1da7b3f13e9a",
-      "translatedAt": "2026-04-27T06:44:00.461Z"
+      "translatedAt": "2026-04-27T07:10:51.456Z"
     },
     {
       "path": "docs/ide-integration/ide-companion-spec.md",
       "sha": "eb4e24bd820073acdba99a02a294622e9588d42b",
-      "translatedAt": "2026-04-27T06:44:00.520Z"
+      "translatedAt": "2026-04-27T07:10:51.496Z"
     },
     {
       "path": "docs/ide-integration/index.md",
       "sha": "cc3b150c1aeeb8c885734f7c497d4f063224b366",
-      "translatedAt": "2026-04-27T06:44:00.548Z"
+      "translatedAt": "2026-04-27T07:10:51.585Z"
     },
     {
       "path": "docs/index.md",
       "sha": "d5fefce47c41816a5b7e8757789404e7e9a11a17",
-      "translatedAt": "2026-04-27T06:44:00.603Z"
+      "translatedAt": "2026-04-27T07:10:51.623Z"
     },
     {
       "path": "docs/integration-tests.md",
       "sha": "06ac3a347f2600d8581711fe1de906d038e7c7e1",
-      "translatedAt": "2026-04-27T06:44:00.647Z"
+      "translatedAt": "2026-04-27T07:10:51.717Z"
     },
     {
       "path": "docs/issue-and-pr-automation.md",
       "sha": "3107bfcb4e8f196ccd82ef2da118d22dcf9fb525",
-      "translatedAt": "2026-04-27T06:44:00.690Z"
+      "translatedAt": "2026-04-27T07:10:51.751Z"
     },
     {
       "path": "docs/local-development.md",
       "sha": "83520c75064ce096bf73d0f02ff0a1f021fbfb45",
-      "translatedAt": "2026-04-27T06:44:00.759Z"
+      "translatedAt": "2026-04-27T07:10:51.843Z"
     },
     {
       "path": "docs/npm.md",
       "sha": "3ceab3c5e717d9c15123eccfd1682839339c53d1",
-      "translatedAt": "2026-04-27T06:44:00.784Z"
+      "translatedAt": "2026-04-27T07:10:51.879Z"
     },
     {
       "path": "docs/reference/commands.md",
       "sha": "7651539cb213e8cc586284c440deef7a8e8bd29e",
-      "translatedAt": "2026-04-27T06:44:00.846Z"
+      "translatedAt": "2026-04-27T07:10:51.985Z"
     },
     {
       "path": "docs/reference/configuration.md",
       "sha": "94a64cc1977073ec5b0a396eeec3f8dad8ca9eb5",
-      "translatedAt": "2026-04-27T06:52:41.179Z"
+      "translatedAt": "2026-04-27T07:19:06.971Z"
     },
     {
       "path": "docs/reference/keyboard-shortcuts.md",
       "sha": "6f7a8cce4a6c11c5f2a4c8aecf8f6f35dbc308fd",
-      "translatedAt": "2026-04-27T06:44:00.931Z"
+      "translatedAt": "2026-04-27T07:10:52.113Z"
     },
     {
       "path": "docs/reference/memport.md",
       "sha": "a8c2da5a2d1ad648fe4e089fcdf56ed0c1cdea38",
-      "translatedAt": "2026-04-27T06:44:01.035Z"
+      "translatedAt": "2026-04-27T07:10:52.233Z"
     },
     {
       "path": "docs/reference/policy-engine.md",
       "sha": "d9dc21f49cb2faa57ef146b9cd7e8d2f80d7ade7",
-      "translatedAt": "2026-04-27T06:51:24.570Z"
+      "translatedAt": "2026-04-27T07:18:52.269Z"
     },
     {
       "path": "docs/reference/tools.md",
       "sha": "6236225d88c6021168f64f01e7290964e9ced066",
-      "translatedAt": "2026-04-27T06:50:47.778Z"
+      "translatedAt": "2026-04-27T07:17:26.828Z"
     },
     {
       "path": "docs/release-confidence.md",
       "sha": "22769f95564df93d6e0338f47887ce51ca09d196",
-      "translatedAt": "2026-04-27T06:50:47.885Z"
+      "translatedAt": "2026-04-27T07:17:27.132Z"
     },
     {
       "path": "docs/releases.md",
       "sha": "7969535960ef0fec1d08bc3e7198852fdf1aeb8c",
-      "translatedAt": "2026-04-27T06:50:47.970Z"
+      "translatedAt": "2026-04-27T07:17:27.286Z"
     },
     {
       "path": "docs/resources/faq.md",
       "sha": "834eda02cecb31d4dbff17bedeaf27b24c512050",
-      "translatedAt": "2026-04-27T06:50:48.052Z"
+      "translatedAt": "2026-04-27T07:17:27.433Z"
     },
     {
       "path": "docs/resources/quota-and-pricing.md",
       "sha": "18beb7c761ff199103e4871bb55b2827fd3c5cfc",
-      "translatedAt": "2026-04-27T06:57:54.016Z"
+      "translatedAt": "2026-04-27T07:24:39.779Z"
     },
     {
       "path": "docs/resources/tos-privacy.md",
       "sha": "06966138894068be5c3dcffc65f5147ad74081a7",
-      "translatedAt": "2026-04-27T06:51:24.677Z"
+      "translatedAt": "2026-04-27T07:18:45.365Z"
     },
     {
       "path": "docs/resources/troubleshooting.md",
       "sha": "2c63e7c9694634b0f675d65a2ac48fef914ab738",
-      "translatedAt": "2026-04-27T06:51:24.775Z"
+      "translatedAt": "2026-04-27T07:18:45.645Z"
     },
     {
       "path": "docs/resources/uninstall.md",
       "sha": "60d8eac9b7d7c337545d6db6ac030a148440b301",
-      "translatedAt": "2026-04-27T06:51:24.864Z"
+      "translatedAt": "2026-04-27T07:18:45.790Z"
     },
     {
       "path": "docs/tools/activate-skill.md",
       "sha": "e7178b7a38fa8aeec69477908fd2a7646d3f45f2",
-      "translatedAt": "2026-04-27T06:51:24.945Z"
+      "translatedAt": "2026-04-27T07:18:45.948Z"
     },
     {
       "path": "docs/tools/ask-user.md",
       "sha": "065d2227dc943fb1841de5b08e62b7db5396e654",
-      "translatedAt": "2026-04-27T06:51:25.041Z"
+      "translatedAt": "2026-04-27T07:18:46.065Z"
     },
     {
       "path": "docs/tools/file-system.md",
       "sha": "83c3691dd35b86c02136157cf215b198ba6e61f8",
-      "translatedAt": "2026-04-27T06:51:25.168Z"
+      "translatedAt": "2026-04-27T07:18:46.196Z"
     },
     {
       "path": "docs/tools/internal-docs.md",
       "sha": "0d30655fcda2c352cbf8bfca8c3317d1a20551aa",
-      "translatedAt": "2026-04-27T06:51:25.264Z"
+      "translatedAt": "2026-04-27T07:18:46.321Z"
     },
     {
       "path": "docs/tools/mcp-resources.md",
       "sha": "a6dad26e10fa938355253e13ff987ad3a7250d5a",
-      "translatedAt": "2026-04-27T06:51:25.366Z"
+      "translatedAt": "2026-04-27T07:18:46.449Z"
     },
     {
       "path": "docs/tools/mcp-server.md",
       "sha": "d9d8835c8ce6a549da6c9057c23afdcf3f63767d",
-      "translatedAt": "2026-04-27T06:51:25.468Z"
+      "translatedAt": "2026-04-27T07:18:46.636Z"
     },
     {
       "path": "docs/tools/memory.md",
       "sha": "f76e16523835835b21b6ca992fb7b6a9521d6bfc",
-      "translatedAt": "2026-04-27T06:51:25.569Z"
+      "translatedAt": "2026-04-27T07:18:46.779Z"
     },
     {
       "path": "docs/tools/planning.md",
       "sha": "13e9cd4fd8c4e2c24bdfea1dae2489a6b105d96d",
-      "translatedAt": "2026-04-27T06:51:25.656Z"
+      "translatedAt": "2026-04-27T07:18:46.909Z"
     },
     {
       "path": "docs/tools/shell.md",
       "sha": "84bb76e39346cca8e27a804a713980b8b07b1d0b",
-      "translatedAt": "2026-04-27T06:51:25.742Z"
+      "translatedAt": "2026-04-27T07:18:47.038Z"
     },
     {
       "path": "docs/tools/todos.md",
       "sha": "d198b872eab3fc9c0dccdef219b0952b1ef97554",
-      "translatedAt": "2026-04-27T06:51:25.822Z"
+      "translatedAt": "2026-04-27T07:18:47.163Z"
     },
     {
       "path": "docs/tools/tracker.md",
       "sha": "387d0bd654a88c747b90543dc4d0110f5e3d5baf",
-      "translatedAt": "2026-04-27T06:51:25.910Z"
+      "translatedAt": "2026-04-27T07:18:47.292Z"
     },
     {
       "path": "docs/tools/web-fetch.md",
       "sha": "66d8f4a57029b27d85bbc90b7cebae153161405d",
-      "translatedAt": "2026-04-27T06:51:26.015Z"
+      "translatedAt": "2026-04-27T07:18:47.479Z"
     },
     {
       "path": "docs/tools/web-search.md",
       "sha": "3976b2b7e071e958ae4331e281bdb9ce3ee4bd7a",
-      "translatedAt": "2026-04-27T06:51:26.109Z"
+      "translatedAt": "2026-04-27T07:18:47.622Z"
     }
   ],
   "failedFiles": [
@@ -467,31 +467,31 @@
       "path": "docs/core/remote-agents.md",
       "reason": "deepseek: glossaryTerm",
       "sourceHash": "7a3e7ffe2aa035934f45532e40525bdd38849a93",
-      "timestamp": "2026-04-27T06:57:54.016Z"
+      "timestamp": "2026-04-27T07:24:39.779Z"
     },
     {
       "path": "docs/examples/proxy-script.md",
       "reason": "deepseek: glossaryTerm",
       "sourceHash": "35780d41efec80aaa21cccc0c4e3e524f8c464c6",
-      "timestamp": "2026-04-27T06:57:54.016Z"
+      "timestamp": "2026-04-27T07:24:39.779Z"
     },
     {
       "path": "docs/reference/configuration.md",
       "reason": "deepseek: output truncated",
       "sourceHash": "94a64cc1977073ec5b0a396eeec3f8dad8ca9eb5",
-      "timestamp": "2026-04-27T06:57:54.016Z"
+      "timestamp": "2026-04-27T07:24:39.779Z"
     },
     {
       "path": "docs/reference/policy-engine.md",
       "reason": "deepseek: headingCount,glossaryTerm",
       "sourceHash": "d9dc21f49cb2faa57ef146b9cd7e8d2f80d7ade7",
-      "timestamp": "2026-04-27T06:57:54.016Z"
+      "timestamp": "2026-04-27T07:24:39.779Z"
     },
     {
       "path": "docs/resources/quota-and-pricing.md",
       "reason": "deepseek: glossaryTerm",
       "sourceHash": "18beb7c761ff199103e4871bb55b2827fd3c5cfc",
-      "timestamp": "2026-04-27T06:57:54.016Z"
+      "timestamp": "2026-04-27T07:24:39.779Z"
     }
   ]
 }
