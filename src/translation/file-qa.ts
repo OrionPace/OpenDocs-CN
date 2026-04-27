@@ -29,6 +29,111 @@ const VOID_ELEMENTS = new Set([
   'wbr',
 ])
 
+// Standard HTML5 non-void elements that VitePress/Vue validates strictly.
+// Non-standard tags (e.g. <extension-names>, <crate>) are NOT in this set;
+// they are handled via isCustomElement in VitePress config instead.
+export const STANDARD_HTML5_ELEMENTS = new Set([
+  'a',
+  'abbr',
+  'address',
+  'article',
+  'aside',
+  'audio',
+  'b',
+  'bdi',
+  'bdo',
+  'blockquote',
+  'body',
+  'button',
+  'canvas',
+  'caption',
+  'cite',
+  'code',
+  'colgroup',
+  'data',
+  'datalist',
+  'dd',
+  'del',
+  'details',
+  'dfn',
+  'dialog',
+  'div',
+  'dl',
+  'dt',
+  'em',
+  'fieldset',
+  'figcaption',
+  'figure',
+  'footer',
+  'form',
+  'h1',
+  'h2',
+  'h3',
+  'h4',
+  'h5',
+  'h6',
+  'head',
+  'header',
+  'hgroup',
+  'html',
+  'i',
+  'iframe',
+  'ins',
+  'kbd',
+  'label',
+  'legend',
+  'li',
+  'main',
+  'map',
+  'mark',
+  'menu',
+  'meter',
+  'nav',
+  'noscript',
+  'object',
+  'ol',
+  'optgroup',
+  'option',
+  'output',
+  'p',
+  'picture',
+  'pre',
+  'progress',
+  'q',
+  'rp',
+  'rt',
+  'ruby',
+  's',
+  'samp',
+  'script',
+  'search',
+  'section',
+  'select',
+  'slot',
+  'small',
+  'span',
+  'strong',
+  'style',
+  'sub',
+  'summary',
+  'sup',
+  'table',
+  'tbody',
+  'td',
+  'template',
+  'textarea',
+  'tfoot',
+  'th',
+  'thead',
+  'time',
+  'title',
+  'tr',
+  'u',
+  'ul',
+  'var',
+  'video',
+])
+
 const OPEN_TAG_RE = /<([a-zA-Z][a-zA-Z0-9-]*)\b[^>]*?(?<!\/|-)>/g
 const CLOSE_TAG_RE = /<\/([a-zA-Z][a-zA-Z0-9-]*)>/g
 
@@ -57,13 +162,15 @@ function countHtmlTags(text: string): Map<string, { open: number; close: number 
 
 /**
  * Deterministically repair HTML tag imbalance by appending missing closing tags.
- * Handles upstream source bugs (e.g. a missing </details>) that would otherwise
- * break VitePress/Vue compilation even when using the English source fallback.
+ * Only repairs standard HTML5 non-void elements (e.g. a missing </details>).
+ * Non-standard tags (e.g. <extension-names>, <crate>) are skipped here and
+ * handled by VitePress's isCustomElement config instead.
  */
 export function repairHtmlBalance(text: string): string {
   const counts = countHtmlTags(text)
   let result = text
   for (const [tag, { open, close }] of counts) {
+    if (!STANDARD_HTML5_ELEMENTS.has(tag)) continue
     const deficit = open - close
     if (deficit > 0) {
       result += ('\n' + `</${tag}>`).repeat(deficit)

@@ -3,6 +3,7 @@ import { resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { loadConfig } from '../../src/config/loader.js'
 import { buildSidebar } from '../../src/vitepress/sidebar.js'
+import { STANDARD_HTML5_ELEMENTS } from '../../src/translation/file-qa.js'
 
 const here = fileURLToPath(new URL('.', import.meta.url))
 const docsRoot = resolve(here, '..')
@@ -17,11 +18,11 @@ export default defineConfig({
   vue: {
     template: {
       compilerOptions: {
-        // Translated markdown may contain non-standard HTML tags from upstream
-        // docs (e.g. <crate>, <br>, custom shorthand). Treat everything as a
-        // custom element so Vue's strict HTML nesting validation doesn't break
-        // the build.
-        isCustomElement: () => true,
+        // CLI docs often contain angle-bracket placeholders like <extension-names>
+        // or <crate> in plain text. Tell Vue to treat non-standard tags as custom
+        // web components (lenient about closing) while still validating standard
+        // HTML5 elements (details, div, etc.) normally.
+        isCustomElement: (tag) => !STANDARD_HTML5_ELEMENTS.has(tag.toLowerCase()),
       },
     },
   },
