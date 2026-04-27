@@ -1,5 +1,9 @@
 import { describe, it, expect } from 'vitest'
-import { runFileQA, repairHtmlBalance } from '../../src/translation/file-qa.js'
+import {
+  runFileQA,
+  repairHtmlBalance,
+  escapeNonStandardHtmlTags,
+} from '../../src/translation/file-qa.js'
 
 const NO_GLOSSARY = [] as const
 
@@ -77,5 +81,41 @@ describe('repairHtmlBalance', () => {
     // `<crate>` is CLI placeholder syntax, not a real HTML tag
     const text = 'run `just fix -p <crate>` to build'
     expect(repairHtmlBalance(text)).toBe(text)
+  })
+})
+
+describe('escapeNonStandardHtmlTags', () => {
+  it('escapes CLI placeholder tags in plain text', () => {
+    const text = 'run gemini update <extension-names>|--all'
+    const result = escapeNonStandardHtmlTags(text)
+    expect(result).toContain('&lt;extension-names&gt;')
+    expect(result).not.toContain('<extension-names>')
+  })
+
+  it('escapes closing non-standard tags', () => {
+    const text = 'see <output-file> for results </output-file>'
+    const result = escapeNonStandardHtmlTags(text)
+    expect(result).toContain('&lt;output-file&gt;')
+    expect(result).toContain('&lt;/output-file&gt;')
+  })
+
+  it('does not escape standard HTML5 elements', () => {
+    const text = '<details><summary>x</summary>y</details>'
+    expect(escapeNonStandardHtmlTags(text)).toBe(text)
+  })
+
+  it('does not escape void elements', () => {
+    const text = 'line1<br>line2<img src="a.png">end'
+    expect(escapeNonStandardHtmlTags(text)).toBe(text)
+  })
+
+  it('preserves content inside fenced code blocks verbatim', () => {
+    const text = '```\ngemini update <extension-names>\n```'
+    expect(escapeNonStandardHtmlTags(text)).toBe(text)
+  })
+
+  it('preserves content inside inline code spans verbatim', () => {
+    const text = 'run `just fix -p <crate>` to build'
+    expect(escapeNonStandardHtmlTags(text)).toBe(text)
   })
 })

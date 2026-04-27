@@ -163,8 +163,8 @@ function countHtmlTags(text: string): Map<string, { open: number; close: number 
 /**
  * Deterministically repair HTML tag imbalance by appending missing closing tags.
  * Only repairs standard HTML5 non-void elements (e.g. a missing </details>).
- * Non-standard tags (e.g. <extension-names>, <crate>) are skipped here and
- * handled by VitePress's isCustomElement config instead.
+ * Non-standard tags (e.g. <extension-names>, <crate>) are handled separately
+ * by escapeNonStandardHtmlTags.
  */
 export function repairHtmlBalance(text: string): string {
   const counts = countHtmlTags(text)
@@ -177,6 +177,38 @@ export function repairHtmlBalance(text: string): string {
     }
   }
   return result
+}
+
+/**
+ * Escape non-standard HTML tags (CLI placeholders like <extension-names> or
+ * <output-file>) to HTML entities so VitePress/Vue never sees them as real
+ * elements. Skips content inside fenced code blocks and inline code spans
+ * (markdown-it handles those correctly on its own).
+ */
+export function escapeNonStandardHtmlTags(text: string): string {
+  const NON_STANDARD_TAG_RE = /<(\/?)([a-zA-Z][a-zA-Z0-9-]*)(\b[^>]*?)>/g
+
+  // Split on fenced code blocks — preserve them verbatim
+  const segments = text.split(/(```[\s\S]*?```)/gm)
+  return segments
+    .map((seg, i) => {
+      if (i % 2 === 1) return seg // inside a fenced block
+      // Temporarily replace inline code spans so we don't touch them
+      const placeholders: string[] = []
+      const withPlaceholders = seg.replace(INLINE_CODE_RE, (m) => {
+        placeholders.push(m)
+        return `\x00${placeholders.length - 1}\x00`
+      })
+      // Escape non-standard open and close tags
+      const escaped = withPlaceholders.replace(NON_STANDARD_TAG_RE, (_, slash, tag, attrs) => {
+        const lTag = tag.toLowerCase()
+        if (VOID_ELEMENTS.has(lTag) || STANDARD_HTML5_ELEMENTS.has(lTag)) return _
+        return `&lt;${slash}${tag}${attrs}&gt;`
+      })
+      // Restore inline code spans
+      return escaped.replace(/\x00(\d+)\x00/g, (_, idx) => placeholders[Number(idx)]!)
+    })
+    .join('')
 }
 
 function count(text: string, re: RegExp): number {
