@@ -211,6 +211,32 @@ export function escapeNonStandardHtmlTags(text: string): string {
     .join('')
 }
 
+/**
+ * Rewrite absolute-path image/asset references to upstream raw GitHub URLs so
+ * VitePress never tries to bundle assets that only exist on the upstream site.
+ *
+ * e.g. ![alt](/docs/assets/foo.png) →
+ *      ![alt](https://raw.githubusercontent.com/{owner}/{repo}/{sha}/docs/assets/foo.png)
+ */
+export function rewriteAbsoluteAssetUrls(
+  text: string,
+  owner: string,
+  repo: string,
+  sha: string,
+): string {
+  const rawBase = `https://raw.githubusercontent.com/${owner}/${repo}/${sha}`
+  // Markdown image syntax: ![alt](/path)
+  const withMd = text.replace(
+    /!\[([^\]]*)\]\(\/((?:[^)#?])+(?:\.[a-zA-Z]{2,5})(?:[^)]*)?)\)/g,
+    (_, alt, path) => `![${alt}](${rawBase}/${path})`,
+  )
+  // HTML img src="/path..."
+  return withMd.replace(
+    /(<img\b[^>]*?\bsrc=")\/([^"]+)(")/gi,
+    (_, pre, path, suf) => `${pre}${rawBase}/${path}${suf}`,
+  )
+}
+
 function count(text: string, re: RegExp): number {
   return (text.match(re) ?? []).length
 }

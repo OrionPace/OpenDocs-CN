@@ -4,7 +4,11 @@ import { fetchBranchSha, fetchFileContent, fetchFileTree, type FileEntry } from 
 import { emptyState, readState, writeState } from '../sync/state.js'
 import { chunkFile, joinChunks } from '../translation/chunker.js'
 import { translateChunk } from '../translation/engine.js'
-import { repairHtmlBalance, escapeNonStandardHtmlTags } from '../translation/file-qa.js'
+import {
+  repairHtmlBalance,
+  escapeNonStandardHtmlTags,
+  rewriteAbsoluteAssetUrls,
+} from '../translation/file-qa.js'
 import { matchGlossary } from '../translation/glossary.js'
 import type { TranslationMemory } from '../translation/memory.js'
 import type { TranslationProvider } from '../translation/providers/interface.js'
@@ -169,8 +173,13 @@ async function translateOneFile(input: TranslateOneInput): Promise<FileResult> {
   const anyFailed = chunkOutcomes.some((c) => c.res.status === 'failed')
   const failReason = chunkOutcomes.find((c) => c.res.failReason)?.res.failReason
 
-  const assembled = escapeNonStandardHtmlTags(
-    repairHtmlBalance(joinChunks(chunkOutcomes.map((c) => c.res.translated))),
+  const assembled = rewriteAbsoluteAssetUrls(
+    escapeNonStandardHtmlTags(
+      repairHtmlBalance(joinChunks(chunkOutcomes.map((c) => c.res.translated))),
+    ),
+    project.owner,
+    project.repo,
+    upstreamSha,
   )
 
   writeTranslatedFile({
