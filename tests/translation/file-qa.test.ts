@@ -72,4 +72,10 @@ describe('repairHtmlBalance', () => {
     const text = '```\n<div>unclosed\n```\nplain'
     expect(repairHtmlBalance(text)).toBe(text)
   })
+
+  it('ignores HTML-like tokens inside inline code spans', () => {
+    // `<crate>` is CLI placeholder syntax, not a real HTML tag
+    const text = 'run `just fix -p <crate>` to build'
+    expect(repairHtmlBalance(text)).toBe(text)
+  })
 })

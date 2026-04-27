@@ -33,7 +33,9 @@ const OPEN_TAG_RE = /<([a-zA-Z][a-zA-Z0-9-]*)\b[^>]*?(?<!\/|-)>/g
 const CLOSE_TAG_RE = /<\/([a-zA-Z][a-zA-Z0-9-]*)>/g
 
 function countHtmlTags(text: string): Map<string, { open: number; close: number }> {
-  const stripped = text.replace(FENCE_RE, '')
+  // Strip both fenced code blocks and inline code spans so that HTML-like
+  // tokens inside code (e.g. `<crate>`) are not counted as real HTML tags.
+  const stripped = text.replace(FENCE_RE, '').replace(INLINE_CODE_RE, '')
   const counts = new Map<string, { open: number; close: number }>()
 
   const get = (tag: string) => {
