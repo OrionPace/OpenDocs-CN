@@ -14,6 +14,18 @@ const sidebar = buildSidebar(
 )
 
 export default defineConfig({
+  vue: {
+    template: {
+      compilerOptions: {
+        // Translated markdown may contain non-standard HTML tags from upstream
+        // docs (e.g. <crate>, <br>, custom shorthand). Treat everything as a
+        // custom element so Vue's strict HTML nesting validation doesn't break
+        // the build.
+        isCustomElement: () => true,
+      },
+    },
+  },
+
   lang: 'zh-CN',
   title: 'OpenDocs CN',
   description: '社区中文翻译 · 非官方 · Unofficial community translation',
