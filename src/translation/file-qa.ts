@@ -53,6 +53,23 @@ function countHtmlTags(text: string): Map<string, { open: number; close: number 
   return counts
 }
 
+/**
+ * Deterministically repair HTML tag imbalance by appending missing closing tags.
+ * Handles upstream source bugs (e.g. a missing </details>) that would otherwise
+ * break VitePress/Vue compilation even when using the English source fallback.
+ */
+export function repairHtmlBalance(text: string): string {
+  const counts = countHtmlTags(text)
+  let result = text
+  for (const [tag, { open, close }] of counts) {
+    const deficit = open - close
+    if (deficit > 0) {
+      result += ('\n' + `</${tag}>`).repeat(deficit)
+    }
+  }
+  return result
+}
+
 function count(text: string, re: RegExp): number {
   return (text.match(re) ?? []).length
 }

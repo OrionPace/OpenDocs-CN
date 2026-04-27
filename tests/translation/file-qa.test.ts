@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { runFileQA } from '../../src/translation/file-qa.js'
+import { runFileQA, repairHtmlBalance } from '../../src/translation/file-qa.js'
 
 const NO_GLOSSARY = [] as const
 
@@ -45,5 +45,31 @@ describe('runFileQA — htmlTagBalance', () => {
     const tr = '<details>未闭合'
     const result = runFileQA(src, tr, NO_GLOSSARY)
     expect(result.failures.filter((f) => f.name === 'htmlTagBalance')).toHaveLength(0)
+  })
+})
+
+describe('repairHtmlBalance', () => {
+  it('appends missing closing tags', () => {
+    const repaired = repairHtmlBalance('<details><summary>x</summary>content')
+    expect(repaired).toContain('</details>')
+    expect((repaired.match(/<details/g) ?? []).length).toBe(
+      (repaired.match(/<\/details>/g) ?? []).length,
+    )
+  })
+
+  it('leaves balanced content unchanged', () => {
+    const balanced = '<details><summary>x</summary>y</details>'
+    expect(repairHtmlBalance(balanced)).toBe(balanced)
+  })
+
+  it('appends correct count of missing closes', () => {
+    // Two opens, zero closes
+    const repaired = repairHtmlBalance('<div><div>content')
+    expect((repaired.match(/<\/div>/g) ?? []).length).toBe(2)
+  })
+
+  it('ignores HTML in fenced code blocks', () => {
+    const text = '```\n<div>unclosed\n```\nplain'
+    expect(repairHtmlBalance(text)).toBe(text)
   })
 })
