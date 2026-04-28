@@ -161,22 +161,58 @@ function countHtmlTags(text: string): Map<string, { open: number; close: number 
 }
 
 /**
- * Deterministically repair HTML tag imbalance by appending missing closing tags.
- * Only repairs standard HTML5 non-void elements (e.g. a missing </details>).
- * Non-standard tags (e.g. <extension-names>, <crate>) are handled separately
- * by escapeNonStandardHtmlTags.
+ * Deterministically repair HTML tag imbalance for standard HTML5 non-void elements.
+ * - open > close: append missing closing tags at the end.
+ * - close > open: remove orphaned closing tags (they cause Vue genNode crashes).
+ * Non-standard tags (e.g. <extension-names>) are handled by escapeNonStandardHtmlTags.
  */
 export function repairHtmlBalance(text: string): string {
   const counts = countHtmlTags(text)
   let result = text
+
   for (const [tag, { open, close }] of counts) {
     if (!STANDARD_HTML5_ELEMENTS.has(tag)) continue
     const deficit = open - close
     if (deficit > 0) {
+      // Append missing closing tags.
       result += ('\n' + `</${tag}>`).repeat(deficit)
+    } else if (deficit < 0) {
+      // Remove orphaned closing tags by stripping excess occurrences.
+      // We scan outside fenced/inline-code regions so code content is untouched.
+      const excess = -deficit
+      const closeTag = `</${tag}>`
+      result = removeExcessCloseTags(result, closeTag, excess)
     }
   }
   return result
+}
+
+/**
+ * Remove the first `count` occurrences of `closeTag` from `text`,
+ * skipping content inside fenced code blocks and inline code spans.
+ */
+function removeExcessCloseTags(text: string, closeTag: string, count: number): string {
+  let remaining = count
+  const segments = text.split(/(```[\s\S]*?```)/gm)
+  const processed = segments.map((seg, i) => {
+    if (i % 2 === 1 || remaining === 0) return seg // inside fence or already done
+    const placeholders: string[] = []
+    const withPlaceholders = seg.replace(INLINE_CODE_RE, (m) => {
+      placeholders.push(m)
+      return `\x00${placeholders.length - 1}\x00`
+    })
+    const escaped = closeTag.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+    const re = new RegExp(escaped, 'g')
+    const cleaned = withPlaceholders.replace(re, (match) => {
+      if (remaining > 0) {
+        remaining--
+        return ''
+      }
+      return match
+    })
+    return cleaned.replace(/\x00(\d+)\x00/g, (_, idx) => placeholders[Number(idx)]!)
+  })
+  return processed.join('')
 }
 
 /**
@@ -235,6 +271,29 @@ export function rewriteAbsoluteAssetUrls(
     /(<img\b[^>]*?\bsrc=")\/([^"]+)(")/gi,
     (_, pre, path, suf) => `${pre}${rawBase}/${path}${suf}`,
   )
+}
+
+/**
+ * Escape Vue template interpolation expressions ({{ }}) in plain text so
+ * VitePress's Vue compiler never tries to evaluate them as JavaScript.
+ * Skips fenced code blocks and inline code spans.
+ */
+export function sanitizeVueExpressions(text: string): string {
+  const segments = text.split(/(```[\s\S]*?```)/gm)
+  return segments
+    .map((seg, i) => {
+      if (i % 2 === 1) return seg
+      const placeholders: string[] = []
+      const withPlaceholders = seg.replace(INLINE_CODE_RE, (m) => {
+        placeholders.push(m)
+        return `\x00${placeholders.length - 1}\x00`
+      })
+      const escaped = withPlaceholders
+        .replace(/\{\{/g, '&#123;&#123;')
+        .replace(/\}\}/g, '&#125;&#125;')
+      return escaped.replace(/\x00(\d+)\x00/g, (_, idx) => placeholders[Number(idx)]!)
+    })
+    .join('')
 }
 
 function count(text: string, re: RegExp): number {

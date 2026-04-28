@@ -3,6 +3,7 @@ import {
   runFileQA,
   repairHtmlBalance,
   escapeNonStandardHtmlTags,
+  sanitizeVueExpressions,
 } from '../../src/translation/file-qa.js'
 
 const NO_GLOSSARY = [] as const
@@ -117,5 +118,50 @@ describe('escapeNonStandardHtmlTags', () => {
   it('preserves content inside inline code spans verbatim', () => {
     const text = 'run `just fix -p <crate>` to build'
     expect(escapeNonStandardHtmlTags(text)).toBe(text)
+  })
+})
+
+describe('repairHtmlBalance — orphaned close tags', () => {
+  it('removes orphaned closing tags when close > open', () => {
+    const text = 'some text</details>'
+    const result = repairHtmlBalance(text)
+    expect(result).not.toContain('</details>')
+  })
+
+  it('removes only the excess close tags, preserving matched pairs', () => {
+    const text = '<details>content</details></details>'
+    const result = repairHtmlBalance(text)
+    expect((result.match(/<details>/g) ?? []).length).toBe(1)
+    expect((result.match(/<\/details>/g) ?? []).length).toBe(1)
+  })
+
+  it('does not touch close tags inside fenced code blocks', () => {
+    const text = '```\n</details>\n```\nplain'
+    expect(repairHtmlBalance(text)).toBe(text)
+  })
+})
+
+describe('sanitizeVueExpressions', () => {
+  it('escapes {{ }} in plain text', () => {
+    const text = 'value is {{ variable }} here'
+    const result = sanitizeVueExpressions(text)
+    expect(result).not.toContain('{{')
+    expect(result).toContain('&#123;&#123;')
+    expect(result).toContain('&#125;&#125;')
+  })
+
+  it('preserves {{ }} inside fenced code blocks', () => {
+    const text = '```\necho {{ variable }}\n```'
+    expect(sanitizeVueExpressions(text)).toBe(text)
+  })
+
+  it('preserves {{ }} inside inline code spans', () => {
+    const text = 'use `{{ variable }}` syntax'
+    expect(sanitizeVueExpressions(text)).toBe(text)
+  })
+
+  it('leaves text without {{ }} unchanged', () => {
+    const text = 'no template expressions here'
+    expect(sanitizeVueExpressions(text)).toBe(text)
   })
 })

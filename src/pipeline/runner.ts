@@ -8,6 +8,7 @@ import {
   repairHtmlBalance,
   escapeNonStandardHtmlTags,
   rewriteAbsoluteAssetUrls,
+  sanitizeVueExpressions,
 } from '../translation/file-qa.js'
 import { matchGlossary } from '../translation/glossary.js'
 import type { TranslationMemory } from '../translation/memory.js'
@@ -173,13 +174,15 @@ async function translateOneFile(input: TranslateOneInput): Promise<FileResult> {
   const anyFailed = chunkOutcomes.some((c) => c.res.status === 'failed')
   const failReason = chunkOutcomes.find((c) => c.res.failReason)?.res.failReason
 
-  const assembled = rewriteAbsoluteAssetUrls(
-    escapeNonStandardHtmlTags(
-      repairHtmlBalance(joinChunks(chunkOutcomes.map((c) => c.res.translated))),
+  const assembled = sanitizeVueExpressions(
+    rewriteAbsoluteAssetUrls(
+      escapeNonStandardHtmlTags(
+        repairHtmlBalance(joinChunks(chunkOutcomes.map((c) => c.res.translated))),
+      ),
+      project.owner,
+      project.repo,
+      upstreamSha,
     ),
-    project.owner,
-    project.repo,
-    upstreamSha,
   )
 
   writeTranslatedFile({
