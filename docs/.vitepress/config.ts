@@ -3,7 +3,6 @@ import { resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { loadConfig } from '../../src/config/loader.js'
 import { buildSidebar } from '../../src/vitepress/sidebar.js'
-import { STANDARD_HTML5_ELEMENTS } from '../../src/translation/file-qa.js'
 
 const here = fileURLToPath(new URL('.', import.meta.url))
 const docsRoot = resolve(here, '..')
@@ -15,18 +14,6 @@ const sidebar = buildSidebar(
 )
 
 export default defineConfig({
-  vue: {
-    template: {
-      compilerOptions: {
-        // CLI docs often contain angle-bracket placeholders like <extension-names>
-        // or <crate> in plain text. Tell Vue to treat non-standard tags as custom
-        // web components (lenient about closing) while still validating standard
-        // HTML5 elements (details, div, etc.) normally.
-        isCustomElement: (tag) => !STANDARD_HTML5_ELEMENTS.has(tag.toLowerCase()),
-      },
-    },
-  },
-
   lang: 'zh-CN',
   title: 'OpenDocs CN',
   description: '社区中文翻译 · 非官方 · Unofficial community translation',
@@ -34,6 +21,8 @@ export default defineConfig({
   base: '/OpenDocs-CN/',
   cleanUrls: true,
   lastUpdated: false,
+  // Dead links in translated docs are expected (upstream anchors we don't host).
+  ignoreDeadLinks: true,
 
   head: [
     ['meta', { name: 'theme-color', content: '#3c8772' }],
