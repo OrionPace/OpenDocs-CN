@@ -1,7 +1,7 @@
 {
-  "name": "opendocs-cn",
+  "name": "antigravity-doc-zh",
   "version": "0.1.0",
-  "description": "Community Chinese translation of developer CLI documentation (Gemini CLI, Codex CLI). Unofficial.",
+  "description": "Unofficial Chinese documentation and notes for Google Antigravity. Community maintained.",
   "license": "MIT",
   "private": true,
   "type": "module",

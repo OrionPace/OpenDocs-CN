@@ -1,32 +1,24 @@
 # 关于本站
 
-OpenDocs CN 是一个社区维护的自动化文档翻译流水线，目标是让中文开发者更便捷地阅读热门开发者 CLI 的英文文档。
+Antigravity Docs 中文是一个社区维护的非官方中文整理项目，目标是帮助中文开发者更高效地理解 Google Antigravity 相关官方文档、公告和开发者工作流。
 
-## 工作原理
+## 项目状态
 
-1. **同步**：通过 GitHub Actions 定期拉取上游仓库 `docs/` 路径下的 Markdown 文件，固定到具体的 commit SHA。
-2. **切分**：使用 [unified](https://unifiedjs.com/) / remark 把每个文件解析为 mdast，按顶层节点（段落、列表、代码块、标题等）切分为独立 _block_。
-3. **翻译**：每个 block 单独发往 LLM。代码块、URL、文件路径、CLI 名称、环境变量名等不参与翻译；标题保留英文锚点 `{#slug}`。
-4. **缓存**：以 `(sourceHash, glossaryHash, promptVersion)` 三元组为 key 缓存到 SQLite。下次同步若上游块未变化，**不会**调用 LLM。
-5. **重组**：QA 通过后重新拼装为完整文件，写入对应路由目录，并附署名页脚。
+本项目前身为 `OpenDocs-CN`，曾用于同步和翻译 Gemini CLI、Codex CLI 等开发者 CLI 文档。当前维护重心已调整为 Antigravity。
 
-## 翻译质量
+由于 Antigravity 的稳定文档来源、许可边界和可自动同步方式仍需核验，本站现阶段以“来源索引 + 中文整理 + 迁移说明”为主，不承诺与官方文档实时同步。
 
-- **默认模型**：DeepSeek `deepseek-v4-flash`。失败时自动重试一次（更严格的 prompt），仍失败则切换到 OpenRouter 兜底。
-- **强制约束**：通过正则后处理验证代码栏数量、URL 数量、链接数量、标题层级数量是否与上游一致。任一项不一致直接判失败。
-- **术语表**：项目级 `config/glossary.yml` 定义统一术语映射。匹配源文中的术语后，必须在译文中出现对应目标。
-- **人工审阅**：可后续通过 PR 修订单条记录，并在 translation memory 中标记为 `reviewed: true`，后续机器同步不会覆盖。
+## 工作原则
 
-## 许可证与归属
+1. **以官方原文为准**：中文内容只作为辅助阅读材料。
+2. **不暗示官方背书**：本站不属于 Google，也不是官方中文文档。
+3. **谨慎处理全文翻译**：在确认许可边界前，优先做摘要、索引和引用式说明。
+4. **保留可追溯来源**：重要判断需要记录官方链接、访问日期和备注。
 
-- 翻译后的 Markdown 是上游 Apache 2.0 文档的衍生作品，**继承 Apache 2.0**。每页底部有指向具体 commit 的署名页脚。
-- 本仓库的基础设施代码（TypeScript、构建脚本、VitePress 配置）使用 [MIT 许可证](https://github.com/opendocs-cn/opendocs-cn/blob/main/LICENSE)。
-- 上游 `LICENSE` 与 `NOTICE`（如有）镜像在 [`/licenses/`](/licenses/) 下。
+## 历史归档
 
-## 商标声明
-
-本站不展示上游项目方的 logo，不在任何用户可见字符串中暗示官方背书。使用上游项目名称仅为描述性引用（nominative fair use）。
+旧 Gemini CLI / Codex CLI 同步状态与翻译记忆已移动到 `archive/legacy-open-cli/`，仅用于历史追溯或未来迁移参考。
 
 ## 下架请求
 
-如上游项目方或其公司所有者要求下架、改名或重定向，将在 48 小时内配合处理。详见仓库根目录 `.claude/rules/04-compliance.md` 第 8 节。
+如相关权利方要求删除、改名或调整内容，本项目将配合处理。

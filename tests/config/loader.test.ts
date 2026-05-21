@@ -4,8 +4,8 @@ import { loadConfig } from '../../src/config/loader.js'
 describe('loadConfig', () => {
   it('loads and validates all three config files without throwing', () => {
     const config = loadConfig()
-    expect(config.projects.projects).toHaveLength(2)
-    expect(config.projects.projects.map((p) => p.id).sort()).toEqual(['codex', 'gemini-cli'])
+    expect(config.projects.projects).toHaveLength(0)
+    expect(config.projects.projects).toEqual([])
   })
 
   it('primary provider is nvidia-nim (free endpoint, required)', () => {
