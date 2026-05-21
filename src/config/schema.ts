@@ -13,7 +13,7 @@ export const ProjectConfigSchema = z.object({
 })
 
 export const ProjectsFileSchema = z.object({
-  projects: z.array(ProjectConfigSchema).min(1),
+  projects: z.array(ProjectConfigSchema),
   ourRepo: z.string().regex(/^[^/]+\/[^/]+$/, 'ourRepo must be "owner/repo"'),
 })
 

@@ -1,23 +1,9 @@
-projects:
-  - id: gemini-cli
-    name: Gemini CLI
-    owner: google-gemini
-    repo: gemini-cli
-    branch: main
-    docsPath: docs/
-    route: /gemini-cli/
-    upstreamUrl: https://github.com/google-gemini/gemini-cli/tree/main/docs
-    license: Apache-2.0
+# Active upstream projects for the automated GitHub-docs translation pipeline.
+#
+# Antigravity currently does not expose a public GitHub docs/ tree compatible
+# with the old Gemini CLI/Codex sync pipeline, so this list is intentionally
+# empty. Manual/curated Antigravity pages live under docs/antigravity/.
+projects: []
 
-  - id: codex
-    name: Codex CLI
-    owner: openai
-    repo: codex
-    branch: main
-    docsPath: docs/
-    route: /codex/
-    upstreamUrl: https://github.com/openai/codex/tree/main/docs
-    license: Apache-2.0
-
-# Our own repo identifier, used for the attribution footer's "report an error" link.
-ourRepo: opendocs-cn/opendocs-cn
+# Our own repo identifier, used for generated attribution / issue links.
+ourRepo: OrionPace/antigravity-doc-zh

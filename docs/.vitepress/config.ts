@@ -8,17 +8,20 @@ const here = fileURLToPath(new URL('.', import.meta.url))
 const docsRoot = resolve(here, '..')
 
 const { projects } = loadConfig().projects
-const sidebar = buildSidebar(
-  projects.map((p) => ({ id: p.id, route: p.route })),
-  docsRoot,
-)
+const sidebar = {
+  ...buildSidebar([{ id: 'antigravity', route: '/antigravity/' }], docsRoot),
+  ...buildSidebar(
+    projects.map((p) => ({ id: p.id, route: p.route })),
+    docsRoot,
+  ),
+}
 
 export default defineConfig({
   lang: 'zh-CN',
-  title: 'OpenDocs CN',
-  description: '社区中文翻译 · 非官方 · Unofficial community translation',
-  // GitHub Pages serves under /OpenDocs-CN/ — must match the repo name exactly.
-  base: '/OpenDocs-CN/',
+  title: 'Antigravity Docs 中文',
+  description: 'Google Antigravity 社区中文整理 · 非官方',
+  // GitHub Pages serves under /antigravity-doc-zh/ — must match the repo name exactly.
+  base: '/antigravity-doc-zh/',
   cleanUrls: true,
   lastUpdated: false,
   // Dead links in translated docs are expected (upstream anchors we don't host).
@@ -32,13 +35,14 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: '首页', link: '/' },
+      { text: 'Antigravity', link: '/antigravity/' },
       ...projects.map((p) => ({ text: p.name, link: p.route })),
       { text: '关于', link: '/about/' },
     ],
 
     sidebar,
 
-    socialLinks: [{ icon: 'github', link: 'https://github.com/opendocs-cn/opendocs-cn' }],
+    socialLinks: [{ icon: 'github', link: 'https://github.com/OrionPace/antigravity-doc-zh' }],
 
     search: {
       provider: 'local',
@@ -71,8 +75,8 @@ export default defineConfig({
 
     footer: {
       message:
-        '社区中文翻译 · 非官方 · Unofficial community translation · Not affiliated with the upstream projects',
-      copyright: '内容遵循各项目原始许可证（Apache 2.0），本站基础设施代码 MIT 许可证',
+        'Antigravity 社区中文整理 · 非官方 · Not affiliated with Google or upstream projects',
+      copyright: '基础设施代码 MIT 许可证；整理/翻译内容遵循对应官方来源许可与合理引用边界',
     },
   },
 })
