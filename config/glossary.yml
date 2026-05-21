@@ -4,9 +4,35 @@
 # cache key for blocks where the term appears.
 
 terms:
+  - source: Antigravity
+    target: Antigravity
+    note: 产品名保留英文，不译作“反重力”
+    caseSensitive: true
+
   - source: agent
     target: 智能体
     note: fixed term in agent tooling; do not use 代理
+
+  - source: agentic
+    target: 智能体式
+
+  - source: subagent
+    target: 子智能体
+
+  - source: command center
+    target: 指挥中心
+
+  - source: workspace
+    target: 工作区
+
+  - source: project
+    target: 项目
+
+  - source: scheduled message
+    target: 定时消息
+
+  - source: artifact
+    target: 产物
 
   - source: sandbox
     target: 沙箱

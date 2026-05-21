@@ -61,6 +61,17 @@ async function main(): Promise<void> {
   const opts = program.opts<{ project?: string; full: boolean; concurrency?: number }>()
 
   const config = loadConfig()
+  const allProjects: ProjectConfig[] = config.projects.projects
+  const targets = opts.project ? allProjects.filter((p) => p.id === opts.project) : allProjects
+  if (targets.length === 0) {
+    if (opts.project) {
+      console.error(pc.red(`No project matches id="${opts.project}"`))
+      process.exit(1)
+    }
+    console.log(pc.yellow('No active upstream projects configured; skipping sync.'))
+    return
+  }
+
   const providers = config.providers.providers
     .map(buildProvider)
     .filter((p): p is TranslationProvider => p !== null)
@@ -70,13 +81,6 @@ async function main(): Promise<void> {
     process.exit(1)
   }
   console.log(pc.dim(`providers: ${providers.map((p) => `${p.name}(${p.model})`).join(' → ')}`))
-
-  const allProjects: ProjectConfig[] = config.projects.projects
-  const targets = opts.project ? allProjects.filter((p) => p.id === opts.project) : allProjects
-  if (targets.length === 0) {
-    console.error(pc.red(`No project matches id="${opts.project}"`))
-    process.exit(1)
-  }
 
   let totalFailures = 0
   for (const project of targets) {

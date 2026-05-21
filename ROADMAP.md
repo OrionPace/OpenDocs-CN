@@ -11,15 +11,16 @@
 
 ## Phase 2：官方来源核验
 
-- [ ] 确认 Antigravity 官方主页与文档入口
+- [x] 确认 Antigravity 官方主页与基础入口
+- [x] 建立官方来源索引初稿
 - [ ] 确认 Gemini CLI 后续维护状态的官方表述
 - [ ] 确认是否存在公开 GitHub docs 源
 - [ ] 明确翻译许可、引用边界和免责声明
 
 ## Phase 3：核心内容建设
 
-- [ ] Antigravity Overview 中文整理
-- [ ] Quickstart / 安装访问方式
+- [x] Antigravity Overview 中文整理初稿
+- [x] Quickstart / 安装访问方式初稿
 - [ ] 核心概念与术语表
 - [ ] 开发者工作流
 - [ ] 与 Gemini CLI 的差异

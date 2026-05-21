@@ -11,15 +11,17 @@
 
 ## 阅读路线
 
+- [Antigravity 概览](./overview.md)
+- [Quickstart：开始使用 Antigravity](./quickstart.md)
 - [从 Gemini CLI 到 Antigravity](./migration/from-gemini-cli.md)
-- [官方来源索引](../../sources/official-links.md)
+- [官方来源索引](./reference/official-sources.md)
 - [项目路线图](../../ROADMAP.md)
 
 ## 待补充
 
-- Antigravity 官方概览
-- 安装与访问方式
-- 核心概念
+- CLI 使用说明
+- IDE 使用说明
+- SDK 使用说明
 - 开发者工作流
-- 与 Gemini CLI 的差异
+- 与 Gemini CLI 的差异细化
 - 常见问题

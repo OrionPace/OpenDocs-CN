@@ -1,41 +1,33 @@
-# 项目概览 — OpenDocs-CN
+# 项目概览 — antigravity-doc-zh
 
-> **进入项目时先读 `implementation_plan.md`** —— 它给出当前架构、已完成、当前阻塞、下一步。本文件只给出"是什么"。
+## 当前定位
 
-## 一句话
+`antigravity-doc-zh` 是 Google Antigravity 相关官方文档、公告和开发者工作流的社区中文整理项目。
 
-自动同步上游 GitHub 项目的英文 `docs/` → 用 LLM 翻译成中文 → 通过 VitePress 发布静态站点。
+- 非官方项目，不代表 Google；
+- 产品状态、价格、许可、条款和 API 行为以官方英文原文为准；
+- 关键事实需要能追溯到官方来源；
+- 项目不再维护 Codex CLI 文档；
+- Gemini CLI 相关内容仅作为历史/迁移背景。
 
-## Phase 1 范围（MVP）
+## 历史
 
-两个项目，仅此而已：
+本项目前身是 `OpenDocs-CN`，曾计划自动同步并翻译 Gemini CLI / Codex CLI 的 GitHub `docs/` 目录。现在仓库已改名为 `OrionPace/antigravity-doc-zh`，维护重点转向 Antigravity。
 
-| 项目 | 上游 | 路由 |
-|---|---|---|
-| Gemini CLI | `google-gemini/gemini-cli` @ `main`，路径 `docs/` | `/gemini-cli/` |
-| Codex CLI | `openai/codex` @ `main`，路径 `docs/` | `/codex/` |
+## 当前结构
 
-部署到 `https://orionpace.github.io/OpenDocs-CN/`（GitHub Pages，子路径 `/OpenDocs-CN/`）。
+| 路径 | 用途 |
+| --- | --- |
+| `docs/antigravity/` | 当前 Antigravity 中文文档主入口 |
+| `docs/antigravity/reference/official-sources.md` | 官方来源索引 |
+| `docs/antigravity/migration/from-gemini-cli.md` | 从 Gemini CLI 到 Antigravity 的迁移说明 |
+| `archive/legacy-open-cli/` | OpenDocs-CN 阶段遗留状态、翻译记忆和计划 |
+| `PROJECT_STATE.md` | 长上下文/换会话恢复现场用的交接文档 |
 
-## Phase 1 验收标准（八条）
+## 工作原则
 
-`implementation_plan.md` 跟踪每条的当前状态。
-
-1. `pnpm sync` 首次跑通 → 两个项目完整翻译，VitePress 无错误构建
-2. 再次 `pnpm sync`（无上游变化）→ 零 LLM 调用
-3. 单文件变更 → 仅该文件触发 LLM
-4. 代码块 / 行内代码 / URL / 标题锚点逐字节与上游一致
-5. `pnpm qa` → 零 glossary_violation
-6. 站点可访问 + GitHub Pages 自动部署
-7. 每页 footer 含上游 commit-pinned 来源链接
-8. 首页首屏有"社区中文翻译 · 非官方"声明
-
-## 不做（Phase 1 非目标）
-
-并排双语 / PR review 流 / 非 Markdown 内容（图片 OCR、MDX、notebook）/ 多版本文档 / 本地 LLM / Algolia 搜索 / UI 多语言切换 / 自定义主题。
-
-## 详细规则
-
-- 技术栈、Provider 配置、跨平台约束：`01-tech-stack.md`
-- 翻译时硬约束（v2 文件级架构）：`03-translation-rules.md`
-- 合规、署名、预部署清单：`04-compliance.md`
+1. 先核验来源，再写结论。
+2. 不写“官方中文文档”，只写“社区中文整理/翻译”。
+3. 不全文搬运许可边界不明的官方页面。
+4. 不把 Codex 内容混入本项目。
+5. 每完成阶段更新 `PROJECT_STATE.md` 和 `ROADMAP.md`，避免上下文压缩后失忆。

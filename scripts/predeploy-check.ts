@@ -63,7 +63,8 @@ function checkHomepageDisclaimer(): void {
     return
   }
   const html = readFileSync(p, 'utf8')
-  const ok = html.includes('社区中文翻译') && html.includes('非官方')
+  const ok =
+    (html.includes('社区中文整理') || html.includes('社区中文翻译')) && html.includes('非官方')
   record('homepage-disclaimer', ok)
 }
 
